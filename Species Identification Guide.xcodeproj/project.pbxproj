@@ -11,7 +11,6 @@
 		271B1733209806B90097F5C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271B1732209806B90097F5C1 /* ViewController.swift */; };
 		271B1736209806B90097F5C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271B1734209806B90097F5C1 /* Main.storyboard */; };
 		271B1738209806BB0097F5C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271B1737209806BB0097F5C1 /* Assets.xcassets */; };
-		271B173B209806BB0097F5C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271B1739209806BB0097F5C1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		271B1732209806B90097F5C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		271B1735209806B90097F5C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		271B1737209806BB0097F5C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		271B173A209806BB0097F5C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		271B173C209806BB0097F5C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +56,6 @@
 				271B1732209806B90097F5C1 /* ViewController.swift */,
 				271B1734209806B90097F5C1 /* Main.storyboard */,
 				271B1737209806BB0097F5C1 /* Assets.xcassets */,
-				271B1739209806BB0097F5C1 /* LaunchScreen.storyboard */,
 				271B173C209806BB0097F5C1 /* Info.plist */,
 			);
 			path = "Species Identification Guide";
@@ -96,6 +93,7 @@
 				TargetAttributes = {
 					271B172C209806B90097F5C1 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -122,7 +120,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271B173B209806BB0097F5C1 /* LaunchScreen.storyboard in Resources */,
 				271B1738209806BB0097F5C1 /* Assets.xcassets in Resources */,
 				271B1736209806B90097F5C1 /* Main.storyboard in Resources */,
 			);
@@ -149,14 +146,6 @@
 				271B1735209806B90097F5C1 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		271B1739209806BB0097F5C1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				271B173A209806BB0097F5C1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -280,6 +269,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GGR85MH5L;
 				INFOPLIST_FILE = "Species Identification Guide/Info.plist";
@@ -289,6 +279,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "PACE.Species-Identification-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GGR85MH5L;
 				INFOPLIST_FILE = "Species Identification Guide/Info.plist";

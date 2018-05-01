@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R1f-eW-Iz0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Invertebrates-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Species_Identification_Guide" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,109 +18,154 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vW9-ro-pKd">
-                                <rect key="frame" x="10" y="144" width="355" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kha-cP-ZS6">
+                                <rect key="frame" x="10" y="74" width="355" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pkk-aL-oiH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtm-0w-3bD">
+                                <rect key="frame" x="10" y="114" width="355" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="daO-jP-Nsu"/>
+                                </constraints>
+                                <state key="normal" title="Species Shortlist">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="NXT-Fy-uue" kind="show" id="yX4-co-PHx"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nm-sw-b5g">
+                                <rect key="frame" x="0.0" y="64" width="200" height="603"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4a-I1-5Q4">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
-                                        <color key="backgroundColor" red="0.93401015228426398" green="0.93401015228426398" blue="0.93401015228426398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-gW-7lb">
+                                        <rect key="frame" x="10" y="10" width="180" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="GKK-ME-oC6"/>
+                                            <constraint firstAttribute="height" constant="40" id="JHZ-yc-5ay"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Characteristic">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Invertebrates">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="characterisitcTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2In-cK-0jP"/>
-                                            <action selector="handleSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W0M-td-v3k"/>
-                                        </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dut-wM-JQI">
-                                        <rect key="frame" x="0.0" y="-144" width="355" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-d1-Edy">
+                                        <rect key="frame" x="10" y="60" width="180" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ZtK-ge-D5d"/>
+                                            <constraint firstAttribute="height" constant="40" id="fmK-Sp-3Xp"/>
                                         </constraints>
-                                        <state key="normal" title="Arm">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="About">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="characterisitcTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Yy-wU-uEb"/>
-                                        </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGJ-h7-b60">
-                                        <rect key="frame" x="0.0" y="-144" width="355" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puc-AE-Avj">
+                                        <rect key="frame" x="10" y="110" width="180" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Wvu-7M-2jv"/>
+                                            <constraint firstAttribute="height" constant="40" id="oHO-6s-kri"/>
                                         </constraints>
-                                        <state key="normal" title="Leg">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Restart Application">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="characterisitcTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sPl-bh-2By"/>
-                                        </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJB-ml-WlA">
-                                        <rect key="frame" x="0.0" y="-144" width="355" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4v-xS-uf8">
+                                        <rect key="frame" x="10" y="160" width="180" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="m1K-Gu-yne"/>
+                                            <constraint firstAttribute="height" constant="40" id="vyn-bI-Sh4"/>
                                         </constraints>
-                                        <state key="normal" title="Head">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Acknowledgements">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="characterisitcTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7RF-GT-wAh"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-UH-Wg9">
-                                        <rect key="frame" x="0.0" y="-144" width="355" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="WIx-Cw-vBL"/>
-                                        </constraints>
-                                        <state key="normal" title="Other">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="characterisitcTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ozc-6X-qmx"/>
-                                        </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vGJ-h7-b60" firstAttribute="leading" secondItem="vW9-ro-pKd" secondAttribute="leading" id="4L6-kO-z89"/>
-                                    <constraint firstAttribute="trailing" secondItem="zJB-ml-WlA" secondAttribute="trailing" id="B9A-cV-1yC"/>
-                                    <constraint firstItem="eAU-UH-Wg9" firstAttribute="leading" secondItem="vW9-ro-pKd" secondAttribute="leading" id="RMK-DH-0M1"/>
-                                    <constraint firstAttribute="trailing" secondItem="e4a-I1-5Q4" secondAttribute="trailing" id="Wz8-8h-IlH"/>
-                                    <constraint firstAttribute="trailing" secondItem="eAU-UH-Wg9" secondAttribute="trailing" id="YSf-Ip-a2z"/>
-                                    <constraint firstAttribute="trailing" secondItem="dut-wM-JQI" secondAttribute="trailing" id="YjJ-A8-e1r"/>
-                                    <constraint firstItem="e4a-I1-5Q4" firstAttribute="leading" secondItem="vW9-ro-pKd" secondAttribute="leading" id="aTy-gd-0PY"/>
-                                    <constraint firstAttribute="trailing" secondItem="vGJ-h7-b60" secondAttribute="trailing" id="dA0-NS-GdW"/>
-                                    <constraint firstItem="zJB-ml-WlA" firstAttribute="leading" secondItem="vW9-ro-pKd" secondAttribute="leading" id="eGd-p8-gvC"/>
-                                    <constraint firstItem="dut-wM-JQI" firstAttribute="leading" secondItem="vW9-ro-pKd" secondAttribute="leading" id="kM4-Z6-kgb"/>
+                                    <constraint firstItem="Z4v-xS-uf8" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="10" id="79p-xO-gi2"/>
+                                    <constraint firstItem="Bny-d1-Edy" firstAttribute="top" secondItem="pnF-gW-7lb" secondAttribute="bottom" constant="10" id="GZa-oX-Tdb"/>
+                                    <constraint firstItem="pnF-gW-7lb" firstAttribute="top" secondItem="3nm-sw-b5g" secondAttribute="top" constant="10" id="KRU-TC-QLj"/>
+                                    <constraint firstAttribute="width" constant="200" id="MZw-gg-0p2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bny-d1-Edy" secondAttribute="trailing" constant="10" id="OOm-mG-mfh"/>
+                                    <constraint firstAttribute="trailing" secondItem="pnF-gW-7lb" secondAttribute="trailing" constant="10" id="Q6u-Y7-yBm"/>
+                                    <constraint firstItem="Z4v-xS-uf8" firstAttribute="top" secondItem="Puc-AE-Avj" secondAttribute="bottom" constant="10" id="TcN-v4-L7m"/>
+                                    <constraint firstItem="Bny-d1-Edy" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="10" id="cGD-zq-YhE"/>
+                                    <constraint firstItem="Puc-AE-Avj" firstAttribute="top" secondItem="Bny-d1-Edy" secondAttribute="bottom" constant="10" id="dpx-xx-o6N"/>
+                                    <constraint firstItem="pnF-gW-7lb" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="10" id="jNM-0w-6b0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Puc-AE-Avj" secondAttribute="trailing" constant="10" id="mHw-l5-mfp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z4v-xS-uf8" secondAttribute="trailing" constant="10" id="qpq-3H-rbz"/>
+                                    <constraint firstItem="Puc-AE-Avj" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="10" id="uWp-hB-0gZ"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8324873096446701" green="0.8324873096446701" blue="0.8324873096446701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vW9-ro-pKd" secondAttribute="trailing" constant="10" id="2r2-uM-PIb"/>
-                            <constraint firstItem="vW9-ro-pKd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="BdP-Nm-2j2"/>
-                            <constraint firstItem="vW9-ro-pKd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="KmF-z7-MHe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gtm-0w-3bD" secondAttribute="trailing" constant="10" id="7UC-g3-8jh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kha-cP-ZS6" secondAttribute="trailing" constant="10" id="Dl0-aE-0qt"/>
+                            <constraint firstItem="Gtm-0w-3bD" firstAttribute="top" secondItem="kha-cP-ZS6" secondAttribute="bottom" constant="10" id="TZn-OE-70U"/>
+                            <constraint firstItem="3nm-sw-b5g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VVO-97-XqR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3nm-sw-b5g" secondAttribute="bottom" id="fE4-CO-7VE"/>
+                            <constraint firstItem="kha-cP-ZS6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="i5n-Tb-ZZP"/>
+                            <constraint firstItem="kha-cP-ZS6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="km8-yq-dOx"/>
+                            <constraint firstItem="Gtm-0w-3bD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="mq4-26-g2k"/>
+                            <constraint firstItem="3nm-sw-b5g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pCa-Lb-x5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Invertebrates" id="5GY-Ad-G4p"/>
                     <connections>
-                        <outletCollection property="characteristicList" destination="dut-wM-JQI" collectionClass="NSMutableArray" id="IFV-Bq-53K"/>
-                        <outletCollection property="characteristicList" destination="vGJ-h7-b60" collectionClass="NSMutableArray" id="KRy-Z9-BcM"/>
-                        <outletCollection property="characteristicList" destination="zJB-ml-WlA" collectionClass="NSMutableArray" id="t4e-8m-WNC"/>
-                        <outletCollection property="characteristicList" destination="eAU-UH-Wg9" collectionClass="NSMutableArray" id="i3Y-Z7-u1O"/>
+                        <outlet property="search" destination="kha-cP-ZS6" id="bmI-ED-Ngf"/>
+                        <outlet property="sideView" destination="3nm-sw-b5g" id="r5u-rR-xFd"/>
+                        <outlet property="viewConstraint" destination="VVO-97-XqR" id="q2b-6P-vmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="DO5-zW-WUQ">
+                    <connections>
+                        <action selector="panPerformed:" destination="BYZ-38-t0r" id="MsD-zj-Xu0"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Yv-Pk-gmP">
+            <objects>
+                <viewController id="NXT-Fy-uue" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gda-Vr-uZa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xtc-i3-hbU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QsY-xW-pMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863" y="134"/>
+        </scene>
+        <!--abel-->
+        <scene sceneID="RwT-S3-XXI">
+            <objects>
+                <navigationController title="abel" automaticallyAdjustsScrollViewInsets="NO" id="R1f-eW-Iz0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2R1-3Z-N04">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="W68-sN-t2Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8CW-IZ-Bx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="134"/>
         </scene>
     </scenes>
 </document>
