@@ -35,7 +35,6 @@ extension UIViewController {
 }
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var viewConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideView: UIView!
@@ -48,14 +47,13 @@ class ViewController: UIViewController {
         search.setLeftPaddingPoints(10)
         search.setRightPaddingPoints(10)
         
-        sideView.layer.shadowColor = UIColor.black.cgColor
-        sideView.layer.shadowOpacity = 0.7
-        sideView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        viewConstraint.constant = -210
+        viewConstraint.constant = -310
         
         self.hideKeyboardWhenTappedAround()
     }
-
+    
+    var menuVisible = false;
+    
     @IBAction func panPerformed(_ sender: UIPanGestureRecognizer) {
         if sender.state == .began || sender.state == .changed {
             let translation = sender.translation(in: self.view).x
@@ -67,7 +65,7 @@ class ViewController: UIViewController {
                     })
                 }
             } else {                // Swipe Left
-                if viewConstraint.constant > -210 {
+                if viewConstraint.constant > -310 {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.viewConstraint.constant += translation
                         self.view.layoutIfNeeded()
@@ -77,15 +75,33 @@ class ViewController: UIViewController {
         } else if sender.state == .ended {
             if viewConstraint.constant < -100 {
                 UIView.animate(withDuration: 0.2, animations: {
-                    self.viewConstraint.constant = -210
+                    self.viewConstraint.constant = -310
                     self.view.layoutIfNeeded()
                 })
+                menuVisible = !menuVisible
             } else {
                 UIView.animate(withDuration: 0.2, animations: {
-                    self.viewConstraint.constant = 0
+                    self.viewConstraint.constant = -100
                     self.view.layoutIfNeeded()
                 })
+                menuVisible = !menuVisible
             }
+        }
+    }
+    
+    @IBAction func menuButton(_ sender: Any) {
+        if !menuVisible {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.viewConstraint.constant = -310
+                self.view.layoutIfNeeded()
+            })
+            menuVisible = !menuVisible
+        } else {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.viewConstraint.constant = -100
+                self.view.layoutIfNeeded()
+            })
+            menuVisible = !menuVisible
         }
     }
     
