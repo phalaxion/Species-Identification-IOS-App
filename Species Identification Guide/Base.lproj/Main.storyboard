@@ -48,6 +48,89 @@
                                                     <segue destination="NXT-Fy-uue" kind="show" id="yX4-co-PHx"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NYG-XD-Frr">
+                                                <rect key="frame" x="10" y="130" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2F4-ez-udz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="8CS-Gt-piv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Body Type">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyTypeChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lmE-h1-Z0o"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8V-w7-ZoD">
+                                                        <rect key="frame" x="0.0" y="-194" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="cus-4X-m4R"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Soft Body">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bxF-1p-eaC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7D5-uT-gv1">
+                                                        <rect key="frame" x="0.0" y="-194" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="62n-wV-e0n"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Shell">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBO-4Y-Dg0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="107-Uc-n6K">
+                                                        <rect key="frame" x="0.0" y="-194" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="H65-Wb-89T"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Tough Exoskeleton">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhC-SG-mcO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLG-lx-FyS">
+                                                        <rect key="frame" x="0.0" y="-194" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="4IJ-8S-1Tv"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Visibly Hairy">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XQC-Qb-U89"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="M8V-w7-ZoD" firstAttribute="leading" secondItem="NYG-XD-Frr" secondAttribute="leading" id="AHo-9T-t4H"/>
+                                                    <constraint firstItem="107-Uc-n6K" firstAttribute="leading" secondItem="NYG-XD-Frr" secondAttribute="leading" id="AUT-3z-GVZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GLG-lx-FyS" secondAttribute="trailing" id="Cm7-1n-5Ii"/>
+                                                    <constraint firstItem="2F4-ez-udz" firstAttribute="leading" secondItem="NYG-XD-Frr" secondAttribute="leading" id="JKN-bO-zWQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2F4-ez-udz" secondAttribute="trailing" id="Qdp-uk-dTx"/>
+                                                    <constraint firstItem="GLG-lx-FyS" firstAttribute="leading" secondItem="NYG-XD-Frr" secondAttribute="leading" id="UN1-ii-V2g"/>
+                                                    <constraint firstAttribute="trailing" secondItem="M8V-w7-ZoD" secondAttribute="trailing" id="aqq-Mn-IvE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7D5-uT-gv1" secondAttribute="trailing" id="fFt-IN-Rma"/>
+                                                    <constraint firstItem="7D5-uT-gv1" firstAttribute="leading" secondItem="NYG-XD-Frr" secondAttribute="leading" id="kkx-mN-Tzd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="107-Uc-n6K" secondAttribute="trailing" id="rGv-TM-J7o"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -58,6 +141,9 @@
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="top" secondItem="kha-cP-ZS6" secondAttribute="bottom" constant="10" id="OWJ-e8-T71"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="top" secondItem="wBF-Mv-d58" secondAttribute="top" constant="10" id="b7B-zd-pPo"/>
                                             <constraint firstAttribute="trailing" secondItem="kha-cP-ZS6" secondAttribute="trailing" constant="10" id="n2d-c2-Sg7"/>
+                                            <constraint firstItem="NYG-XD-Frr" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="uO4-fs-ali"/>
+                                            <constraint firstAttribute="trailing" secondItem="NYG-XD-Frr" secondAttribute="trailing" constant="10" id="vLd-vf-f14"/>
+                                            <constraint firstItem="NYG-XD-Frr" firstAttribute="top" secondItem="Gtm-0w-3bD" secondAttribute="bottom" constant="10" id="wZJ-Hn-PYx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -161,9 +247,14 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1264"/>
                     <connections>
+                        <outlet property="bodyTypeButton" destination="2F4-ez-udz" id="Z2J-uq-e18"/>
                         <outlet property="search" destination="kha-cP-ZS6" id="bmI-ED-Ngf"/>
                         <outlet property="sideView" destination="3nm-sw-b5g" id="5QY-xI-8Q3"/>
                         <outlet property="viewConstraint" destination="V3p-Vz-4qS" id="u1Y-3j-Xxm"/>
+                        <outletCollection property="bodyTypes" destination="M8V-w7-ZoD" collectionClass="NSMutableArray" id="OTV-sJ-ME5"/>
+                        <outletCollection property="bodyTypes" destination="7D5-uT-gv1" collectionClass="NSMutableArray" id="CML-Me-Bmr"/>
+                        <outletCollection property="bodyTypes" destination="107-Uc-n6K" collectionClass="NSMutableArray" id="0UD-sg-kwn"/>
+                        <outletCollection property="bodyTypes" destination="GLG-lx-FyS" collectionClass="NSMutableArray" id="jJt-aO-rev"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -310,6 +401,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2R1-3Z-N04">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

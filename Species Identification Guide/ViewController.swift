@@ -109,6 +109,43 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet weak var bodyTypeButton: UIButton!
+    @IBOutlet var bodyTypes: [UIButton]!
+    @IBAction func bodyTypeChoice(_ sender: UIButton) {
+        bodyTypes.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum BodyTypes: String {
+        case soft = "Soft Body"
+        case shell = "Shell"
+        case exo = "Tough Exoskeleton"
+        case hairy = "Visibly Hairy"
+    }
+    @IBAction func bodyTypeTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let bodyType = BodyTypes(rawValue: title) else {
+            return
+        }
+        switch bodyType {
+        case .soft:
+            bodyTypeButton.setTitle("Soft Body", for: .normal)
+            bodyTypeChoice(sender)
+        case .shell:
+            bodyTypeButton.setTitle("Shell", for: .normal)
+            bodyTypeChoice(sender)
+        case .exo:
+            bodyTypeButton.setTitle("Tough Exoskeleton", for: .normal)
+            bodyTypeChoice(sender)
+        case .hairy:
+            bodyTypeButton.setTitle("Visibly Hairy", for: .normal)
+            bodyTypeChoice(sender)
+        }
+    }
+    
 }
 
 
