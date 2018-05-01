@@ -22,6 +22,18 @@ extension UITextField {
     }
 }
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 class ViewController: UIViewController {
 
     
@@ -39,8 +51,9 @@ class ViewController: UIViewController {
         sideView.layer.shadowColor = UIColor.black.cgColor
         sideView.layer.shadowOpacity = 0.7
         sideView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        
         viewConstraint.constant = -210
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     @IBAction func panPerformed(_ sender: UIPanGestureRecognizer) {
