@@ -131,9 +131,68 @@
                                                     <constraint firstAttribute="trailing" secondItem="107-Uc-n6K" secondAttribute="trailing" id="rGv-TM-J7o"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Jw-Yr-BmP">
+                                                <rect key="frame" x="10" y="190" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGC-H1-JM5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ZV5-60-nZM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Body Shape">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Aj-PW-qab"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShM-Qs-1M8">
+                                                        <rect key="frame" x="0.0" y="-254" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ujn-nl-GDs"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Long and Slim">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VSW-FA-Og7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRC-Q1-kgg">
+                                                        <rect key="frame" x="0.0" y="-254" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="tIo-pg-Wb7"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Short and Wide">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6O-9o-6Ry"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o8-dE-Iph">
+                                                        <rect key="frame" x="0.0" y="-254" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="JjT-EH-2L4"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Neither">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBv-yd-6uP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="7Jw-Yr-BmP" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="4yg-XI-WYq"/>
                                             <constraint firstAttribute="height" constant="1200" id="6bl-EK-smj"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="B8t-WS-dlD"/>
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="DHL-0B-oTh"/>
@@ -141,9 +200,11 @@
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="top" secondItem="kha-cP-ZS6" secondAttribute="bottom" constant="10" id="OWJ-e8-T71"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="top" secondItem="wBF-Mv-d58" secondAttribute="top" constant="10" id="b7B-zd-pPo"/>
                                             <constraint firstAttribute="trailing" secondItem="kha-cP-ZS6" secondAttribute="trailing" constant="10" id="n2d-c2-Sg7"/>
+                                            <constraint firstItem="7Jw-Yr-BmP" firstAttribute="top" secondItem="NYG-XD-Frr" secondAttribute="bottom" constant="10" id="tdt-o2-CKp"/>
                                             <constraint firstItem="NYG-XD-Frr" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="uO4-fs-ali"/>
                                             <constraint firstAttribute="trailing" secondItem="NYG-XD-Frr" secondAttribute="trailing" constant="10" id="vLd-vf-f14"/>
                                             <constraint firstItem="NYG-XD-Frr" firstAttribute="top" secondItem="Gtm-0w-3bD" secondAttribute="bottom" constant="10" id="wZJ-Hn-PYx"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Jw-Yr-BmP" secondAttribute="trailing" constant="10" id="ysn-rK-Ebj"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -247,6 +308,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1264"/>
                     <connections>
+                        <outlet property="bodyShapeButton" destination="VGC-H1-JM5" id="EaI-QJ-waB"/>
                         <outlet property="bodyTypeButton" destination="2F4-ez-udz" id="Z2J-uq-e18"/>
                         <outlet property="search" destination="kha-cP-ZS6" id="bmI-ED-Ngf"/>
                         <outlet property="sideView" destination="3nm-sw-b5g" id="5QY-xI-8Q3"/>
@@ -255,6 +317,15 @@
                         <outletCollection property="bodyTypes" destination="7D5-uT-gv1" collectionClass="NSMutableArray" id="CML-Me-Bmr"/>
                         <outletCollection property="bodyTypes" destination="107-Uc-n6K" collectionClass="NSMutableArray" id="0UD-sg-kwn"/>
                         <outletCollection property="bodyTypes" destination="GLG-lx-FyS" collectionClass="NSMutableArray" id="jJt-aO-rev"/>
+                        <outletCollection property="bodyShapes" destination="ShM-Qs-1M8" collectionClass="NSMutableArray" id="Awq-4o-DNz"/>
+                        <outletCollection property="bodyShapes" destination="uRC-Q1-kgg" collectionClass="NSMutableArray" id="OwL-td-9Xq"/>
+                        <outletCollection property="bodyShapes" destination="9o8-dE-Iph" collectionClass="NSMutableArray" id="L6a-cd-J8j"/>
+                        <outletCollection property="bodyShapes" destination="ShM-Qs-1M8" collectionClass="NSMutableArray" id="YKH-wM-laV"/>
+                        <outletCollection property="bodyShapes" destination="uRC-Q1-kgg" collectionClass="NSMutableArray" id="4uO-U0-LdB"/>
+                        <outletCollection property="bodyShapes" destination="9o8-dE-Iph" collectionClass="NSMutableArray" id="COf-3S-49D"/>
+                        <outletCollection property="bodyShapes" destination="ShM-Qs-1M8" collectionClass="NSMutableArray" id="Rsi-1s-PV3"/>
+                        <outletCollection property="bodyShapes" destination="uRC-Q1-kgg" collectionClass="NSMutableArray" id="Ec1-Uk-whq"/>
+                        <outletCollection property="bodyShapes" destination="9o8-dE-Iph" collectionClass="NSMutableArray" id="cGF-tr-0CY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

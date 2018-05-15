@@ -146,6 +146,39 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var bodyShapeButton: UIButton!
+    @IBOutlet var bodyShapes: [UIButton]!
+    
+    @IBAction func bodyShapeChoice(_ sender: UIButton) {
+        bodyShapes.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    enum BodyShapes: String {
+        case long = "Long and Slim"
+        case short = "Short and Wide"
+        case neither = "Neither"
+    }
+    @IBAction func bodyShapeTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let shape = BodyShapes(rawValue: title) else {
+            return
+        }
+        switch shape{
+        case .long:
+            bodyShapeButton.setTitle("Long and Slim", for: .normal)
+            bodyShapeChoice(sender)
+        case .short:
+            bodyShapeButton.setTitle("Short and Wide", for: .normal)
+            bodyShapeChoice(sender)
+        case .neither:
+            bodyShapeButton.setTitle("Neither", for: .normal)
+            bodyShapeChoice(sender)
+        }
+    }
 }
 
 
