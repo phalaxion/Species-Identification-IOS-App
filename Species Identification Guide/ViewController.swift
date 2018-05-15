@@ -13,6 +13,7 @@ extension UITextField {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
+        
     }
     
     func setRightPaddingPoints(_ amount:CGFloat){
@@ -32,6 +33,7 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
 }
 
 class ViewController: UIViewController {
@@ -120,7 +122,7 @@ class ViewController: UIViewController {
             })
         }
     }
-    enum BodyTypes: String {
+    enum BodyTypes: String {        //Cases must be exactly the same as the button in storyboard
         case soft = "Soft Body"
         case shell = "Shell"
         case exo = "Tough Exoskeleton"
@@ -177,6 +179,57 @@ class ViewController: UIViewController {
         case .neither:
             bodyShapeButton.setTitle("Neither", for: .normal)
             bodyShapeChoice(sender)
+        }
+    }
+    
+    @IBOutlet weak var bodyCompressionButton: UIButton!
+    @IBOutlet var bodyCompressions: [UIButton]!
+    
+    @IBAction func bodyCompressionChoice(_ sender: UIButton) {
+        bodyCompressions.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+        
+    }
+    
+    enum BodyCompressions: String {
+        case lateral = "Lateral (from side)"
+        case dorsoVentral = "Dorso-ventral (from top and bottom)"
+        case none = "None"
+    }
+    
+    @IBAction func bodyCompressionTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let compression = BodyCompressions(rawValue: title) else {
+            print("nooo")
+            return
+        }
+        switch compression{
+        case .lateral:
+            bodyCompressionButton.setTitle("Lateral", for: .normal)
+            bodyCompressionChoice(sender)
+        case .dorsoVentral:
+            bodyCompressionButton.setTitle("Dorso-Ventral", for: .normal)
+            bodyCompressionChoice(sender)
+        case .none:
+            bodyCompressionButton.setTitle("None", for: .normal)
+            bodyCompressionChoice(sender)
+        }
+    }
+    
+    @IBOutlet weak var abdomenThoraxConstriction: UIButton!
+    var count = 0
+    @IBAction func abdomenThoraxConstrictionButton(_ sender: Any) {
+        count = count + 1
+        print(count)
+        print(count%2)
+        if (count%2 == 1){
+            abdomenThoraxConstriction.setTitle("Has Constriction Between Thorax and Abdomen", for: .normal)
+        }
+        else {
+            abdomenThoraxConstriction.setTitle("Does Not Have Constriction Between Thorax and Abdomen", for: .normal)
         }
     }
 }

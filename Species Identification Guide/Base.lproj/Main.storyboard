@@ -189,16 +189,104 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AzN-sN-SI6">
+                                                <rect key="frame" x="10" y="250" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNh-SG-eBf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="vPd-Ia-GnV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Body Compression">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qke-zd-NKg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLV-eH-YvP">
+                                                        <rect key="frame" x="0.0" y="-314" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="d9a-YM-5tB"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Lateral (from side)">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kg2-aw-WZG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHI-7y-rnv">
+                                                        <rect key="frame" x="0.0" y="-314" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="N3G-QV-bP7"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Dorso-ventral (from top and bottom)">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ixJ-Aw-Cl6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80E-Q2-TpC">
+                                                        <rect key="frame" x="0.0" y="-314" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="VXf-kz-9Xn"/>
+                                                        </constraints>
+                                                        <state key="normal" title="None">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hOX-4A-HNo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="xLV-eH-YvP" secondAttribute="trailing" id="2Bn-6k-QsW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eHI-7y-rnv" secondAttribute="trailing" id="7sR-vs-Xu8"/>
+                                                    <constraint firstItem="xLV-eH-YvP" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="VDR-JO-hlj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KNh-SG-eBf" secondAttribute="trailing" id="Zfm-Jv-MbQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="80E-Q2-TpC" secondAttribute="trailing" id="a6M-4F-QLL"/>
+                                                    <constraint firstItem="KNh-SG-eBf" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="bYH-Fp-lGt"/>
+                                                    <constraint firstItem="80E-Q2-TpC" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="jKY-ui-qTy"/>
+                                                    <constraint firstItem="eHI-7y-rnv" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="p7f-8l-Plc"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JKQ-7h-61D">
+                                                <rect key="frame" x="10" y="310" width="355" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Q6e-PX-0uZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Does Not Have Constriction Between Thorax and Abdomen">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="abdomenThoraxConstrictionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cPY-eY-8ql"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="7Jw-Yr-BmP" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="4yg-XI-WYq"/>
+                                            <constraint firstAttribute="trailing" secondItem="AzN-sN-SI6" secondAttribute="trailing" constant="10" id="6Q8-dm-pDh"/>
                                             <constraint firstAttribute="height" constant="1200" id="6bl-EK-smj"/>
+                                            <constraint firstItem="AzN-sN-SI6" firstAttribute="top" secondItem="7Jw-Yr-BmP" secondAttribute="bottom" constant="10" id="6hP-ld-GBs"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="B8t-WS-dlD"/>
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="DHL-0B-oTh"/>
+                                            <constraint firstAttribute="trailing" secondItem="JKQ-7h-61D" secondAttribute="trailing" constant="10" id="HpZ-3F-WhR"/>
                                             <constraint firstAttribute="trailing" secondItem="Gtm-0w-3bD" secondAttribute="trailing" constant="10" id="L6i-SO-PjO"/>
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="top" secondItem="kha-cP-ZS6" secondAttribute="bottom" constant="10" id="OWJ-e8-T71"/>
+                                            <constraint firstItem="JKQ-7h-61D" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="V9q-o3-t0S"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="top" secondItem="wBF-Mv-d58" secondAttribute="top" constant="10" id="b7B-zd-pPo"/>
+                                            <constraint firstItem="AzN-sN-SI6" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="gee-eA-zg2"/>
+                                            <constraint firstItem="JKQ-7h-61D" firstAttribute="top" secondItem="AzN-sN-SI6" secondAttribute="bottom" constant="10" id="kNS-M7-6CO"/>
                                             <constraint firstAttribute="trailing" secondItem="kha-cP-ZS6" secondAttribute="trailing" constant="10" id="n2d-c2-Sg7"/>
                                             <constraint firstItem="7Jw-Yr-BmP" firstAttribute="top" secondItem="NYG-XD-Frr" secondAttribute="bottom" constant="10" id="tdt-o2-CKp"/>
                                             <constraint firstItem="NYG-XD-Frr" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="uO4-fs-ali"/>
@@ -295,6 +383,11 @@
                             <constraint firstItem="3nm-sw-b5g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="knX-QV-PIL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3nm-sw-b5g"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DO5-zW-WUQ" appends="YES" id="jyG-W5-x1t"/>
                         </connections>
@@ -308,6 +401,8 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1264"/>
                     <connections>
+                        <outlet property="abdomenThoraxConstriction" destination="JKQ-7h-61D" id="VAP-lA-h3h"/>
+                        <outlet property="bodyCompressionButton" destination="KNh-SG-eBf" id="ZCQ-Ev-TJb"/>
                         <outlet property="bodyShapeButton" destination="VGC-H1-JM5" id="EaI-QJ-waB"/>
                         <outlet property="bodyTypeButton" destination="2F4-ez-udz" id="Z2J-uq-e18"/>
                         <outlet property="search" destination="kha-cP-ZS6" id="bmI-ED-Ngf"/>
@@ -326,6 +421,9 @@
                         <outletCollection property="bodyShapes" destination="ShM-Qs-1M8" collectionClass="NSMutableArray" id="Rsi-1s-PV3"/>
                         <outletCollection property="bodyShapes" destination="uRC-Q1-kgg" collectionClass="NSMutableArray" id="Ec1-Uk-whq"/>
                         <outletCollection property="bodyShapes" destination="9o8-dE-Iph" collectionClass="NSMutableArray" id="cGF-tr-0CY"/>
+                        <outletCollection property="bodyCompressions" destination="80E-Q2-TpC" collectionClass="NSMutableArray" id="YX7-dg-6Fp"/>
+                        <outletCollection property="bodyCompressions" destination="eHI-7y-rnv" collectionClass="NSMutableArray" id="dEO-9n-1JP"/>
+                        <outletCollection property="bodyCompressions" destination="xLV-eH-YvP" collectionClass="NSMutableArray" id="SiM-wj-XrK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
