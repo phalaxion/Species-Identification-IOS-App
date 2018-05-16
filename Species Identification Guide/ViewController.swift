@@ -7,19 +7,15 @@
 //
 
 import UIKit
+import SQLite3
 
 extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat){
+    func setPadding(_ amount:CGFloat){
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
-    }
-    
-    func setRightPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.rightView = paddingView
-        self.rightViewMode = .always
-    }
+        self.rightViewMode = .always    }
 }
 
 extension UIViewController {
@@ -41,15 +37,32 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var search: UITextField!
     
+    var db: OpaquePointer?
+    var searchQuery = "SELECT * FROM INVERTEBRATES WHERE"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        search.setLeftPaddingPoints(10)
-        search.setRightPaddingPoints(10)
+        
+        search.setPadding(10)
         
         viewConstraint.constant = -310
         
         self.hideKeyboardWhenTappedAround()
+        
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("SIG.sqlite")
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("Error Opening Database!")
+        }
+        
+        let createTableQuery = "CREATE TABLE IF NOT EXISTS INVERTEBRATES (id INTEGER PRIMARY KEY AUTOINCREMENT, COMMON_NAME VARCHAR(40), SPECIES_NAME VARCHAR(40), BODY_TYPE VARCHAR(20), BODY_SHAPE VARCHAR(20), BODY_COMPRESS VARCHAR(20), LEG_NUM VARCHAR(20), LEG_TYPE VARCHAR(20), WING_NUM VARCHAR(20), WING_TEXTURE VARCHAR(20), WINGS_RESTING VARCHAR(20), THORAX_CONSTRICT VARCHAR(20), ANTENNAE VARCHAR(20), ANTENNAE_LENGTH VARCHAR(20), MOUTH_PARTS VARCHAR(20), THORACIC_SEC VARCHAR(20), AB_APPENDAGE VARCHAR(20), SIZE INT)"
+        
+        if sqlite3_exec(db, createTableQuery, nil, nil, nil) != SQLITE_OK {
+            print("Error Creating Table!")
+            return
+        }
+        print("Everything is Working!")
+        
+        
     }
     
     var menuVisible = false;
