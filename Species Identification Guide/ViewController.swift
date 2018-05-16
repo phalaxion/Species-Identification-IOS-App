@@ -381,6 +381,272 @@ class ViewController: UIViewController {
             wingTextureChoice(sender)
         }
     }
+    
+    @IBOutlet weak var wingPositionButton: UIButton!
+    @IBOutlet var wingPositions: [UIButton]!
+    
+    @IBAction func wingPositionChoice(_ sender: UIButton) {
+        wingPositions.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum WingPositions: String {
+        case vertical = "Vertical (above body like butterfly)"
+        case horizontal = "Horizontally out from thorax"
+        case tent = "Like a tent over abdomen"
+        case tucked = "Tucked in close to the body / folded"
+    }
+    
+    
+    @IBAction func wingPositionTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let wingPosition = WingPositions(rawValue: title) else {
+            return
+        }
+        switch wingPosition{
+        case .vertical:
+            wingPositionButton.setTitle("Vertical (above body like butterfly)", for: .normal)
+            wingPositionChoice(sender)
+        case .horizontal:
+            wingPositionButton.setTitle("Horizontally out from thorax", for: .normal)
+            wingPositionChoice(sender)
+        case .tent:
+            wingPositionButton.setTitle("Like a tent of abdomen", for: .normal)
+            wingPositionChoice(sender)
+        case .tucked:
+            wingPositionButton.setTitle("Tucked in close to the body / folded", for: .normal)
+            wingPositionChoice(sender)
+        }
+    }
+
+    @IBOutlet weak var antennaeButton: UIButton!
+    @IBOutlet var antennae: [UIButton]!
+    @IBAction func antennaeChoice(_ sender: UIButton) {
+        antennae.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum Antennae: String {
+        case absent = "Antennae Absent"
+        case fileform = "Fileform (looks like a thread)"
+        case beadlike = "Bead-like (looks like a pearl string)"
+        case longFirst = "Long first segment (Scape)"
+        case other = "Other type of Antennae"
+    }
+    @IBAction func antannaeTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let antennae = Antennae(rawValue: title) else {
+            return
+        }
+        switch antennae{
+        case .absent:
+            antennaeButton.setTitle("Antennae Absent", for: .normal)
+            antennaeChoice(sender)
+        case .fileform:
+            antennaeButton.setTitle("Fileform (looks like a thread)", for: .normal)
+            antennaeChoice(sender)
+        case .beadlike:
+            antennaeButton.setTitle("Bead-like (looks like a pearl string)", for: .normal)
+            antennaeChoice(sender)
+        case .longFirst:
+            antennaeButton.setTitle("Long first segment (Scape)", for: .normal)
+            antennaeChoice(sender)
+        case .other:
+            antennaeButton.setTitle("Other type of Antennae", for: .normal)
+            antennaeChoice(sender)
+        }
+    }
+    
+    @IBOutlet var antennaLengths: [UIButton]!
+    @IBOutlet weak var antennaLengthButton: UIButton!
+    @IBAction func antennaLengthChoice(_ sender: UIButton) {
+        antennaLengths.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum AntennaLengths: String {
+        case none = "No antenna / may be hidden or hard to see"
+        case short = "Short - about length of head or shorter"
+        case long = "Long - about length of thorax (could extend over thorax but not beyond end of abdomen)"
+        case extraLong = "Extra long - longer than body (could extend over thorax and abdomen)"
+    }
+    
+    @IBAction func antennaLengthTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let antennaLength = AntennaLengths(rawValue: title) else {
+            return
+        }
+        switch antennaLength{
+        case .none:
+            antennaLengthButton.setTitle("No antenna / may be hidden or hard to see", for: .normal)
+            antennaLengthChoice(sender)
+        case .short:
+            antennaLengthButton.setTitle("Short - about length of head or shorter", for: .normal)
+            antennaLengthChoice(sender)
+        case .long:
+            antennaLengthButton.setTitle("Long - about length of thorax (could extend over thorax but not beyond end of abdomen)", for: .normal)
+            antennaLengthChoice(sender)
+        case .extraLong:
+            antennaLengthButton.setTitle("Extra long - longer than body (could extend over thorax and abdomen)", for: .normal)
+            antennaLengthChoice(sender)
+        }
+    }
+    
+    @IBOutlet weak var mouthPartsButton: UIButton!
+    @IBOutlet var mouthParts: [UIButton]!
+    @IBAction func mouthPartsChoice(_ sender: UIButton) {
+        mouthParts.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum MouthParts: String {
+        case chewing = "Chewing (Mandibles)"
+        case piercing = "Piercing or Sucking (Rostrum)"
+        case enclosed = "Enclosed / not visible"
+    }
+    @IBAction func mouthPartsTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let mouthPart = MouthParts(rawValue: title) else {
+            return
+        }
+        switch mouthPart{
+        case .chewing:
+            mouthPartsButton.setTitle("Chewing (Mandibles)", for: .normal)
+            mouthPartsChoice(sender)
+        case .piercing:
+            mouthPartsButton.setTitle("Piercing or Sucking (Rostrum)", for: .normal)
+            mouthPartsChoice(sender)
+        case .enclosed:
+            mouthPartsButton.setTitle("Enclosed / not visible", for: .normal)
+            mouthPartsChoice(sender)
+        }
+    }
+    @IBOutlet weak var thoracicSectionsButton: UIButton!
+    @IBOutlet var thoracicSections: [UIButton]!
+    @IBAction func thoracicSectionsChoice(_ sender: UIButton) {
+        thoracicSections.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum ThoracicSections: String {
+        case pronotom = "Pronotom (1st section)"
+        case mesonotum = "Mesonotum (2nd section)"
+        case metathorax = "Metathorax (3rd section)"
+    }
+    @IBAction func thoracicSectionsTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let thoracicSection = ThoracicSections(rawValue: title) else {
+            return
+        }
+        switch thoracicSection{
+        case .pronotom:
+            thoracicSectionsButton.setTitle("Pronotom (1st section)", for: .normal)
+            thoracicSectionsChoice(sender)
+        case .mesonotum:
+            thoracicSectionsButton.setTitle("Mesonotum (2nd section)", for: .normal)
+            thoracicSectionsChoice(sender)
+        case .metathorax:
+            thoracicSectionsButton.setTitle("Metathorax (3rd section)", for: .normal)
+            thoracicSectionsChoice(sender)
+        }
+    }
+    
+    @IBOutlet weak var abdomenAppendageButton: UIButton!
+    @IBOutlet var abdomenAppendages: [UIButton]!
+    @IBAction func abdomenAppendageChoice(_ sender: UIButton) {
+        abdomenAppendages.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: { //doesnt seem to be working for this dropdown?
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum AbdomenAppendages: String {
+        case furculum = "Furculum (looks like BBQ fork)"
+        case piercing = "Piercing (e.g. wasp or bee stinger)"
+        case saw = "Saw (folded into body like a pocket knife)"
+        case cerci = "Grasping cerci (looks like claws or forcepts)"
+        case tails0 = "Thread like 'tails' (cerci) x1"
+        case tails1 = "Thread like 'tails' (cerci) x2"
+        case tails2 = "Thread like 'tails' (cerci) x3"
+        case brush = "Brush"
+        case telson = "Telson"
+    }
+    @IBAction func abdomenAppendageTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let abdomenAppendage = AbdomenAppendages(rawValue: title) else {
+            return
+        }
+        switch abdomenAppendage{
+            case .furculum:
+                abdomenAppendageButton.setTitle("Furculum (looks like BBQ fork)", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .piercing:
+                abdomenAppendageButton.setTitle("Piercing (e.g. wasp or bee stinger)", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .saw:
+                abdomenAppendageButton.setTitle("Saw (folded into body like a pocket knife)", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .cerci:
+                abdomenAppendageButton.setTitle("Grasping cerci (looks like claws or forcepts)", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .tails0:
+                abdomenAppendageButton.setTitle("Thread like 'tails' (cerci) x1", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .tails1:
+                abdomenAppendageButton.setTitle("Thread like 'tails' (cerci) x2", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .tails2:
+                abdomenAppendageButton.setTitle("Thread like 'tails' (cerci) x3", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .brush:
+                abdomenAppendageButton.setTitle("Brush", for: .normal)
+                abdomenAppendageChoice(sender)
+            case .telson:
+                abdomenAppendageButton.setTitle("Telson", for: .normal)
+                abdomenAppendageChoice(sender)
+        }
+    }
+    @IBOutlet weak var sizeButton: UIButton!
+    @IBOutlet var sizes: [UIButton]!
+    @IBAction func sizeChoice(_ sender: UIButton) {
+        sizes.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum Sizes: String {
+        case verySmall = "Really small <5mm (can't really see with naked eye)"
+        case small = "Small"
+        case large = "Large"
+    }
+    @IBAction func sizeTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let size = Sizes(rawValue: title) else {
+            return
+        }
+        switch size{
+            case .verySmall:
+                sizeButton.setTitle("Really small <5mm (can't really see with naked eye)", for: .normal)
+                sizeChoice(sender)
+            case .small:
+                sizeButton.setTitle("Small", for: .normal)
+                sizeChoice(sender)
+            case .large:
+                sizeButton.setTitle("Large", for: .normal)
+                sizeChoice(sender)
+        }
+    }
 }
 
 
