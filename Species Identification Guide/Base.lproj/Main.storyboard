@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Species_Identification_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1264"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RJ-IE-yZs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBF-Mv-d58">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kha-cP-ZS6">
                                                 <rect key="frame" x="10" y="10" width="355" height="40"/>
@@ -131,19 +131,1185 @@
                                                     <constraint firstAttribute="trailing" secondItem="107-Uc-n6K" secondAttribute="trailing" id="rGv-TM-J7o"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Jw-Yr-BmP">
+                                                <rect key="frame" x="10" y="190" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGC-H1-JM5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ZV5-60-nZM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Body Shape">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Aj-PW-qab"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShM-Qs-1M8">
+                                                        <rect key="frame" x="0.0" y="-254" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ujn-nl-GDs"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Long and Slim">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VSW-FA-Og7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRC-Q1-kgg">
+                                                        <rect key="frame" x="0.0" y="-254" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="tIo-pg-Wb7"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Short and Wide">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6O-9o-6Ry"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o8-dE-Iph">
+                                                        <rect key="frame" x="0.0" y="-254" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="JjT-EH-2L4"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Neither">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyShapeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBv-yd-6uP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AzN-sN-SI6">
+                                                <rect key="frame" x="10" y="250" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNh-SG-eBf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="vPd-Ia-GnV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Body Compression">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qke-zd-NKg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLV-eH-YvP">
+                                                        <rect key="frame" x="0.0" y="-314" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="d9a-YM-5tB"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Lateral (from side)">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kg2-aw-WZG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHI-7y-rnv">
+                                                        <rect key="frame" x="0.0" y="-314" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="N3G-QV-bP7"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Dorso-ventral (from top and bottom)">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ixJ-Aw-Cl6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80E-Q2-TpC">
+                                                        <rect key="frame" x="0.0" y="-314" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="VXf-kz-9Xn"/>
+                                                        </constraints>
+                                                        <state key="normal" title="None">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bodyCompressionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hOX-4A-HNo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="xLV-eH-YvP" secondAttribute="trailing" id="2Bn-6k-QsW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eHI-7y-rnv" secondAttribute="trailing" id="7sR-vs-Xu8"/>
+                                                    <constraint firstItem="xLV-eH-YvP" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="VDR-JO-hlj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KNh-SG-eBf" secondAttribute="trailing" id="Zfm-Jv-MbQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="80E-Q2-TpC" secondAttribute="trailing" id="a6M-4F-QLL"/>
+                                                    <constraint firstItem="KNh-SG-eBf" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="bYH-Fp-lGt"/>
+                                                    <constraint firstItem="80E-Q2-TpC" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="jKY-ui-qTy"/>
+                                                    <constraint firstItem="eHI-7y-rnv" firstAttribute="leading" secondItem="AzN-sN-SI6" secondAttribute="leading" id="p7f-8l-Plc"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JKQ-7h-61D">
+                                                <rect key="frame" x="10" y="310" width="355" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Q6e-PX-0uZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Does Not Have Constriction Between Thorax and Abdomen">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="abdomenThoraxConstrictionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cPY-eY-8ql"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9g0-BC-fwr">
+                                                <rect key="frame" x="10" y="370" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbg-oP-OXJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Yba-pO-so3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Number of Legs">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numLegChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gC-Iv-n1T"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctf-Ai-syf">
+                                                        <rect key="frame" x="0.0" y="-434" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="0MN-U4-e2b"/>
+                                                        </constraints>
+                                                        <state key="normal" title="0 Legs">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numLegsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WtX-Pt-QmZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckJ-Ub-y2v">
+                                                        <rect key="frame" x="0.0" y="-434" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="nVe-yV-4ha"/>
+                                                        </constraints>
+                                                        <state key="normal" title="6 Legs">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numLegsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oEA-qH-zrx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPV-3y-ecm">
+                                                        <rect key="frame" x="0.0" y="-434" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Vo5-KW-Wdh"/>
+                                                        </constraints>
+                                                        <state key="normal" title="8 Legs">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numLegsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wwb-A3-jkI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUc-5p-pzR">
+                                                        <rect key="frame" x="0.0" y="-434" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="gz4-lB-OiR"/>
+                                                        </constraints>
+                                                        <state key="normal" title="More than 8 Legs">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numLegsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ITi-MZ-31f"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ckJ-Ub-y2v" firstAttribute="leading" secondItem="9g0-BC-fwr" secondAttribute="leading" id="JKc-RA-1FA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ckJ-Ub-y2v" secondAttribute="trailing" id="Jyq-6q-vBz"/>
+                                                    <constraint firstItem="XPV-3y-ecm" firstAttribute="leading" secondItem="9g0-BC-fwr" secondAttribute="leading" id="K5c-9s-96N"/>
+                                                    <constraint firstItem="gUc-5p-pzR" firstAttribute="leading" secondItem="9g0-BC-fwr" secondAttribute="leading" id="TPL-nS-oth"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qbg-oP-OXJ" secondAttribute="trailing" id="UrW-JW-pfe"/>
+                                                    <constraint firstItem="Ctf-Ai-syf" firstAttribute="leading" secondItem="9g0-BC-fwr" secondAttribute="leading" id="VKr-hb-VpX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gUc-5p-pzR" secondAttribute="trailing" id="bKt-KW-97M"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ctf-Ai-syf" secondAttribute="trailing" id="dOt-jM-qjZ"/>
+                                                    <constraint firstItem="qbg-oP-OXJ" firstAttribute="leading" secondItem="9g0-BC-fwr" secondAttribute="leading" id="iA7-kT-QfR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XPV-3y-ecm" secondAttribute="trailing" id="xwB-q0-42w"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EcL-da-6Uh">
+                                                <rect key="frame" x="10" y="430" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyc-U5-hMm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="V3B-e2-gVW"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Leg Type">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="legTypeChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2P-RK-WF7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-ia-Ow4">
+                                                        <rect key="frame" x="0.0" y="-494" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="pFN-T4-gdq"/>
+                                                        </constraints>
+                                                        <state key="normal" title="All look very similar (and similar length)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="legTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zYU-ie-Mve"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erg-Yx-b7U">
+                                                        <rect key="frame" x="0.0" y="-494" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="NyM-xv-Kj9"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Legs different lengths">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="legTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssY-1l-ESX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLM-xr-JVg">
+                                                        <rect key="frame" x="0.0" y="-494" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="XGB-A0-kcF"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Strong jumping hind legs">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="legTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7sd-7m-k61"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFf-dX-dGw">
+                                                        <rect key="frame" x="0.0" y="-494" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="0qg-7p-4tm"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Raptorial (like a T-rex)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="legTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1j-2V-82Q"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVb-mQ-5tv">
+                                                        <rect key="frame" x="0.0" y="-494" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="LA6-DZ-ZPM"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Looks a bit like Popeye's arms">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="legTypeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O3U-90-xwV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="erg-Yx-b7U" secondAttribute="trailing" id="3aZ-e9-vjO"/>
+                                                    <constraint firstItem="hyc-U5-hMm" firstAttribute="leading" secondItem="EcL-da-6Uh" secondAttribute="leading" id="79X-GP-bNN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oVb-mQ-5tv" secondAttribute="trailing" id="7Mk-SH-dee"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hyc-U5-hMm" secondAttribute="trailing" id="DRq-qP-CAj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Lfe-ia-Ow4" secondAttribute="trailing" id="LqH-Er-Xyx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qFf-dX-dGw" secondAttribute="trailing" id="NTd-qU-h7y"/>
+                                                    <constraint firstItem="YLM-xr-JVg" firstAttribute="leading" secondItem="EcL-da-6Uh" secondAttribute="leading" id="RF5-E1-okZ"/>
+                                                    <constraint firstItem="oVb-mQ-5tv" firstAttribute="leading" secondItem="EcL-da-6Uh" secondAttribute="leading" id="Ubn-Hp-aF6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YLM-xr-JVg" secondAttribute="trailing" id="blt-zO-hjo"/>
+                                                    <constraint firstItem="qFf-dX-dGw" firstAttribute="leading" secondItem="EcL-da-6Uh" secondAttribute="leading" id="epj-oL-KlM"/>
+                                                    <constraint firstItem="erg-Yx-b7U" firstAttribute="leading" secondItem="EcL-da-6Uh" secondAttribute="leading" id="lOF-wL-obD"/>
+                                                    <constraint firstItem="Lfe-ia-Ow4" firstAttribute="leading" secondItem="EcL-da-6Uh" secondAttribute="leading" id="y6r-aE-n9u"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S3e-rt-uPI">
+                                                <rect key="frame" x="10" y="490" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk3-OP-6VX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="qIs-gt-po3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Number of Wings">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numWingsChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6O-0K-1vJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt3-xl-bbH">
+                                                        <rect key="frame" x="0.0" y="-554" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="pfe-mT-Dcs"/>
+                                                        </constraints>
+                                                        <state key="normal" title="No Wings">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numWingsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wk8-eJ-M2P"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oW0-VB-OSc">
+                                                        <rect key="frame" x="0.0" y="-554" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="HYT-MJ-hrB"/>
+                                                        </constraints>
+                                                        <state key="normal" title="2 Wings (+a pair of halteres or elytra)">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numWingsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hoX-RZ-gDm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KT-EX-MsR">
+                                                        <rect key="frame" x="0.0" y="-554" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Hs9-ng-zmn"/>
+                                                        </constraints>
+                                                        <state key="normal" title="4 Wings">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numWingsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxc-Jh-F32"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="oW0-VB-OSc" secondAttribute="trailing" id="M3A-Gq-uhd"/>
+                                                    <constraint firstItem="oW0-VB-OSc" firstAttribute="leading" secondItem="S3e-rt-uPI" secondAttribute="leading" id="RvZ-dN-RmN"/>
+                                                    <constraint firstItem="1KT-EX-MsR" firstAttribute="leading" secondItem="S3e-rt-uPI" secondAttribute="leading" id="VUB-yn-826"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Vt3-xl-bbH" secondAttribute="trailing" id="g9i-cp-AK4"/>
+                                                    <constraint firstItem="Vt3-xl-bbH" firstAttribute="leading" secondItem="S3e-rt-uPI" secondAttribute="leading" id="ovY-sl-3oB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1KT-EX-MsR" secondAttribute="trailing" id="pUk-VO-f2w"/>
+                                                    <constraint firstItem="Bk3-OP-6VX" firstAttribute="leading" secondItem="S3e-rt-uPI" secondAttribute="leading" id="vbB-Co-mPT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Bk3-OP-6VX" secondAttribute="trailing" id="x8V-Ir-jqS"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1sx-3I-fYc">
+                                                <rect key="frame" x="10" y="550" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xps-ZS-OTS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Z6g-zz-gDo"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Wing Texture">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingTextureChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S1H-Y0-oJG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gec-xH-n0i">
+                                                        <rect key="frame" x="0.0" y="-614" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="dl4-zR-edA"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Hairy (all over or on edges / margins)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingTextureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cM-pG-dxK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pp8-vK-Sut">
+                                                        <rect key="frame" x="0.0" y="-614" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="BhG-Wq-Jlm"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Scaly and Patterned (like a Butterfly)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingTextureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NIB-Zy-8k2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2K-Ka-nUG">
+                                                        <rect key="frame" x="0.0" y="-614" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ieo-r1-Whq"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Membranous">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingTextureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kX4-hT-Zqr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTU-uv-2y8">
+                                                        <rect key="frame" x="0.0" y="-614" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Eom-kT-dri"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Membranous (highly complex vein pattern)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingTextureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Xp-Lw-ghU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-dN-Ua8">
+                                                        <rect key="frame" x="0.0" y="-614" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="FyE-1l-seD"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Membranous (simple vein pattern)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingTextureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7u-Dx-5rn"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="gec-xH-n0i" firstAttribute="leading" secondItem="1sx-3I-fYc" secondAttribute="leading" id="HLG-aS-TQo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="s2K-Ka-nUG" secondAttribute="trailing" id="K17-FB-DqU"/>
+                                                    <constraint firstItem="Xps-ZS-OTS" firstAttribute="leading" secondItem="1sx-3I-fYc" secondAttribute="leading" id="RMg-z6-NeS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gec-xH-n0i" secondAttribute="trailing" id="Vjv-3B-Q4Q"/>
+                                                    <constraint firstItem="Pp8-vK-Sut" firstAttribute="leading" secondItem="1sx-3I-fYc" secondAttribute="leading" id="aHr-Lg-AEe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Xps-ZS-OTS" secondAttribute="trailing" id="fEe-Ek-hrA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Pp8-vK-Sut" secondAttribute="trailing" id="m2C-X3-zsn"/>
+                                                    <constraint firstItem="s2K-Ka-nUG" firstAttribute="leading" secondItem="1sx-3I-fYc" secondAttribute="leading" id="m3v-Zo-vAV"/>
+                                                    <constraint firstItem="Umd-dN-Ua8" firstAttribute="leading" secondItem="1sx-3I-fYc" secondAttribute="leading" id="mk2-67-cpA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WTU-uv-2y8" secondAttribute="trailing" id="mqk-bl-Oal"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Umd-dN-Ua8" secondAttribute="trailing" id="qiO-su-bhs"/>
+                                                    <constraint firstItem="WTU-uv-2y8" firstAttribute="leading" secondItem="1sx-3I-fYc" secondAttribute="leading" id="tgc-Io-y4p"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="n9e-Ym-2BJ">
+                                                <rect key="frame" x="10" y="610" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTs-VX-BW0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="JxC-94-dfl"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Wing Position at Rest">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingPositionChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v15-a5-fPo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozb-FW-ZX1">
+                                                        <rect key="frame" x="0.0" y="-674" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Bbh-3k-fXo"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Vertical (above body like butterfly)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingPositionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdf-5o-1yJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emu-S2-lxz">
+                                                        <rect key="frame" x="0.0" y="-674" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hCP-pc-JaT"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Horizontally out from thorax">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingPositionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dXF-RZ-3e0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64s-5a-0U2">
+                                                        <rect key="frame" x="0.0" y="-674" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="5DQ-dY-Dx9"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Like a tent over abdomen">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingPositionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LmB-a1-lkt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGC-dd-PcO">
+                                                        <rect key="frame" x="0.0" y="-674" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="3w8-og-UF8"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Tucked in close to the body / folded">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="wingPositionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXT-GU-p0W"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Emu-S2-lxz" secondAttribute="trailing" id="1VH-uO-pAt"/>
+                                                    <constraint firstItem="Emu-S2-lxz" firstAttribute="leading" secondItem="n9e-Ym-2BJ" secondAttribute="leading" id="3IJ-xY-RS0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="64s-5a-0U2" secondAttribute="trailing" id="3OF-IJ-ovj"/>
+                                                    <constraint firstItem="64s-5a-0U2" firstAttribute="leading" secondItem="n9e-Ym-2BJ" secondAttribute="leading" id="FDG-e7-kdc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YTs-VX-BW0" secondAttribute="trailing" id="Ng2-qA-Zm7"/>
+                                                    <constraint firstItem="YTs-VX-BW0" firstAttribute="leading" secondItem="n9e-Ym-2BJ" secondAttribute="leading" id="bFU-GX-qhb"/>
+                                                    <constraint firstItem="Ozb-FW-ZX1" firstAttribute="leading" secondItem="n9e-Ym-2BJ" secondAttribute="leading" id="dgb-Au-prJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pGC-dd-PcO" secondAttribute="trailing" id="lG9-fu-TD7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ozb-FW-ZX1" secondAttribute="trailing" id="z0X-1E-Rlm"/>
+                                                    <constraint firstItem="pGC-dd-PcO" firstAttribute="leading" secondItem="n9e-Ym-2BJ" secondAttribute="leading" id="zwb-xe-UFU"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="byw-my-ZJU">
+                                                <rect key="frame" x="10" y="670" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBO-7P-aE2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="5m2-3G-xlF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Antennae">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antennaeChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOk-Jo-B8E"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTP-Wt-Cjn">
+                                                        <rect key="frame" x="0.0" y="-734" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="f3D-uq-UDw"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Antennae Absent">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antannaeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0cU-Vz-FEp"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiD-ws-68v">
+                                                        <rect key="frame" x="0.0" y="-734" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="KKp-v2-Rly"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Fileform (looks like a thread)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antannaeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ea-zh-RsF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrS-ZU-0DC">
+                                                        <rect key="frame" x="0.0" y="-734" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="byh-DJ-ZNJ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Bead-like (looks like a pearl string)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antannaeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y95-BD-qBM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-iD-P3n">
+                                                        <rect key="frame" x="0.0" y="-734" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Ezf-V5-gim"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Long first segment (Scape)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antannaeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iwH-Fn-V0K"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVM-Ea-B7h">
+                                                        <rect key="frame" x="0.0" y="-734" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="wvt-8J-YF1"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Other type of Antennae">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antannaeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ln0-6P-gxt"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="MrS-ZU-0DC" secondAttribute="trailing" id="5bp-2y-0TL"/>
+                                                    <constraint firstItem="GiD-ws-68v" firstAttribute="leading" secondItem="byw-my-ZJU" secondAttribute="leading" id="5kx-mb-dvc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bBO-7P-aE2" secondAttribute="trailing" id="AO8-jb-SOE"/>
+                                                    <constraint firstItem="NVM-Ea-B7h" firstAttribute="leading" secondItem="byw-my-ZJU" secondAttribute="leading" id="FqG-x2-bxM"/>
+                                                    <constraint firstItem="MrS-ZU-0DC" firstAttribute="leading" secondItem="byw-my-ZJU" secondAttribute="leading" id="SVf-bR-hi3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NVM-Ea-B7h" secondAttribute="trailing" id="X3t-1S-WnA"/>
+                                                    <constraint firstItem="kTP-Wt-Cjn" firstAttribute="leading" secondItem="byw-my-ZJU" secondAttribute="leading" id="bco-OR-IBT"/>
+                                                    <constraint firstItem="bBO-7P-aE2" firstAttribute="leading" secondItem="byw-my-ZJU" secondAttribute="leading" id="c17-jz-oo0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="J9d-iD-P3n" secondAttribute="trailing" id="f7h-C6-Gca"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GiD-ws-68v" secondAttribute="trailing" id="img-dL-aKt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kTP-Wt-Cjn" secondAttribute="trailing" id="pTI-qA-EiS"/>
+                                                    <constraint firstItem="J9d-iD-P3n" firstAttribute="leading" secondItem="byw-my-ZJU" secondAttribute="leading" id="zQd-nG-1y7"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="avH-cK-hyQ">
+                                                <rect key="frame" x="10" y="730" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TA8-bj-Oji">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ryN-dO-hXu"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Antenna Length">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antennaLengthChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDd-cB-5BR"/>
+                                                            <action selector="mouthPartsChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FyA-EE-eH6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76t-mX-gCI">
+                                                        <rect key="frame" x="0.0" y="-794" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="yEs-WA-znm"/>
+                                                        </constraints>
+                                                        <state key="normal" title="No antenna / may be hidden or hard to see">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antennaLengthTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZWO-w2-927"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8N9-uq-if3">
+                                                        <rect key="frame" x="0.0" y="-794" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="HhO-Us-wJV"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Short - about length of head or shorter">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antennaLengthTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNC-jx-XSy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6sD-rZ-Dpq">
+                                                        <rect key="frame" x="0.0" y="-794" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="qzT-g6-nSt"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Long - about length of thorax (could extend over thorax but not beyond end of abdomen)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antennaLengthTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ut1-Pe-p3Z"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Al6-e4-2Ql">
+                                                        <rect key="frame" x="0.0" y="-794" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Yu6-MF-LEm"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Extra long - longer than body (could extend over thorax and abdomen)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="antennaLengthTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ze3-Hn-2bF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Al6-e4-2Ql" secondAttribute="trailing" id="30p-FH-h5j"/>
+                                                    <constraint firstItem="8N9-uq-if3" firstAttribute="leading" secondItem="avH-cK-hyQ" secondAttribute="leading" id="80Q-Wc-hXj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6sD-rZ-Dpq" secondAttribute="trailing" id="9Gk-aQ-16r"/>
+                                                    <constraint firstItem="TA8-bj-Oji" firstAttribute="leading" secondItem="avH-cK-hyQ" secondAttribute="leading" id="Lhi-q5-qwV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8N9-uq-if3" secondAttribute="trailing" id="NlI-Yk-mJq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TA8-bj-Oji" secondAttribute="trailing" id="OaP-Mt-tKb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="76t-mX-gCI" secondAttribute="trailing" id="VJe-e0-IK4"/>
+                                                    <constraint firstItem="Al6-e4-2Ql" firstAttribute="leading" secondItem="avH-cK-hyQ" secondAttribute="leading" id="ZJZ-op-39w"/>
+                                                    <constraint firstItem="6sD-rZ-Dpq" firstAttribute="leading" secondItem="avH-cK-hyQ" secondAttribute="leading" id="Zgg-yp-VZo"/>
+                                                    <constraint firstItem="76t-mX-gCI" firstAttribute="leading" secondItem="avH-cK-hyQ" secondAttribute="leading" id="vTD-3Z-IY2"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zez-dw-Tbo">
+                                                <rect key="frame" x="10" y="790" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cx5-Gs-pI3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="qN2-FW-ZX4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="Mouth Parts">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mouthPartsChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufC-Go-vda"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snQ-zx-J5N">
+                                                        <rect key="frame" x="0.0" y="-854" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Gnc-wV-AMQ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Chewing (Mandibles)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mouthPartsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yoy-gI-fAo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DO3-vm-B6h">
+                                                        <rect key="frame" x="0.0" y="-854" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="blf-Tb-eJo"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Piercing or Sucking (Rostrum)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mouthPartsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3l-q7-6Mt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV7-Bb-yQp">
+                                                        <rect key="frame" x="0.0" y="-854" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="fG4-h6-9Gc"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Enclosed / not visible">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mouthPartsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAj-sv-Orx"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="WV7-Bb-yQp" secondAttribute="trailing" id="3QF-rq-m7h"/>
+                                                    <constraint firstAttribute="trailing" secondItem="snQ-zx-J5N" secondAttribute="trailing" id="aK8-Ny-7EO"/>
+                                                    <constraint firstItem="WV7-Bb-yQp" firstAttribute="leading" secondItem="Zez-dw-Tbo" secondAttribute="leading" id="b1M-Nh-j0x"/>
+                                                    <constraint firstItem="DO3-vm-B6h" firstAttribute="leading" secondItem="Zez-dw-Tbo" secondAttribute="leading" id="bX8-MM-3Bl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cx5-Gs-pI3" secondAttribute="trailing" id="c3C-fd-D09"/>
+                                                    <constraint firstItem="snQ-zx-J5N" firstAttribute="leading" secondItem="Zez-dw-Tbo" secondAttribute="leading" id="cyC-Fm-fLE"/>
+                                                    <constraint firstItem="cx5-Gs-pI3" firstAttribute="leading" secondItem="Zez-dw-Tbo" secondAttribute="leading" id="edB-aS-geO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DO3-vm-B6h" secondAttribute="trailing" id="mal-tM-mpp"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SU1-qX-paw">
+                                                <rect key="frame" x="10" y="850" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0E-hB-zKI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="2NN-nA-Lnv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Elongated thoracic sections">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="thoracicSectionsChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kMO-Eb-Y69"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egD-w0-DuN">
+                                                        <rect key="frame" x="0.0" y="-914" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="tk5-54-HY3"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Pronotom (1st section)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="thoracicSectionsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0y7-6L-wIX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8K-zI-p5e">
+                                                        <rect key="frame" x="0.0" y="-914" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="d2R-52-0SV"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Mesonotum (2nd section)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="thoracicSectionsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ah1-ux-P0v"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-d1-ajW">
+                                                        <rect key="frame" x="0.0" y="-914" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="DMS-ve-Hq7"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Metathorax (3rd section)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="thoracicSectionsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOd-tp-iNE"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="n8K-zI-p5e" secondAttribute="trailing" id="Azd-uI-hMb"/>
+                                                    <constraint firstItem="g0E-hB-zKI" firstAttribute="leading" secondItem="SU1-qX-paw" secondAttribute="leading" id="CRz-VD-W2T"/>
+                                                    <constraint firstItem="egD-w0-DuN" firstAttribute="leading" secondItem="SU1-qX-paw" secondAttribute="leading" id="FWX-Ts-PyR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="egD-w0-DuN" secondAttribute="trailing" id="P56-cw-tV9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="g0E-hB-zKI" secondAttribute="trailing" id="XN8-5E-GSW"/>
+                                                    <constraint firstItem="n8K-zI-p5e" firstAttribute="leading" secondItem="SU1-qX-paw" secondAttribute="leading" id="iKF-Lk-R29"/>
+                                                    <constraint firstItem="7zp-d1-ajW" firstAttribute="leading" secondItem="SU1-qX-paw" secondAttribute="leading" id="qha-gU-nCY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7zp-d1-ajW" secondAttribute="trailing" id="soF-jS-Kom"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-wM-0GE">
+                                                <rect key="frame" x="10" y="910" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cju-fd-03H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Uul-Ky-nyg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Abdomen Appendage">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jkz-Ss-bas"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E10-Xn-2sl">
+                                                        <rect key="frame" x="0.0" y="50" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="M3g-ob-bLr"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Furculum (looks like BBQ fork)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VHx-up-dde"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFK-5e-w6i">
+                                                        <rect key="frame" x="0.0" y="100" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="yzE-QL-yLU"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Piercing (e.g. wasp or bee stinger)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEX-Rr-CAd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byg-Zg-jkL">
+                                                        <rect key="frame" x="0.0" y="150" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Mfn-dp-9iJ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Saw (folded into body like a pocket knife)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwX-98-FRf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq0-qL-Fuf">
+                                                        <rect key="frame" x="0.0" y="200" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="71m-5d-Kjb"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Grasping cerci (looks like claws or forcepts)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HyH-0I-G1v"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k09-jg-JW2">
+                                                        <rect key="frame" x="0.0" y="250" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="7Db-uO-wGK"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Thread like 'tails' (cerci) x1">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nME-Ps-Pg0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-R9-TB8">
+                                                        <rect key="frame" x="0.0" y="300" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ptd-ur-s2Y"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Thread like 'tails' (cerci) x2">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MKq-2q-Llm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zml-iG-dHs">
+                                                        <rect key="frame" x="0.0" y="350" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="frN-Qe-bJ1"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Thread like 'tails' (cerci) x3">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iwy-xn-VnR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQg-Nr-ACm">
+                                                        <rect key="frame" x="0.0" y="400" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="2q7-Bq-0Ca"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Brush">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Jx-fN-ofb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfI-s7-ZrA">
+                                                        <rect key="frame" x="0.0" y="450" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="nhC-IZ-g2c"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Telson">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="abdomenAppendageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSJ-mw-gjX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="byg-Zg-jkL" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="4kv-Mv-PkW"/>
+                                                    <constraint firstItem="k09-jg-JW2" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="4mq-c6-8Vj"/>
+                                                    <constraint firstItem="ZfI-s7-ZrA" firstAttribute="top" secondItem="KQg-Nr-ACm" secondAttribute="bottom" id="4xx-kS-qWC"/>
+                                                    <constraint firstItem="E10-Xn-2sl" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="7o3-bj-6Ia"/>
+                                                    <constraint firstItem="Oq0-qL-Fuf" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="8j0-n4-kkm"/>
+                                                    <constraint firstItem="Zml-iG-dHs" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="BpV-Sf-WgO"/>
+                                                    <constraint firstItem="KQg-Nr-ACm" firstAttribute="top" secondItem="Zml-iG-dHs" secondAttribute="bottom" id="H8V-si-zev"/>
+                                                    <constraint firstItem="uFK-5e-w6i" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="HiR-EG-cRb"/>
+                                                    <constraint firstItem="byg-Zg-jkL" firstAttribute="top" secondItem="uFK-5e-w6i" secondAttribute="bottom" id="Kvx-8l-R8Q"/>
+                                                    <constraint firstItem="Cju-fd-03H" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="MWB-rY-qnq"/>
+                                                    <constraint firstItem="E10-Xn-2sl" firstAttribute="top" secondItem="Cju-fd-03H" secondAttribute="bottom" id="QEM-aF-7TP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="E10-Xn-2sl" secondAttribute="trailing" id="Qbb-ho-Ghe"/>
+                                                    <constraint firstItem="Cju-fd-03H" firstAttribute="top" secondItem="LNc-wM-0GE" secondAttribute="top" id="RQm-aR-ajp"/>
+                                                    <constraint firstItem="Oq0-qL-Fuf" firstAttribute="top" secondItem="byg-Zg-jkL" secondAttribute="bottom" id="SY8-ew-Zq6"/>
+                                                    <constraint firstItem="ZfI-s7-ZrA" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="TbM-9o-XCt"/>
+                                                    <constraint firstItem="Zml-iG-dHs" firstAttribute="top" secondItem="fSc-R9-TB8" secondAttribute="bottom" id="Zyr-hp-3XC"/>
+                                                    <constraint firstItem="fSc-R9-TB8" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="dm4-WA-oRo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KQg-Nr-ACm" secondAttribute="trailing" id="fhK-aZ-WxE"/>
+                                                    <constraint firstItem="uFK-5e-w6i" firstAttribute="top" secondItem="E10-Xn-2sl" secondAttribute="bottom" id="k90-zi-CWt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fSc-R9-TB8" secondAttribute="trailing" id="kyy-Nc-Jah"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uFK-5e-w6i" secondAttribute="trailing" id="mHl-W0-IaM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Cju-fd-03H" secondAttribute="trailing" id="nEN-5m-Xdp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="byg-Zg-jkL" secondAttribute="trailing" id="niR-EF-1oV"/>
+                                                    <constraint firstItem="KQg-Nr-ACm" firstAttribute="leading" secondItem="LNc-wM-0GE" secondAttribute="leading" id="oRI-S8-y0D"/>
+                                                    <constraint firstItem="fSc-R9-TB8" firstAttribute="top" secondItem="k09-jg-JW2" secondAttribute="bottom" id="rWK-M6-Hru"/>
+                                                    <constraint firstItem="k09-jg-JW2" firstAttribute="top" secondItem="Oq0-qL-Fuf" secondAttribute="bottom" id="t9I-bb-r8o"/>
+                                                    <constraint firstAttribute="trailing" secondItem="k09-jg-JW2" secondAttribute="trailing" id="tw4-qW-puc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ZfI-s7-ZrA" secondAttribute="trailing" id="uWd-Mh-lNB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Zml-iG-dHs" secondAttribute="trailing" id="ufS-3M-idg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Oq0-qL-Fuf" secondAttribute="trailing" id="zxR-L7-wUy"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XI2-HA-LCQ">
+                                                <rect key="frame" x="10" y="970" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzf-92-DoQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="bGY-46-t4x"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Size">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="sizeChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GGL-jW-fzR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-ZW-zw0">
+                                                        <rect key="frame" x="0.0" y="-1034" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Mmr-xz-6Ut"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Really small &lt;5mm (can't really see with naked eye)">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="sizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7c-FE-8to"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk2-cH-Vn4">
+                                                        <rect key="frame" x="0.0" y="-1034" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="dcz-LX-eWr"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Small">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="sizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSs-ne-22l"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAi-QE-BpG">
+                                                        <rect key="frame" x="0.0" y="-1034" width="355" height="50"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="fjb-EO-dvb"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Large">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="sizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Oz-bj-WKV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ibf-ZW-zw0" secondAttribute="trailing" id="79w-rB-NlR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kAi-QE-BpG" secondAttribute="trailing" id="9Cj-cB-JhP"/>
+                                                    <constraint firstItem="jzf-92-DoQ" firstAttribute="leading" secondItem="XI2-HA-LCQ" secondAttribute="leading" id="FFF-TD-9xQ"/>
+                                                    <constraint firstItem="kAi-QE-BpG" firstAttribute="leading" secondItem="XI2-HA-LCQ" secondAttribute="leading" id="Myr-2S-hzb"/>
+                                                    <constraint firstItem="Bk2-cH-Vn4" firstAttribute="leading" secondItem="XI2-HA-LCQ" secondAttribute="leading" id="PIG-V8-0uu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Bk2-cH-Vn4" secondAttribute="trailing" id="Wh5-k3-cnz"/>
+                                                    <constraint firstItem="ibf-ZW-zw0" firstAttribute="leading" secondItem="XI2-HA-LCQ" secondAttribute="leading" id="alQ-ux-Eb2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jzf-92-DoQ" secondAttribute="trailing" id="pA6-Bn-uZA"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1200" id="6bl-EK-smj"/>
+                                            <constraint firstItem="7Jw-Yr-BmP" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="4yg-XI-WYq"/>
+                                            <constraint firstAttribute="trailing" secondItem="AzN-sN-SI6" secondAttribute="trailing" constant="10" id="6Q8-dm-pDh"/>
+                                            <constraint firstAttribute="height" constant="1600" id="6bl-EK-smj"/>
+                                            <constraint firstItem="AzN-sN-SI6" firstAttribute="top" secondItem="7Jw-Yr-BmP" secondAttribute="bottom" constant="10" id="6hP-ld-GBs"/>
+                                            <constraint firstItem="EcL-da-6Uh" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="8m1-d0-yTj"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="B8t-WS-dlD"/>
+                                            <constraint firstAttribute="trailing" secondItem="avH-cK-hyQ" secondAttribute="trailing" constant="10" id="D2h-hf-DBQ"/>
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="DHL-0B-oTh"/>
+                                            <constraint firstAttribute="trailing" secondItem="JKQ-7h-61D" secondAttribute="trailing" constant="10" id="HpZ-3F-WhR"/>
+                                            <constraint firstAttribute="trailing" secondItem="1sx-3I-fYc" secondAttribute="trailing" constant="10" id="IR3-BP-ygx"/>
                                             <constraint firstAttribute="trailing" secondItem="Gtm-0w-3bD" secondAttribute="trailing" constant="10" id="L6i-SO-PjO"/>
+                                            <constraint firstAttribute="trailing" secondItem="LNc-wM-0GE" secondAttribute="trailing" constant="10" id="Msa-xH-QZW"/>
+                                            <constraint firstItem="XI2-HA-LCQ" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="NVS-sL-9MX"/>
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="top" secondItem="kha-cP-ZS6" secondAttribute="bottom" constant="10" id="OWJ-e8-T71"/>
+                                            <constraint firstItem="Zez-dw-Tbo" firstAttribute="top" secondItem="avH-cK-hyQ" secondAttribute="bottom" constant="10" id="PbJ-kX-TnW"/>
+                                            <constraint firstItem="n9e-Ym-2BJ" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="RVi-FH-ehu"/>
+                                            <constraint firstItem="XI2-HA-LCQ" firstAttribute="top" secondItem="LNc-wM-0GE" secondAttribute="bottom" constant="10" id="Rku-NQ-eGL"/>
+                                            <constraint firstItem="1sx-3I-fYc" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="SR9-FY-Vgc"/>
+                                            <constraint firstItem="JKQ-7h-61D" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="V9q-o3-t0S"/>
+                                            <constraint firstItem="Zez-dw-Tbo" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="VGb-oI-UXW"/>
+                                            <constraint firstItem="byw-my-ZJU" firstAttribute="top" secondItem="n9e-Ym-2BJ" secondAttribute="bottom" constant="10" id="WCf-lV-YD3"/>
+                                            <constraint firstAttribute="trailing" secondItem="byw-my-ZJU" secondAttribute="trailing" constant="10" id="Wyn-8p-ICm"/>
+                                            <constraint firstItem="S3e-rt-uPI" firstAttribute="top" secondItem="EcL-da-6Uh" secondAttribute="bottom" constant="10" id="aBc-gS-Vva"/>
+                                            <constraint firstItem="byw-my-ZJU" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="adP-hU-hUU"/>
+                                            <constraint firstItem="9g0-BC-fwr" firstAttribute="top" secondItem="JKQ-7h-61D" secondAttribute="bottom" constant="10" id="aeO-FL-8kA"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="top" secondItem="wBF-Mv-d58" secondAttribute="top" constant="10" id="b7B-zd-pPo"/>
+                                            <constraint firstItem="EcL-da-6Uh" firstAttribute="top" secondItem="9g0-BC-fwr" secondAttribute="bottom" constant="10" id="dPL-r9-GGi"/>
+                                            <constraint firstItem="avH-cK-hyQ" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="fLK-hN-093"/>
+                                            <constraint firstItem="AzN-sN-SI6" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="gee-eA-zg2"/>
+                                            <constraint firstAttribute="trailing" secondItem="S3e-rt-uPI" secondAttribute="trailing" constant="10" id="hLW-1v-u9U"/>
+                                            <constraint firstItem="S3e-rt-uPI" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="j1C-kj-2KN"/>
+                                            <constraint firstItem="9g0-BC-fwr" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="jPn-Lp-qTl"/>
+                                            <constraint firstItem="JKQ-7h-61D" firstAttribute="top" secondItem="AzN-sN-SI6" secondAttribute="bottom" constant="10" id="kNS-M7-6CO"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zez-dw-Tbo" secondAttribute="trailing" constant="10" id="kVI-Ru-Aw4"/>
+                                            <constraint firstAttribute="trailing" secondItem="XI2-HA-LCQ" secondAttribute="trailing" constant="10" id="ksc-C5-bIH"/>
+                                            <constraint firstItem="1sx-3I-fYc" firstAttribute="top" secondItem="S3e-rt-uPI" secondAttribute="bottom" constant="10" id="lw0-pf-hQI"/>
+                                            <constraint firstAttribute="trailing" secondItem="SU1-qX-paw" secondAttribute="trailing" constant="10" id="m5d-U0-sX4"/>
                                             <constraint firstAttribute="trailing" secondItem="kha-cP-ZS6" secondAttribute="trailing" constant="10" id="n2d-c2-Sg7"/>
+                                            <constraint firstAttribute="trailing" secondItem="EcL-da-6Uh" secondAttribute="trailing" constant="10" id="oK6-BZ-E8E"/>
+                                            <constraint firstAttribute="trailing" secondItem="n9e-Ym-2BJ" secondAttribute="trailing" constant="10" id="qAo-Ty-xMS"/>
+                                            <constraint firstItem="LNc-wM-0GE" firstAttribute="top" secondItem="SU1-qX-paw" secondAttribute="bottom" constant="10" id="qZM-Hx-h8H"/>
+                                            <constraint firstItem="SU1-qX-paw" firstAttribute="top" secondItem="Zez-dw-Tbo" secondAttribute="bottom" constant="10" id="sxT-Xw-JHO"/>
+                                            <constraint firstItem="LNc-wM-0GE" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="t0O-yU-SB3"/>
+                                            <constraint firstItem="7Jw-Yr-BmP" firstAttribute="top" secondItem="NYG-XD-Frr" secondAttribute="bottom" constant="10" id="tdt-o2-CKp"/>
                                             <constraint firstItem="NYG-XD-Frr" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="uO4-fs-ali"/>
                                             <constraint firstAttribute="trailing" secondItem="NYG-XD-Frr" secondAttribute="trailing" constant="10" id="vLd-vf-f14"/>
                                             <constraint firstItem="NYG-XD-Frr" firstAttribute="top" secondItem="Gtm-0w-3bD" secondAttribute="bottom" constant="10" id="wZJ-Hn-PYx"/>
+                                            <constraint firstAttribute="trailing" secondItem="9g0-BC-fwr" secondAttribute="trailing" constant="10" id="xLr-Uf-eTM"/>
+                                            <constraint firstItem="SU1-qX-paw" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="yhn-6G-Le2"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Jw-Yr-BmP" secondAttribute="trailing" constant="10" id="ysn-rK-Ebj"/>
+                                            <constraint firstItem="n9e-Ym-2BJ" firstAttribute="top" secondItem="1sx-3I-fYc" secondAttribute="bottom" constant="10" id="zYl-3z-tRW"/>
+                                            <constraint firstItem="avH-cK-hyQ" firstAttribute="top" secondItem="byw-my-ZJU" secondAttribute="bottom" constant="10" id="zci-gr-glg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -234,6 +1400,11 @@
                             <constraint firstItem="3nm-sw-b5g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="knX-QV-PIL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3nm-sw-b5g"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DO5-zW-WUQ" appends="YES" id="jyG-W5-x1t"/>
                         </connections>
@@ -245,16 +1416,90 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="1264"/>
+                    <size key="freeformSize" width="375" height="1600"/>
                     <connections>
+                        <outlet property="abdomenAppendageButton" destination="Cju-fd-03H" id="T0p-sp-l6h"/>
+                        <outlet property="abdomenThoraxConstriction" destination="JKQ-7h-61D" id="VAP-lA-h3h"/>
+                        <outlet property="antennaLengthButton" destination="TA8-bj-Oji" id="aac-ip-yj6"/>
+                        <outlet property="antennaeButton" destination="bBO-7P-aE2" id="gAE-Rw-m0M"/>
+                        <outlet property="bodyCompressionButton" destination="KNh-SG-eBf" id="ZCQ-Ev-TJb"/>
+                        <outlet property="bodyShapeButton" destination="VGC-H1-JM5" id="EaI-QJ-waB"/>
                         <outlet property="bodyTypeButton" destination="2F4-ez-udz" id="Z2J-uq-e18"/>
+                        <outlet property="legTypeButton" destination="hyc-U5-hMm" id="JJC-ob-TzS"/>
+                        <outlet property="mouthPartsButton" destination="cx5-Gs-pI3" id="q20-J3-tzM"/>
+                        <outlet property="numLegsButton" destination="qbg-oP-OXJ" id="YTV-7r-dZt"/>
+                        <outlet property="numWingsButton" destination="Bk3-OP-6VX" id="Vhe-Ln-zbS"/>
                         <outlet property="search" destination="kha-cP-ZS6" id="bmI-ED-Ngf"/>
                         <outlet property="sideView" destination="3nm-sw-b5g" id="5QY-xI-8Q3"/>
+                        <outlet property="sizeButton" destination="jzf-92-DoQ" id="e3a-ya-Bs9"/>
+                        <outlet property="thoracicSectionsButton" destination="g0E-hB-zKI" id="vTp-7Z-YQX"/>
                         <outlet property="viewConstraint" destination="V3p-Vz-4qS" id="u1Y-3j-Xxm"/>
+                        <outlet property="wingPositionButton" destination="YTs-VX-BW0" id="pwz-I0-LOb"/>
+                        <outlet property="wingTextureButton" destination="Xps-ZS-OTS" id="pdK-O0-c8Z"/>
                         <outletCollection property="bodyTypes" destination="M8V-w7-ZoD" collectionClass="NSMutableArray" id="OTV-sJ-ME5"/>
                         <outletCollection property="bodyTypes" destination="7D5-uT-gv1" collectionClass="NSMutableArray" id="CML-Me-Bmr"/>
                         <outletCollection property="bodyTypes" destination="107-Uc-n6K" collectionClass="NSMutableArray" id="0UD-sg-kwn"/>
                         <outletCollection property="bodyTypes" destination="GLG-lx-FyS" collectionClass="NSMutableArray" id="jJt-aO-rev"/>
+                        <outletCollection property="bodyShapes" destination="ShM-Qs-1M8" collectionClass="NSMutableArray" id="Awq-4o-DNz"/>
+                        <outletCollection property="bodyShapes" destination="uRC-Q1-kgg" collectionClass="NSMutableArray" id="OwL-td-9Xq"/>
+                        <outletCollection property="bodyShapes" destination="9o8-dE-Iph" collectionClass="NSMutableArray" id="L6a-cd-J8j"/>
+                        <outletCollection property="bodyShapes" destination="ShM-Qs-1M8" collectionClass="NSMutableArray" id="YKH-wM-laV"/>
+                        <outletCollection property="bodyShapes" destination="uRC-Q1-kgg" collectionClass="NSMutableArray" id="4uO-U0-LdB"/>
+                        <outletCollection property="bodyShapes" destination="9o8-dE-Iph" collectionClass="NSMutableArray" id="COf-3S-49D"/>
+                        <outletCollection property="bodyShapes" destination="ShM-Qs-1M8" collectionClass="NSMutableArray" id="Rsi-1s-PV3"/>
+                        <outletCollection property="bodyShapes" destination="uRC-Q1-kgg" collectionClass="NSMutableArray" id="Ec1-Uk-whq"/>
+                        <outletCollection property="bodyShapes" destination="9o8-dE-Iph" collectionClass="NSMutableArray" id="cGF-tr-0CY"/>
+                        <outletCollection property="bodyCompressions" destination="80E-Q2-TpC" collectionClass="NSMutableArray" id="YX7-dg-6Fp"/>
+                        <outletCollection property="bodyCompressions" destination="eHI-7y-rnv" collectionClass="NSMutableArray" id="dEO-9n-1JP"/>
+                        <outletCollection property="bodyCompressions" destination="xLV-eH-YvP" collectionClass="NSMutableArray" id="SiM-wj-XrK"/>
+                        <outletCollection property="numLegs" destination="Ctf-Ai-syf" collectionClass="NSMutableArray" id="OWk-cq-j4I"/>
+                        <outletCollection property="numLegs" destination="ckJ-Ub-y2v" collectionClass="NSMutableArray" id="xIJ-ND-ldb"/>
+                        <outletCollection property="numLegs" destination="XPV-3y-ecm" collectionClass="NSMutableArray" id="Hhp-C3-GLJ"/>
+                        <outletCollection property="numLegs" destination="gUc-5p-pzR" collectionClass="NSMutableArray" id="0CB-kV-AgS"/>
+                        <outletCollection property="legTypes" destination="Lfe-ia-Ow4" collectionClass="NSMutableArray" id="jHr-DF-NJg"/>
+                        <outletCollection property="legTypes" destination="erg-Yx-b7U" collectionClass="NSMutableArray" id="rxB-tv-2Gb"/>
+                        <outletCollection property="legTypes" destination="YLM-xr-JVg" collectionClass="NSMutableArray" id="Lae-nB-c0w"/>
+                        <outletCollection property="legTypes" destination="qFf-dX-dGw" collectionClass="NSMutableArray" id="fdG-KX-1HX"/>
+                        <outletCollection property="legTypes" destination="oVb-mQ-5tv" collectionClass="NSMutableArray" id="i0e-9l-IPS"/>
+                        <outletCollection property="numWings" destination="Vt3-xl-bbH" collectionClass="NSMutableArray" id="pmt-3R-wXQ"/>
+                        <outletCollection property="numWings" destination="oW0-VB-OSc" collectionClass="NSMutableArray" id="Iid-tQ-Tzu"/>
+                        <outletCollection property="numWings" destination="1KT-EX-MsR" collectionClass="NSMutableArray" id="aQt-4O-aE0"/>
+                        <outletCollection property="wingTextures" destination="gec-xH-n0i" collectionClass="NSMutableArray" id="UXE-mF-9M5"/>
+                        <outletCollection property="wingTextures" destination="Pp8-vK-Sut" collectionClass="NSMutableArray" id="X2K-wv-nfv"/>
+                        <outletCollection property="wingTextures" destination="s2K-Ka-nUG" collectionClass="NSMutableArray" id="vuo-3A-6OV"/>
+                        <outletCollection property="wingTextures" destination="WTU-uv-2y8" collectionClass="NSMutableArray" id="NYX-8G-9P8"/>
+                        <outletCollection property="wingTextures" destination="Umd-dN-Ua8" collectionClass="NSMutableArray" id="knX-5V-O1O"/>
+                        <outletCollection property="wingPositions" destination="Ozb-FW-ZX1" collectionClass="NSMutableArray" id="KKb-Ij-Rkf"/>
+                        <outletCollection property="wingPositions" destination="Emu-S2-lxz" collectionClass="NSMutableArray" id="xQt-J8-Nk2"/>
+                        <outletCollection property="wingPositions" destination="64s-5a-0U2" collectionClass="NSMutableArray" id="pMq-Hi-nTM"/>
+                        <outletCollection property="wingPositions" destination="pGC-dd-PcO" collectionClass="NSMutableArray" id="Ylc-Tc-EYo"/>
+                        <outletCollection property="antennae" destination="kTP-Wt-Cjn" collectionClass="NSMutableArray" id="xn9-GS-WPc"/>
+                        <outletCollection property="antennae" destination="GiD-ws-68v" collectionClass="NSMutableArray" id="SrN-mm-Lqh"/>
+                        <outletCollection property="antennae" destination="MrS-ZU-0DC" collectionClass="NSMutableArray" id="3fH-fc-spb"/>
+                        <outletCollection property="antennae" destination="J9d-iD-P3n" collectionClass="NSMutableArray" id="um7-0P-75z"/>
+                        <outletCollection property="antennae" destination="NVM-Ea-B7h" collectionClass="NSMutableArray" id="QBs-yF-7Ps"/>
+                        <outletCollection property="antennaLengths" destination="76t-mX-gCI" collectionClass="NSMutableArray" id="8Im-E5-kyd"/>
+                        <outletCollection property="antennaLengths" destination="8N9-uq-if3" collectionClass="NSMutableArray" id="utN-ck-tjh"/>
+                        <outletCollection property="antennaLengths" destination="6sD-rZ-Dpq" collectionClass="NSMutableArray" id="eqG-xG-K7h"/>
+                        <outletCollection property="antennaLengths" destination="Al6-e4-2Ql" collectionClass="NSMutableArray" id="UIp-Tu-2hL"/>
+                        <outletCollection property="mouthParts" destination="snQ-zx-J5N" collectionClass="NSMutableArray" id="4VK-IY-Xha"/>
+                        <outletCollection property="mouthParts" destination="DO3-vm-B6h" collectionClass="NSMutableArray" id="QfE-2u-xiQ"/>
+                        <outletCollection property="mouthParts" destination="WV7-Bb-yQp" collectionClass="NSMutableArray" id="JWa-Xv-vwR"/>
+                        <outletCollection property="thoracicSections" destination="egD-w0-DuN" collectionClass="NSMutableArray" id="0Ci-76-GCX"/>
+                        <outletCollection property="thoracicSections" destination="n8K-zI-p5e" collectionClass="NSMutableArray" id="61T-e6-dwO"/>
+                        <outletCollection property="thoracicSections" destination="7zp-d1-ajW" collectionClass="NSMutableArray" id="Ap8-Zn-vkf"/>
+                        <outletCollection property="abdomenAppendages" destination="E10-Xn-2sl" collectionClass="NSMutableArray" id="G5a-SR-O8Z"/>
+                        <outletCollection property="abdomenAppendages" destination="uFK-5e-w6i" collectionClass="NSMutableArray" id="dnF-c2-SQo"/>
+                        <outletCollection property="abdomenAppendages" destination="byg-Zg-jkL" collectionClass="NSMutableArray" id="pkn-iJ-Z9v"/>
+                        <outletCollection property="abdomenAppendages" destination="Oq0-qL-Fuf" collectionClass="NSMutableArray" id="vnV-NZ-1ow"/>
+                        <outletCollection property="abdomenAppendages" destination="k09-jg-JW2" collectionClass="NSMutableArray" id="E5e-NU-p6G"/>
+                        <outletCollection property="abdomenAppendages" destination="fSc-R9-TB8" collectionClass="NSMutableArray" id="gwh-mA-fSN"/>
+                        <outletCollection property="abdomenAppendages" destination="Zml-iG-dHs" collectionClass="NSMutableArray" id="m3g-uZ-wve"/>
+                        <outletCollection property="abdomenAppendages" destination="KQg-Nr-ACm" collectionClass="NSMutableArray" id="DWm-3z-TJd"/>
+                        <outletCollection property="abdomenAppendages" destination="ZfI-s7-ZrA" collectionClass="NSMutableArray" id="CTe-ni-70a"/>
+                        <outletCollection property="sizes" destination="ibf-ZW-zw0" collectionClass="NSMutableArray" id="2cB-Bg-AAZ"/>
+                        <outletCollection property="sizes" destination="Bk2-cH-Vn4" collectionClass="NSMutableArray" id="adB-h6-wyA"/>
+                        <outletCollection property="sizes" destination="kAi-QE-BpG" collectionClass="NSMutableArray" id="DeR-hp-rwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
