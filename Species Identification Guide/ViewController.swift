@@ -110,7 +110,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func menuButton(_ sender: Any) {
+    @IBAction func menuToggle(_ sender: Any) {
         if !menuVisible {
             UIView.animate(withDuration: 0.2, animations: {
                 self.viewConstraint.constant = -310

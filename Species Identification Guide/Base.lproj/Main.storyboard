@@ -1427,7 +1427,7 @@
                     <navigationItem key="navigationItem" title="Invertebrates" id="tzc-iM-MlO">
                         <barButtonItem key="leftBarButtonItem" systemItem="organize" id="I7F-f6-7wo">
                             <connections>
-                                <action selector="menuButton:" destination="BYZ-38-t0r" id="DO9-IG-cIf"/>
+                                <action selector="menuToggle:" destination="BYZ-38-t0r" id="nAb-g5-g65"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
