@@ -8,6 +8,8 @@
 
 import UIKit
 import SQLite3
+import Foundation
+import CSV
 
 extension UITextField {
     func setPadding(_ amount:CGFloat){
@@ -60,9 +62,15 @@ class ViewController: UIViewController {
             print("Error Creating Table!")
             return
         }
-        print("Everything is Working!")
+        print("Database is Working!")
         
-        
+        let csvPath = Bundle.main.path(forResource: "invertebrates", ofType: "csv")!
+        let stream = InputStream(fileAtPath: csvPath)!
+        let csv = try! CSVReader(stream: stream, hasHeaderRow: true)
+
+        while let row = csv.next() {
+            print("\(row)")
+        }
     }
     
     var menuVisible = false;

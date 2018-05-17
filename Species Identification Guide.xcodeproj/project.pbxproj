@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220F3BEA7D48370B95D25896 /* Pods_Species_Identification_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF43412688413FCA6585583 /* Pods_Species_Identification_Guide.framework */; };
 		271B1731209806B90097F5C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271B1730209806B90097F5C1 /* AppDelegate.swift */; };
 		271B1733209806B90097F5C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271B1732209806B90097F5C1 /* ViewController.swift */; };
 		271B1736209806B90097F5C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271B1734209806B90097F5C1 /* Main.storyboard */; };
 		271B1738209806BB0097F5C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271B1737209806BB0097F5C1 /* Assets.xcassets */; };
+		273A0FBD20AC2F6F0036D81C /* invertebrates.csv in Resources */ = {isa = PBXBuildFile; fileRef = 273A0FBC20AC2F6F0036D81C /* invertebrates.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F3E1FBBAF837708AED4B32D /* Pods-Species Identification Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Species Identification Guide.release.xcconfig"; path = "Pods/Target Support Files/Pods-Species Identification Guide/Pods-Species Identification Guide.release.xcconfig"; sourceTree = "<group>"; };
 		271B172D209806B90097F5C1 /* Species Identification Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Species Identification Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		271B1730209806B90097F5C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271B1732209806B90097F5C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		271B1735209806B90097F5C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		271B1737209806BB0097F5C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271B173C209806BB0097F5C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		273A0FBC20AC2F6F0036D81C /* invertebrates.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invertebrates.csv; sourceTree = "<group>"; };
+		A840A1A711B861263A3429BC /* Pods-Species Identification Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Species Identification Guide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Species Identification Guide/Pods-Species Identification Guide.debug.xcconfig"; sourceTree = "<group>"; };
+		DBF43412688413FCA6585583 /* Pods_Species_Identification_Guide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Species_Identification_Guide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220F3BEA7D48370B95D25896 /* Pods_Species_Identification_Guide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +45,8 @@
 			children = (
 				271B172F209806B90097F5C1 /* Species Identification Guide */,
 				271B172E209806B90097F5C1 /* Products */,
+				617B06F1E9F0F73774C657C1 /* Pods */,
+				F076CE251B6D9F5093460C9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +61,7 @@
 		271B172F209806B90097F5C1 /* Species Identification Guide */ = {
 			isa = PBXGroup;
 			children = (
+				273A0FBC20AC2F6F0036D81C /* invertebrates.csv */,
 				271B1730209806B90097F5C1 /* AppDelegate.swift */,
 				271B1732209806B90097F5C1 /* ViewController.swift */,
 				271B1734209806B90097F5C1 /* Main.storyboard */,
@@ -61,6 +71,23 @@
 			path = "Species Identification Guide";
 			sourceTree = "<group>";
 		};
+		617B06F1E9F0F73774C657C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A840A1A711B861263A3429BC /* Pods-Species Identification Guide.debug.xcconfig */,
+				1F3E1FBBAF837708AED4B32D /* Pods-Species Identification Guide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F076CE251B6D9F5093460C9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBF43412688413FCA6585583 /* Pods_Species_Identification_Guide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 271B173F209806BB0097F5C1 /* Build configuration list for PBXNativeTarget "Species Identification Guide" */;
 			buildPhases = (
+				B8C1E645D3CECEC852962D37 /* [CP] Check Pods Manifest.lock */,
 				271B1729209806B90097F5C1 /* Sources */,
 				271B172A209806B90097F5C1 /* Frameworks */,
 				271B172B209806B90097F5C1 /* Resources */,
+				A24453AB6E1498BFDFF80BC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -121,11 +150,51 @@
 			buildActionMask = 2147483647;
 			files = (
 				271B1738209806BB0097F5C1 /* Assets.xcassets in Resources */,
+				273A0FBD20AC2F6F0036D81C /* invertebrates.csv in Resources */,
 				271B1736209806B90097F5C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A24453AB6E1498BFDFF80BC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Species Identification Guide/Pods-Species Identification Guide-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Species Identification Guide/Pods-Species Identification Guide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8C1E645D3CECEC852962D37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Species Identification Guide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		271B1729209806B90097F5C1 /* Sources */ = {
@@ -267,6 +336,7 @@
 		};
 		271B1740209806BB0097F5C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A840A1A711B861263A3429BC /* Pods-Species Identification Guide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -287,6 +357,7 @@
 		};
 		271B1741209806BB0097F5C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F3E1FBBAF837708AED4B32D /* Pods-Species Identification Guide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
