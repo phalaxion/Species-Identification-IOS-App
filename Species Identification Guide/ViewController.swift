@@ -123,6 +123,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet var bodySubMenuItems: [UIStackView]!
+    @IBAction func bodySubMenus(_ sender: Any) {
+        bodySubMenuItems.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    //----------------------------------Categories---------------------------------------------//
     @IBOutlet weak var bodyTypeButton: UIButton!
     @IBOutlet var bodyTypes: [UIButton]!
     @IBAction func bodyTypeChoice(_ sender: UIButton) {
