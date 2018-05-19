@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kha-cP-ZS6">
-                                                <rect key="frame" x="10" y="10" width="355" height="40"/>
+                                                <rect key="frame" x="10" y="10" width="315" height="40"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="HgE-bN-cPe"/>
@@ -284,7 +284,7 @@
                                                                     <constraint firstAttribute="height" constant="50" id="Q6e-PX-0uZ"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <state key="normal" title="Does Not Have Constriction Between Thorax and Abdomen">
+                                                                <state key="normal" title="No Thorax and Abdomen Constriction">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
@@ -1279,14 +1279,29 @@
                                                     <constraint firstAttribute="trailing" secondItem="jzf-92-DoQ" secondAttribute="trailing" id="pA6-Bn-uZA"/>
                                                 </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifi-Rg-xhk">
+                                                <rect key="frame" x="325" y="10" width="40" height="40"/>
+                                                <color key="backgroundColor" red="0.39026068652849744" green="0.39026068652849744" blue="0.39026068652849744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="C4o-Q7-iGs"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Hdi-eq-pRC"/>
+                                                </constraints>
+                                                <state key="normal" image="hamburger"/>
+                                                <connections>
+                                                    <action selector="searchBarActivate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bgn-5g-nCL"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ifi-Rg-xhk" secondAttribute="trailing" constant="10" id="19Z-66-OkK"/>
                                             <constraint firstAttribute="height" constant="1600" id="6bl-EK-smj"/>
+                                            <constraint firstItem="ifi-Rg-xhk" firstAttribute="top" secondItem="wBF-Mv-d58" secondAttribute="top" constant="10" id="7a9-CW-y9K"/>
                                             <constraint firstItem="EcL-da-6Uh" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="8m1-d0-yTj"/>
                                             <constraint firstItem="9g0-BC-fwr" firstAttribute="top" secondItem="xqh-DJ-rXr" secondAttribute="bottom" constant="10" id="8yv-GH-uFe"/>
                                             <constraint firstItem="xqh-DJ-rXr" firstAttribute="top" secondItem="Gtm-0w-3bD" secondAttribute="bottom" constant="10" id="AUL-xh-GRE"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="B8t-WS-dlD"/>
+                                            <constraint firstItem="Gtm-0w-3bD" firstAttribute="top" secondItem="ifi-Rg-xhk" secondAttribute="bottom" constant="10" id="BaP-CI-G4e"/>
                                             <constraint firstAttribute="trailing" secondItem="avH-cK-hyQ" secondAttribute="trailing" constant="10" id="D2h-hf-DBQ"/>
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="DHL-0B-oTh"/>
                                             <constraint firstAttribute="trailing" secondItem="1sx-3I-fYc" secondAttribute="trailing" constant="10" id="IR3-BP-ygx"/>
@@ -1301,12 +1316,14 @@
                                             <constraint firstItem="Zez-dw-Tbo" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="VGb-oI-UXW"/>
                                             <constraint firstItem="byw-my-ZJU" firstAttribute="top" secondItem="n9e-Ym-2BJ" secondAttribute="bottom" constant="10" id="WCf-lV-YD3"/>
                                             <constraint firstAttribute="trailing" secondItem="byw-my-ZJU" secondAttribute="trailing" constant="10" id="Wyn-8p-ICm"/>
+                                            <constraint firstItem="ifi-Rg-xhk" firstAttribute="leading" secondItem="kha-cP-ZS6" secondAttribute="trailing" id="a19-s5-dGe"/>
                                             <constraint firstItem="S3e-rt-uPI" firstAttribute="top" secondItem="EcL-da-6Uh" secondAttribute="bottom" constant="10" id="aBc-gS-Vva"/>
                                             <constraint firstItem="byw-my-ZJU" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="adP-hU-hUU"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="top" secondItem="wBF-Mv-d58" secondAttribute="top" constant="10" id="b7B-zd-pPo"/>
                                             <constraint firstItem="EcL-da-6Uh" firstAttribute="top" secondItem="9g0-BC-fwr" secondAttribute="bottom" constant="10" id="dPL-r9-GGi"/>
                                             <constraint firstItem="avH-cK-hyQ" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="fLK-hN-093"/>
                                             <constraint firstItem="xqh-DJ-rXr" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="fPR-Ne-oHZ"/>
+                                            <constraint firstItem="ifi-Rg-xhk" firstAttribute="leading" secondItem="kha-cP-ZS6" secondAttribute="trailing" id="hKO-MH-8SE"/>
                                             <constraint firstAttribute="trailing" secondItem="S3e-rt-uPI" secondAttribute="trailing" constant="10" id="hLW-1v-u9U"/>
                                             <constraint firstItem="S3e-rt-uPI" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="j1C-kj-2KN"/>
                                             <constraint firstItem="9g0-BC-fwr" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="jPn-Lp-qTl"/>
@@ -1315,7 +1332,6 @@
                                             <constraint firstAttribute="trailing" secondItem="XI2-HA-LCQ" secondAttribute="trailing" constant="10" id="ksc-C5-bIH"/>
                                             <constraint firstItem="1sx-3I-fYc" firstAttribute="top" secondItem="S3e-rt-uPI" secondAttribute="bottom" constant="10" id="lw0-pf-hQI"/>
                                             <constraint firstAttribute="trailing" secondItem="SU1-qX-paw" secondAttribute="trailing" constant="10" id="m5d-U0-sX4"/>
-                                            <constraint firstAttribute="trailing" secondItem="kha-cP-ZS6" secondAttribute="trailing" constant="10" id="n2d-c2-Sg7"/>
                                             <constraint firstAttribute="trailing" secondItem="EcL-da-6Uh" secondAttribute="trailing" constant="10" id="oK6-BZ-E8E"/>
                                             <constraint firstAttribute="trailing" secondItem="n9e-Ym-2BJ" secondAttribute="trailing" constant="10" id="qAo-Ty-xMS"/>
                                             <constraint firstItem="LNc-wM-0GE" firstAttribute="top" secondItem="SU1-qX-paw" secondAttribute="bottom" constant="10" id="qZM-Hx-h8H"/>
@@ -1336,7 +1352,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nm-sw-b5g">
-                                <rect key="frame" x="-100" y="64" width="300" height="1200"/>
+                                <rect key="frame" x="-100" y="64" width="300" height="1536"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-gW-7lb">
                                         <rect key="frame" x="110" y="10" width="180" height="40"/>
@@ -1445,6 +1461,7 @@
                         <outlet property="numLegsButton" destination="qbg-oP-OXJ" id="YTV-7r-dZt"/>
                         <outlet property="numWingsButton" destination="Bk3-OP-6VX" id="Vhe-Ln-zbS"/>
                         <outlet property="search" destination="kha-cP-ZS6" id="bmI-ED-Ngf"/>
+                        <outlet property="searchInput" destination="kha-cP-ZS6" id="hVv-o4-usL"/>
                         <outlet property="sideView" destination="3nm-sw-b5g" id="5QY-xI-8Q3"/>
                         <outlet property="sizeButton" destination="jzf-92-DoQ" id="e3a-ya-Bs9"/>
                         <outlet property="thoracicSectionsButton" destination="g0E-hB-zKI" id="vTp-7Z-YQX"/>
@@ -1679,5 +1696,6 @@
     </scenes>
     <resources>
         <image name="bear" width="1200" height="800"/>
+        <image name="hamburger" width="1200" height="1200"/>
     </resources>
 </document>
