@@ -340,6 +340,7 @@ class ViewController: UIViewController {
     //-----Characteristic Group Menus-----//
     @IBOutlet var bodySubMenuItems: [UIStackView]!
     @IBAction func bodySubMenus(_ sender: Any) {
+        print("unhide")
         bodySubMenuItems.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
@@ -534,6 +535,7 @@ class ViewController: UIViewController {
         case jumpingHind = "Strong jumping hind legs"
         case raptorial = "Raptorial"
         case popeye = "Popeye arms"
+        case modified = "Modified Front Legs"
     }
     @IBAction func legTypeTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let legType = LegTypes(rawValue: title) else {
@@ -556,6 +558,9 @@ class ViewController: UIViewController {
             legTypeChoice(sender)
         case .popeye:
             legTypeButton.setTitle("Popeye arms", for: .normal)
+            legTypeChoice(sender)
+        case .modified:
+            legTypeButton.setTitle("Modified Front Legs", for: .normal)
             legTypeChoice(sender)
         }
     }
@@ -612,6 +617,8 @@ class ViewController: UIViewController {
         case membranous0 = "Membranous"
         case membranous1 = "Complex vein pattern"
         case membranous2 = "Simple vein pattern"
+        case hardened = "Hardened"
+        case hemelytra = "Hemelytra"
     }
     @IBAction func wingTextureTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let wingTexture = WingTextures(rawValue: title) else {
@@ -635,6 +642,12 @@ class ViewController: UIViewController {
         case .membranous2:
             wingTextureButton.setTitle("Simple vein pattern", for: .normal)
             wingTextureChoice(sender)
+        case .hardened:
+            wingTextureButton.setTitle("Hardened", for: .normal)
+            wingTextureChoice(sender)
+        case .hemelytra:
+            wingTextureButton.setTitle("Hemelytra", for: .normal)
+            wingTextureChoice(sender)
         }
     }
     
@@ -654,6 +667,7 @@ class ViewController: UIViewController {
         case horizontal = "Horizontal from thorax"
         case tent = "Tent over abdomen"
         case tucked = "Tucked into body"
+        case middle = "Meet in Middle"
     }
     @IBAction func wingPositionTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let wingPosition = WingPositions(rawValue: title) else {
@@ -674,6 +688,9 @@ class ViewController: UIViewController {
         case .tucked:
             wingPositionButton.setTitle("Tucked into body", for: .normal)
             wingPositionChoice(sender)
+        case .middle:
+            wingPositionButton.setTitle("Meet in Middle", for: .normal)
+            wingPositionChoice(sender)
         }
     }
     
@@ -693,7 +710,11 @@ class ViewController: UIViewController {
         case fileform = "Filiform"
         case beadlike = "Bead-like"
         case longFirst = "Long first segment"
-        case other = "Other type of Antennae"
+        case setaceous = "Setaceous"
+        case elbowed = "Elbowed"
+        case endFlagellum = "Thin End Flagellum"
+        case feathery = "Feathery"
+        case clubbed = "Clubbed"
     }
     @IBAction func antannaeTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let antennae = Antennae(rawValue: title) else {
@@ -714,8 +735,20 @@ class ViewController: UIViewController {
         case .longFirst:
             antennaeButton.setTitle("Long first segment", for: .normal)
             antennaeChoice(sender)
-        case .other:
-            antennaeButton.setTitle("Other type of Antennae", for: .normal)
+        case .setaceous:
+            antennaeButton.setTitle("Setaceous", for: .normal)
+            antennaeChoice(sender)
+        case .elbowed:
+            antennaeButton.setTitle("Elbowed", for: .normal)
+            antennaeChoice(sender)
+        case .endFlagellum:
+            antennaeButton.setTitle("Thin End Flagellum", for: .normal)
+            antennaeChoice(sender)
+        case .feathery:
+            antennaeButton.setTitle("Feathery", for: .normal)
+            antennaeChoice(sender)
+        case .clubbed:
+            antennaeButton.setTitle("Clubbed", for: .normal)
             antennaeChoice(sender)
         }
     }
