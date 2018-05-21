@@ -5,7 +5,7 @@ DEPENDENCIES:
   - CSV.swift (~> 2.2.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - CSV.swift
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d0b522ad44934ae4ff6599de498b1e9026e07686
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
