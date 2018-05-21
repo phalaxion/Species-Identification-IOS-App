@@ -13,6 +13,8 @@
 		271B1736209806B90097F5C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271B1734209806B90097F5C1 /* Main.storyboard */; };
 		271B1738209806BB0097F5C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271B1737209806BB0097F5C1 /* Assets.xcassets */; };
 		273A0FBD20AC2F6F0036D81C /* invertebrates.csv in Resources */ = {isa = PBXBuildFile; fileRef = 273A0FBC20AC2F6F0036D81C /* invertebrates.csv */; };
+		63A8D01320B26F8500AB4C69 /* ShortlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8D01220B26F8500AB4C69 /* ShortlistViewController.swift */; };
+		63A8D01520B26F9C00AB4C69 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8D01420B26F9C00AB4C69 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		271B1737209806BB0097F5C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271B173C209806BB0097F5C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273A0FBC20AC2F6F0036D81C /* invertebrates.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invertebrates.csv; sourceTree = "<group>"; };
+		63A8D01220B26F8500AB4C69 /* ShortlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortlistViewController.swift; sourceTree = "<group>"; };
+		63A8D01420B26F9C00AB4C69 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A840A1A711B861263A3429BC /* Pods-Species Identification Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Species Identification Guide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Species Identification Guide/Pods-Species Identification Guide.debug.xcconfig"; sourceTree = "<group>"; };
 		DBF43412688413FCA6585583 /* Pods_Species_Identification_Guide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Species_Identification_Guide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +71,8 @@
 				271B1734209806B90097F5C1 /* Main.storyboard */,
 				271B1737209806BB0097F5C1 /* Assets.xcassets */,
 				271B173C209806BB0097F5C1 /* Info.plist */,
+				63A8D01220B26F8500AB4C69 /* ShortlistViewController.swift */,
+				63A8D01420B26F9C00AB4C69 /* ProfileViewController.swift */,
 			);
 			path = "Species Identification Guide";
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 			files = (
 				271B1733209806B90097F5C1 /* ViewController.swift in Sources */,
 				271B1731209806B90097F5C1 /* AppDelegate.swift in Sources */,
+				63A8D01520B26F9C00AB4C69 /* ProfileViewController.swift in Sources */,
+				63A8D01320B26F8500AB4C69 /* ShortlistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
