@@ -349,6 +349,38 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet var legSubMenuItems: [UIStackView]!
+    @IBAction func legSubMenus(_ sender: UIButton) {
+        print("unhide")
+        legSubMenuItems.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    @IBOutlet var wingSubMenuItems: [UIStackView]!
+    
+    @IBAction func wingSubMenus(_ sender: UIButton) {
+        print("unhide")
+        wingSubMenuItems.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    @IBOutlet var antennaeSubMenuItems: [UIStackView]!
+    @IBAction func antennaeSubMenus(_ sender: UIButton) {
+        print("unhide")
+        antennaeSubMenuItems.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
     //-----Characteristic Submenus-----//
     //Cases must be exactly the same as the button in storyboard
     
