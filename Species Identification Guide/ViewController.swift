@@ -399,7 +399,6 @@ class ViewController: UIViewController {
         case soft = "Soft Body"
         case shell = "Shell"
         case exo = "Tough Exoskeleton"
-        case hairy = "Visibly Hairy"
     }
     @IBAction func bodyTypeTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let bodyType = BodyTypes(rawValue: title) else {
@@ -417,13 +416,11 @@ class ViewController: UIViewController {
         case .exo:
             bodyTypeButton.setTitle("Tough Exoskeleton", for: .normal)
             bodyTypeChoice(sender)
-        case .hairy:
-            bodyTypeButton.setTitle("Visibly Hairy", for: .normal)
-            bodyTypeChoice(sender)
         }
     }
     
     //BODY SHAPE
+    /*
     @IBOutlet weak var bodyShapeButton: UIButton!
     @IBOutlet var bodyShapes: [UIButton]!
     @IBAction func bodyShapeChoice(_ sender: UIButton) {
@@ -493,7 +490,7 @@ class ViewController: UIViewController {
             bodyCompressionChoice(sender)
         }
     }
-    
+    */
     // ABDOMEN - THORAX CONSTRICTION
     @IBOutlet weak var abdomenThoraxConstriction: UIButton!
     var count = 0
@@ -562,12 +559,10 @@ class ViewController: UIViewController {
         }
     }
     enum LegTypes: String {
-        case similar = "All look very similar"
-        case different = "Legs different lengths"
+        case na = "N/A"
         case jumpingHind = "Strong jumping hind legs"
         case raptorial = "Raptorial"
-        case popeye = "Popeye arms"
-        case modified = "Modified Front Legs"
+        case digging = "Front Legs flattened for digging"
     }
     @IBAction func legTypeTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let legType = LegTypes(rawValue: title) else {
@@ -576,11 +571,8 @@ class ViewController: UIViewController {
         legTypSel = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch legType{
-        case .similar:
-            legTypeButton.setTitle("All look very similar", for: .normal)
-            legTypeChoice(sender)
-        case .different:
-            legTypeButton.setTitle("Legs different lengths", for: .normal)
+        case .na:
+            legTypeButton.setTitle("N/A", for: .normal)
             legTypeChoice(sender)
         case .jumpingHind:
             legTypeButton.setTitle("Strong jumping hind legs", for: .normal)
@@ -588,11 +580,8 @@ class ViewController: UIViewController {
         case .raptorial:
             legTypeButton.setTitle("Raptorial", for: .normal)
             legTypeChoice(sender)
-        case .popeye:
-            legTypeButton.setTitle("Popeye arms", for: .normal)
-            legTypeChoice(sender)
-        case .modified:
-            legTypeButton.setTitle("Modified Front Legs", for: .normal)
+        case .digging:
+            legTypeButton.setTitle("Front Legs flattened for digging", for: .normal)
             legTypeChoice(sender)
         }
     }
@@ -610,8 +599,9 @@ class ViewController: UIViewController {
     }
     enum NumWings: String {
         case none = "No Wings"
-        case two = "2 Wings (+ halteres or elytra)"
-        case four = "4 Wings"
+        case elytra = "2 Wings (+ elytra)"
+        case hemelytra = "2 Wings (+ hemelytra)"
+        case halteres = "2 Wings (+ halteres)"
     }
     @IBAction func numWingsTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let numWing = NumWings(rawValue: title) else {
@@ -623,11 +613,14 @@ class ViewController: UIViewController {
         case .none:
             numWingsButton.setTitle("No Wings", for: .normal)
             numWingsChoice(sender)
-        case .two:
-            numWingsButton.setTitle("2 Wings (+ halteres or elytra)", for: .normal)
+        case .elytra:
+            numWingsButton.setTitle("2 Wings (+ elytra)", for: .normal)
             numWingsChoice(sender)
-        case .four:
-            numWingsButton.setTitle("4 Wings", for: .normal)
+        case .hemelytra:
+            numWingsButton.setTitle("2 Wings (+ hemelytra)", for: .normal)
+            numWingsChoice(sender)
+        case .halteres:
+            numWingsButton.setTitle("2 Wings (+ halteres)", for: .normal)
             numWingsChoice(sender)
         }
     }
@@ -646,11 +639,8 @@ class ViewController: UIViewController {
     enum WingTextures: String {
         case hairy = "Hairy"
         case scaly = "Scaly and Patterned"
-        case membranous0 = "Membranous"
         case membranous1 = "Complex vein pattern"
         case membranous2 = "Simple vein pattern"
-        case hardened = "Hardened"
-        case hemelytra = "Hemelytra"
     }
     @IBAction func wingTextureTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let wingTexture = WingTextures(rawValue: title) else {
@@ -665,25 +655,17 @@ class ViewController: UIViewController {
         case .scaly:
             wingTextureButton.setTitle("Scaly and Patterned)", for: .normal)
             wingTextureChoice(sender)
-        case .membranous0:
-            wingTextureButton.setTitle("Membranous", for: .normal)
-            wingTextureChoice(sender)
         case .membranous1:
             wingTextureButton.setTitle("Complex vein pattern", for: .normal)
             wingTextureChoice(sender)
         case .membranous2:
             wingTextureButton.setTitle("Simple vein pattern", for: .normal)
             wingTextureChoice(sender)
-        case .hardened:
-            wingTextureButton.setTitle("Hardened", for: .normal)
-            wingTextureChoice(sender)
-        case .hemelytra:
-            wingTextureButton.setTitle("Hemelytra", for: .normal)
-            wingTextureChoice(sender)
         }
     }
     
     // WING POSITION
+    /*
     @IBOutlet weak var wingPositionButton: UIButton!
     @IBOutlet var wingPositions: [UIButton]!
     @IBAction func wingPositionChoice(_ sender: UIButton) {
@@ -725,7 +707,7 @@ class ViewController: UIViewController {
             wingPositionChoice(sender)
         }
     }
-    
+    */
     // ANTENNAE TYPE
     @IBOutlet weak var antennaeButton: UIButton!
     @IBOutlet var antennae: [UIButton]!
@@ -738,14 +720,10 @@ class ViewController: UIViewController {
         }
     }
     enum Antennae: String {
-        case absent = "Absent"
         case fileform = "Filiform"
         case beadlike = "Bead-like"
         case longFirst = "Long first segment"
-        case setaceous = "Setaceous"
-        case elbowed = "Elbowed"
-        case endFlagellum = "Thin End Flagellum"
-        case feathery = "Feathery"
+        case biramous = "Biramous"
         case clubbed = "Clubbed"
     }
     @IBAction func antannaeTapped(_ sender: UIButton) {
@@ -755,9 +733,6 @@ class ViewController: UIViewController {
         antnneSel = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch antennae{
-        case .absent:
-            antennaeButton.setTitle("Absent", for: .normal)
-            antennaeChoice(sender)
         case .fileform:
             antennaeButton.setTitle("Filiform", for: .normal)
             antennaeChoice(sender)
@@ -767,17 +742,8 @@ class ViewController: UIViewController {
         case .longFirst:
             antennaeButton.setTitle("Long first segment", for: .normal)
             antennaeChoice(sender)
-        case .setaceous:
-            antennaeButton.setTitle("Setaceous", for: .normal)
-            antennaeChoice(sender)
-        case .elbowed:
-            antennaeButton.setTitle("Elbowed", for: .normal)
-            antennaeChoice(sender)
-        case .endFlagellum:
-            antennaeButton.setTitle("Thin End Flagellum", for: .normal)
-            antennaeChoice(sender)
-        case .feathery:
-            antennaeButton.setTitle("Feathery", for: .normal)
+        case .biramous:
+            antennaeButton.setTitle("Biramous", for: .normal)
             antennaeChoice(sender)
         case .clubbed:
             antennaeButton.setTitle("Clubbed", for: .normal)
@@ -797,10 +763,9 @@ class ViewController: UIViewController {
         }
     }
     enum AntennaLengths: String {
-        case none = "No antenna/hidden"
+        case none = "No antenna"
         case short = "Short"
-        case long = "Long"
-        case extraLong = "Extra long"
+        case long = "Long First Segment"
     }
     @IBAction func antennaLengthTapped(_ sender: UIButton) {
         guard let title = sender.currentTitle, let antennaLength = AntennaLengths(rawValue: title) else {
@@ -810,16 +775,13 @@ class ViewController: UIViewController {
         autoQuery() // Runs the update query for species shortlist
         switch antennaLength{
         case .none:
-            antennaLengthButton.setTitle("No antenna/hidden", for: .normal)
+            antennaLengthButton.setTitle("No antenna", for: .normal)
             antennaLengthChoice(sender)
         case .short:
             antennaLengthButton.setTitle("Short", for: .normal)
             antennaLengthChoice(sender)
         case .long:
-            antennaLengthButton.setTitle("Long", for: .normal)
-            antennaLengthChoice(sender)
-        case .extraLong:
-            antennaLengthButton.setTitle("Extra long", for: .normal)
+            antennaLengthButton.setTitle("Long First Segment", for: .normal)
             antennaLengthChoice(sender)
         }
     }
@@ -860,6 +822,7 @@ class ViewController: UIViewController {
     }
     
     // THORAIC SECTIONS
+    /*
     @IBOutlet weak var thoracicSectionsButton: UIButton!
     @IBOutlet var thoracicSections: [UIButton]!
     @IBAction func thoracicSectionsChoice(_ sender: UIButton) {
@@ -893,7 +856,7 @@ class ViewController: UIViewController {
             thoracicSectionsChoice(sender)
         }
     }
-    
+    */
     // ABDOMEN APPENDAGE
     @IBOutlet weak var abdomenAppendageButton: UIButton!
     @IBOutlet var abdomenAppendages: [UIButton]!
@@ -908,12 +871,9 @@ class ViewController: UIViewController {
     enum AbdomenAppendages: String {
         case furculum = "Furculum"
         case piercing = "Piercing"
-        case saw = "Saw"
-        case cerci = "Grasping Cerci"
-        case tails0 = "Thread tails x1"
-        case tails1 = "Thread tails x2"
-        case tails2 = "Thread tails x3"
-        case brush = "Brush"
+        case cerci = "2 Grasping Cerci"
+        case tails1 = "2 Tail-like Cerci"
+        case tails2 = "3 Tail-like Cerci"
         case telson = "Telson"
     }
     @IBAction func abdomenAppendageTapped(_ sender: UIButton) {
@@ -929,23 +889,14 @@ class ViewController: UIViewController {
             case .piercing:
                 abdomenAppendageButton.setTitle("Piercing", for: .normal)
                 abdomenAppendageChoice(sender)
-            case .saw:
-                abdomenAppendageButton.setTitle("Saw", for: .normal)
-                abdomenAppendageChoice(sender)
             case .cerci:
-                abdomenAppendageButton.setTitle("Grasping Cerci", for: .normal)
-                abdomenAppendageChoice(sender)
-            case .tails0:
-                abdomenAppendageButton.setTitle("Thread tails x1", for: .normal)
+                abdomenAppendageButton.setTitle("2 Grasping Cerci", for: .normal)
                 abdomenAppendageChoice(sender)
             case .tails1:
-                abdomenAppendageButton.setTitle("Thread tails x2", for: .normal)
+                abdomenAppendageButton.setTitle("2 Tail-like Cerci", for: .normal)
                 abdomenAppendageChoice(sender)
             case .tails2:
-                abdomenAppendageButton.setTitle("Thread tails x3", for: .normal)
-                abdomenAppendageChoice(sender)
-            case .brush:
-                abdomenAppendageButton.setTitle("Brush", for: .normal)
+                abdomenAppendageButton.setTitle("3 Tail-like Cerci", for: .normal)
                 abdomenAppendageChoice(sender)
             case .telson:
                 abdomenAppendageButton.setTitle("Telson", for: .normal)
@@ -985,6 +936,82 @@ class ViewController: UIViewController {
             case .large:
                 sizeButton.setTitle("Large", for: .normal)
                 sizeChoice(sender)
+        }
+    }
+    // EYES
+    @IBOutlet weak var hasEyes: UIButton!
+    var count1 = 1
+    @IBAction func eyesButton(_ sender: Any) {
+        count1 = count1 + 1
+        if (count1%2 == 1){
+            hasEyes.setTitle("Has Eyes", for: .normal)
+        }
+        else {
+            hasEyes.setTitle("No Eyes or Extremely Reduced", for: .normal)
+        }
+    }
+    
+    // ELYTRA LENGTH
+    @IBOutlet weak var elytraLength: UIButton!
+    var count2 = 1
+    @IBAction func elytraButton(_ sender: Any) {
+        count2 = count2 + 1
+        if (count2%2 == 1){
+            elytraLength.setTitle("Short Elytra", for: .normal)
+        }
+        else {
+            elytraLength.setTitle("Long Elytra", for: .normal)
+        }
+    }
+    
+    //ANT SUBFAMILY
+    
+    @IBOutlet weak var subFamilyButton: UIButton!
+    @IBOutlet var subFamilies: [UIButton]!
+    @IBAction func subFamilyChoice(_ sender: UIButton){
+        subFamilies.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum Families: String {
+        case dolichoderinae = "Dolichoderinae"
+        case formicinae = "Formicinae"
+        case ecatomminae = "Ecatomminae"
+        case ponerinae = "Ponerinae"
+        case myrmeciinae = "Myrmeciinae"
+        case myrmicinae = "Myrmicinae"
+        case dorylinae = "Dorylinae"
+    }
+    
+    @IBAction func subFamilyTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let fam = Families(rawValue: title) else {
+            return
+        }
+        switch fam{
+        case .dolichoderinae:
+            subFamilyButton.setTitle("Dolichoderinae", for: .normal)
+            subFamilyChoice(sender)
+        case .formicinae:
+            subFamilyButton.setTitle("Formicinae", for: .normal)
+            subFamilyChoice(sender)
+        case .ecatomminae:
+            subFamilyButton.setTitle("Ecatomminae", for: .normal)
+            subFamilyChoice(sender)
+        case .ponerinae:
+            subFamilyButton.setTitle("Ponerinae", for: .normal)
+            subFamilyChoice(sender)
+        case .myrmeciinae:
+            subFamilyButton.setTitle("Myrmeciinae", for: .normal)
+            subFamilyChoice(sender)
+        case .myrmicinae:
+            subFamilyButton.setTitle("Myrmicinae", for: .normal)
+            subFamilyChoice(sender)
+        case .dorylinae:
+            subFamilyButton.setTitle("Dorylinae", for: .normal)
+            subFamilyChoice(sender)
         }
     }
 }
