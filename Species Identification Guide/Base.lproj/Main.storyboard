@@ -847,7 +847,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-R9-TB8">
-                                                                <rect key="frame" x="0.0" y="-974" width="355" height="50"/>
+                                                                <rect key="frame" x="0.0" y="-924" width="355" height="50"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="ptd-ur-s2Y"/>
@@ -860,7 +860,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zml-iG-dHs">
-                                                                <rect key="frame" x="0.0" y="-924" width="355" height="50"/>
+                                                                <rect key="frame" x="0.0" y="-874" width="355" height="50"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="frN-Qe-bJ1"/>

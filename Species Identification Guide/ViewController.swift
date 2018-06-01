@@ -45,21 +45,22 @@ class ViewController: UIViewController {
     var searchBarResult : [[String]] = []
     
     // List of variables holding their corresponding drop-down menu selection
-    var bdyTypSel = ""
-    var bdyShpSel = ""
-    var bdyCmpSel = ""
-    var thrConSel = "No"
-    var lngBdySel = ""
-    var legNumSel = ""
-    var legTypSel = ""
-    var wngNumSel = ""
-    var wngTexSel = ""
-    var wngPosSel = ""
-    var antnneSel = ""
-    var antLenSel = ""
-    var mthPrtSel = ""
-    var abdAppSel = ""
-    var avgSzeSel = ""
+    var BodyTypeSelection = ""
+    var BodyConstrictionSelection = "No"
+    var LegNumSelection = ""
+    var LegTypeSelection = ""
+    var MoreLegSelection = ""
+    var WingNumSelection = ""
+    var WingTextureSelection = ""
+    var AntennaeSelection = ""
+    var AntennaeLengthSelection = ""
+    var MouthPartsSelection = ""
+    var AbdomenAppendageSelection = ""
+    var AverageSizeSelection = ""
+    var EyePresenceSelection = ""
+    var HeadFeaturesSelection = ""
+    var ElytraLengthSelection = ""
+    var AntSubfamilySelection = ""
     
     @IBOutlet weak var search: UITextField!
     
@@ -97,7 +98,7 @@ class ViewController: UIViewController {
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             var tmp : [String] = []
-            for i in 1...35 {
+            for i in 1...29 {
                 tmp.append(String(cString: sqlite3_column_text(stmt, Int32(i))))
             }
             searchBarResult.append(tmp)
@@ -137,35 +138,29 @@ class ViewController: UIViewController {
         SPECIES_NAME VARCHAR(40),
         MORPHO_SPECIES_NAME VARCAHR(40),
         BODY_TYPE VARCHAR(30),
-        BODY_SHAPE VARCHAR(30),
-        BODY_COMPRESSION VARCHAR(30),
-        THORAX_CONSTRICTION VARCHAR(30),
-        ELONGATED_BODY_SECTION VARCHAR(30),
+        BODY_CONSTRICTION VARCHAR(30),
         LEG_NUM VARCHAR(30),
         LEG_TYPE VARCHAR(30),
+        GREATER_THAN_EIGHT_LEGS VARCHAR(30),
         WING_NUM VARCHAR(30),
         WING_TEXTURE VARCHAR(30),
-        WING_RESTING_POSITION VARCHAR(30),
         ANTENNAE VARCHAR(30),
         ANTENNAE_LENGTH VARCHAR(30),
         MOUTH_PARTS VARCHAR(30),
         ABDOMEN_APPENDAGE VARCHAR(30),
         SIZE VARCHAR(20),
-        UNRANKED_CLADE1 VARCHAR(30),
-        UNRANKED_CLADE2 VARCHAR(30),
-        UNRANKED_CLADE3 VARCHAR(30),
-        UNRANKED_CLADE4 VARCHAR(30),
+        EYE_PRESENCE VARCHAR(30),
+        HEAD_SHAPE_FEATURES VARCHAR(30),
+        LENGTH_OF_ELYTRA VARCHAR(30),
+        ANT_SUBFAMILY_CRITERIA VARCHAR(30),
         PHYLUM VARCHAR(30),
         SUBPHYLUM VARCHAR(30),
         CLASS VARCHAR(30),
-        UNRANKED_CLADE5 VARCHAR(30),
         SUBCLASS VARCHAR(30),
-        INFRACLASS VARCHAR(30),
         SUPERORDER VARCHAR(30),
-        UNRANKED_CLADE6 VARCHAR(30),
-        COHORT VARCHAR(30),
         `ORDER` VARCHAR(30),
         SUBORDER VARCHAR(30),
+        SUPERFAMILY VARCHAR(30),
         FAMILY VARCHAR(30),
         SUBFAMILY VARCHAR(30));
         """
@@ -194,17 +189,18 @@ class ViewController: UIViewController {
         while let row = csv.next() {
             insertQuery = """
             INSERT INTO INVERTEBRATES (
-            COMMON_NAME, SPECIES_NAME, MORPHO_SPECIES_NAME, BODY_TYPE, BODY_SHAPE, BODY_COMPRESSION, THORAX_CONSTRICTION, ELONGATED_BODY_SECTION, LEG_NUM, LEG_TYPE, WING_NUM, WING_TEXTURE, WING_RESTING_POSITION, ANTENNAE, ANTENNAE_LENGTH, MOUTH_PARTS, ABDOMEN_APPENDAGE, SIZE, UNRANKED_CLADE1, UNRANKED_CLADE2, UNRANKED_CLADE3, UNRANKED_CLADE4, PHYLUM, SUBPHYLUM, CLASS, UNRANKED_CLADE5, SUBCLASS, INFRACLASS, SUPERORDER, UNRANKED_CLADE6, COHORT, `ORDER`, SUBORDER, FAMILY, SUBFAMILY
+            COMMON_NAME, SPECIES_NAME, MORPHO_SPECIES_NAME, BODY_TYPE, BODY_CONSTRICTION,  LEG_NUM, LEG_TYPE, GREATER_THAN_EIGHT_LEGS, WING_NUM, WING_TEXTURE,  ANTENNAE, ANTENNAE_LENGTH, MOUTH_PARTS, ABDOMEN_APPENDAGE, SIZE, EYE_PRESENCE, HEAD_SHAPE_FEATURES, LENGTH_OF_ELYTRA, ANT_SUBFAMILY_CRITERIA, PHYLUM, SUBPHYLUM, CLASS, SUBCLASS, SUPERORDER, `ORDER`, SUBORDER, SUPERFAMILY, FAMILY, SUBFAMILY
             )
             VALUES
             (
-            '\(row[0])', '\(row[1])', '\(row[2])', '\(row[3])', '\(row[4])', '\(row[5])', '\(row[6])', '\(row[7])', '\(row[8])', '\(row[9])', '\(row[10])', '\(row[11])', '\(row[12])', '\(row[13])', '\(row[14])', '\(row[15])', '\(row[16])', '\(row[17])', '\(row[18])', '\(row[19])', '\(row[20])', '\(row[21])', '\(row[22])', '\(row[23])', '\(row[24])', '\(row[25])', '\(row[26])', '\(row[27])', '\(row[28])', '\(row[29])', '\(row[30])', '\(row[31])', '\(row[32])', '\(row[33])', '\(row[34])'
+            '\(row[0])', '\(row[1])', '\(row[2])', '\(row[3])', '\(row[4])', '\(row[5])', '\(row[6])', '\(row[7])', '\(row[8])', '\(row[9])', '\(row[10])', '\(row[11])', '\(row[12])', '\(row[13])', '\(row[14])', '\(row[15])', '\(row[16])', '\(row[17])', '\(row[18])', '\(row[19])', '\(row[20])', '\(row[21])', '\(row[22])', '\(row[23])', '\(row[24])', '\(row[25])', '\(row[26])', '\(row[27])', '\(row[28])'
             );
             """
             //print(insertQuery)
             
             if sqlite3_exec(db, insertQuery, nil, nil, nil) != SQLITE_OK {
-                print("Error Inserting Row!")
+                let errmsg = String(cString: sqlite3_errmsg(db)!)
+                print("Row Insert Failed!: \(errmsg)")
                 return
             } else {
                 //print("Row Inserted Successfully!")
@@ -223,21 +219,22 @@ class ViewController: UIViewController {
         // A query that is updated by drop-down options being selected
         let mainQuery = """
         SELECT * FROM INVERTEBRATES
-        WHERE BODY_TYPE LIKE '%\(bdyTypSel)%'
-        AND BODY_SHAPE LIKE '%\(bdyShpSel)%'
-        AND BODY_COMPRESSION LIKE '%\(bdyCmpSel)%'
-        AND THORAX_CONSTRICTION LIKE '%\(thrConSel)%'
-        AND ELONGATED_BODY_SECTION LIKE '%\(lngBdySel)%'
-        AND LEG_NUM LIKE '%\(legNumSel)%'
-        AND LEG_TYPE LIKE '%\(legTypSel)%'
-        AND WING_NUM LIKE '%\(wngNumSel)%'
-        AND WING_TEXTURE LIKE '%\(wngTexSel)%'
-        AND WING_RESTING_POSITION LIKE '%\(wngPosSel)%'
-        AND ANTENNAE LIKE '%\(antnneSel)%'
-        AND ANTENNAE_LENGTH LIKE '%\(antLenSel)%'
-        AND MOUTH_PARTS LIKE '%\(mthPrtSel)%'
-        AND ABDOMEN_APPENDAGE LIKE '%\(abdAppSel)%'
-        AND SIZE LIKE '%\(avgSzeSel)%';
+        WHERE BODY_TYPE LIKE '%\(BodyTypeSelection)%'
+        AND BODY_CONSTRICTION LIKE '%\(BodyConstrictionSelection)%'
+        AND LEG_NUM LIKE '%\(LegNumSelection)%'
+        AND LEG_TYPE LIKE '%\(LegTypeSelection)%'
+        AND GREATER_THAN_EIGHT_LEGS LIKE '%\(MoreLegSelection)%'
+        AND WING_NUM LIKE '%\(WingNumSelection)%'
+        AND WING_TEXTURE LIKE '%\(WingTextureSelection)%'
+        AND ANTENNAE LIKE '%\(AntennaeSelection)%'
+        AND ANTENNAE_LENGTH LIKE '%\(AntennaeLengthSelection)%'
+        AND MOUTH_PARTS LIKE '%\(MouthPartsSelection)%'
+        AND ABDOMEN_APPENDAGE LIKE '%\(AbdomenAppendageSelection)%'
+        AND SIZE LIKE '%\(AverageSizeSelection)%';
+        AND EYE_PRESENCE LIKE '%\(EyePresenceSelection)%'
+        AND HEAD_SHAPE_FEATURES LIKE '%\(HeadFeaturesSelection)%'
+        AND LENGTH_OF_ELYTRA LIKE '%\(ElytraLengthSelection)%'
+        AND ANT_SUBFAMILY_CRITERIA LIKE '%\(AntSubfamilySelection)%';
         """
         
         var stmt: OpaquePointer?
@@ -250,7 +247,7 @@ class ViewController: UIViewController {
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             var tmp : [String] = []
-            for i in 1...35 {
+            for i in 1...29 {
                 tmp.append(String(cString: sqlite3_column_text(stmt, Int32(i))))
             }
             searchResult.append(tmp)
@@ -381,6 +378,7 @@ class ViewController: UIViewController {
             })
         }
     }
+    
     //-----Characteristic Submenus-----//
     //Cases must be exactly the same as the button in storyboard
     
@@ -404,7 +402,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let bodyType = BodyTypes(rawValue: title) else {
             return
         }
-        bdyTypSel = title // Sets global variable to the current menu selection
+        BodyTypeSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch bodyType {
         case .soft:
@@ -419,91 +417,19 @@ class ViewController: UIViewController {
         }
     }
     
-    //BODY SHAPE
-    /*
-    @IBOutlet weak var bodyShapeButton: UIButton!
-    @IBOutlet var bodyShapes: [UIButton]!
-    @IBAction func bodyShapeChoice(_ sender: UIButton) {
-        bodyShapes.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    enum BodyShapes: String {
-        case long = "Long and Slim"
-        case short = "Short and Wide"
-        case neither = "N/either"
-    }
-    @IBAction func bodyShapeTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let shape = BodyShapes(rawValue: title) else {
-            return
-        }
-        bdyShpSel = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch shape{
-        case .long:
-            bodyShapeButton.setTitle("Long and Slim", for: .normal)
-            bodyShapeChoice(sender)
-        case .short:
-            bodyShapeButton.setTitle("Short and Wide", for: .normal)
-            bodyShapeChoice(sender)
-        case .neither:
-            bodyShapeButton.setTitle("N/either", for: .normal)
-            bodyShapeChoice(sender)
-        }
-    }
-    
-    // BODY COMPRESSION
-    @IBOutlet weak var bodyCompressionButton: UIButton!
-    @IBOutlet var bodyCompressions: [UIButton]!
-    @IBAction func bodyCompressionChoice(_ sender: UIButton) {
-        bodyCompressions.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-        
-    }
-    enum BodyCompressions: String {
-        case lateral = "Lateral"
-        case dorsoVentral = "Dorso-ventral"
-        case none = "None"
-    }
-    @IBAction func bodyCompressionTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let compression = BodyCompressions(rawValue: title) else {
-            return
-        }
-        bdyCmpSel = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch compression{
-        case .lateral:
-            bodyCompressionButton.setTitle("Lateral", for: .normal)
-            bodyCompressionChoice(sender)
-        case .dorsoVentral:
-            bodyCompressionButton.setTitle("Dorso-Ventral", for: .normal)
-            bodyCompressionChoice(sender)
-        case .none:
-            bodyCompressionButton.setTitle("None", for: .normal)
-            bodyCompressionChoice(sender)
-        }
-    }
-    */
-    // ABDOMEN - THORAX CONSTRICTION
+    // BODY CONSTRICTION
     @IBOutlet weak var abdomenThoraxConstriction: UIButton!
     var count = 0
     @IBAction func abdomenThoraxConstrictionButton(_ sender: Any) {
         count = count + 1
         if (count%2 == 1){
             abdomenThoraxConstriction.setTitle("Constriction Between Thorax and Abdomen", for: .normal)
-            thrConSel = "Yes" // Sets global variable to the current menu selection
+            BodyConstrictionSelection = "Yes" // Sets global variable to the current menu selection
             autoQuery() // Runs the update query for species shortlist
         }
         else {
             abdomenThoraxConstriction.setTitle("No Constriction Between Thorax and Abdomen", for: .normal)
-            thrConSel = "No" // Sets global variable to the current menu selection
+            BodyConstrictionSelection = "No" // Sets global variable to the current menu selection
             autoQuery() // Runs the update query for species shortlist
         }
     }
@@ -529,7 +455,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let shape = NumLegs(rawValue: title) else {
             return
         }
-        legNumSel = title // Sets global variable to the current menu selection
+        LegNumSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch shape{
         case .zero:
@@ -568,7 +494,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let legType = LegTypes(rawValue: title) else {
             return
         }
-        legTypSel = title // Sets global variable to the current menu selection
+        LegTypeSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch legType{
         case .na:
@@ -607,7 +533,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let numWing = NumWings(rawValue: title) else {
             return
         }
-        wngNumSel = title // Sets global variable to the current menu selection
+        WingNumSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch numWing{
         case .none:
@@ -646,7 +572,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let wingTexture = WingTextures(rawValue: title) else {
             return
         }
-        wngTexSel = title // Sets global variable to the current menu selection
+        WingTextureSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch wingTexture{
         case .hairy:
@@ -664,50 +590,6 @@ class ViewController: UIViewController {
         }
     }
     
-    // WING POSITION
-    /*
-    @IBOutlet weak var wingPositionButton: UIButton!
-    @IBOutlet var wingPositions: [UIButton]!
-    @IBAction func wingPositionChoice(_ sender: UIButton) {
-        wingPositions.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    enum WingPositions: String {
-        case vertical = "Vertical"
-        case horizontal = "Horizontal from thorax"
-        case tent = "Tent over abdomen"
-        case tucked = "Tucked into body"
-        case middle = "Meet in Middle"
-    }
-    @IBAction func wingPositionTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let wingPosition = WingPositions(rawValue: title) else {
-            return
-        }
-        wngPosSel = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch wingPosition{
-        case .vertical:
-            wingPositionButton.setTitle("Vertical", for: .normal)
-            wingPositionChoice(sender)
-        case .horizontal:
-            wingPositionButton.setTitle("Horizontal from thorax", for: .normal)
-            wingPositionChoice(sender)
-        case .tent:
-            wingPositionButton.setTitle("Tent over abdomen", for: .normal)
-            wingPositionChoice(sender)
-        case .tucked:
-            wingPositionButton.setTitle("Tucked into body", for: .normal)
-            wingPositionChoice(sender)
-        case .middle:
-            wingPositionButton.setTitle("Meet in Middle", for: .normal)
-            wingPositionChoice(sender)
-        }
-    }
-    */
     // ANTENNAE TYPE
     @IBOutlet weak var antennaeButton: UIButton!
     @IBOutlet var antennae: [UIButton]!
@@ -730,7 +612,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let antennae = Antennae(rawValue: title) else {
             return
         }
-        antnneSel = title // Sets global variable to the current menu selection
+        AntennaeSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch antennae{
         case .fileform:
@@ -771,7 +653,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let antennaLength = AntennaLengths(rawValue: title) else {
             return
         }
-        antLenSel = title // Sets global variable to the current menu selection
+        AntennaeLengthSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch antennaLength{
         case .none:
@@ -806,7 +688,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let mouthPart = MouthParts(rawValue: title) else {
             return
         }
-        mthPrtSel = title // Sets global variable to the current menu selection
+        MouthPartsSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch mouthPart{
         case .chewing:
@@ -821,42 +703,6 @@ class ViewController: UIViewController {
         }
     }
     
-    // THORAIC SECTIONS
-    /*
-    @IBOutlet weak var thoracicSectionsButton: UIButton!
-    @IBOutlet var thoracicSections: [UIButton]!
-    @IBAction func thoracicSectionsChoice(_ sender: UIButton) {
-        thoracicSections.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    enum ThoracicSections: String {
-        case pronotom = "Pronotom"
-        case mesonotum = "Mesonotum"
-        case metathorax = "Metathorax"
-    }
-    @IBAction func thoracicSectionsTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let thoracicSection = ThoracicSections(rawValue: title) else {
-            return
-        }
-        lngBdySel = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch thoracicSection{
-        case .pronotom:
-            thoracicSectionsButton.setTitle("Pronotom", for: .normal)
-            thoracicSectionsChoice(sender)
-        case .mesonotum:
-            thoracicSectionsButton.setTitle("Mesonotum", for: .normal)
-            thoracicSectionsChoice(sender)
-        case .metathorax:
-            thoracicSectionsButton.setTitle("Metathorax", for: .normal)
-            thoracicSectionsChoice(sender)
-        }
-    }
-    */
     // ABDOMEN APPENDAGE
     @IBOutlet weak var abdomenAppendageButton: UIButton!
     @IBOutlet var abdomenAppendages: [UIButton]!
@@ -880,7 +726,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let abdomenAppendage = AbdomenAppendages(rawValue: title) else {
             return
         }
-        abdAppSel = title // Sets global variable to the current menu selection
+        AbdomenAppendageSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch abdomenAppendage{
             case .furculum:
@@ -924,7 +770,7 @@ class ViewController: UIViewController {
         guard let title = sender.currentTitle, let size = Sizes(rawValue: title) else {
             return
         }
-        avgSzeSel = title // Sets global variable to the current menu selection
+        AverageSizeSelection = title // Sets global variable to the current menu selection
         autoQuery() // Runs the update query for species shortlist
         switch size{
             case .verySmall:
@@ -938,6 +784,7 @@ class ViewController: UIViewController {
                 sizeChoice(sender)
         }
     }
+    
     // EYES
     @IBOutlet weak var hasEyes: UIButton!
     var count1 = 1
@@ -965,7 +812,6 @@ class ViewController: UIViewController {
     }
     
     //ANT SUBFAMILY
-    
     @IBOutlet weak var subFamilyButton: UIButton!
     @IBOutlet var subFamilies: [UIButton]!
     @IBAction func subFamilyChoice(_ sender: UIButton){
