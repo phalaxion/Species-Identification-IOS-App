@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Species Identification Guide
 //
-//  Created by user910210 on 4/30/18.
-//  Copyright © 2018 PACE Group24. All rights reserved.
+//  Created by David Rosetti on 4/30/18.
+//  Copyright © 2018 David Rosetti. All rights reserved.
 //
 
 import UIKit
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     var db: OpaquePointer?
     var searchResult : [[String]] = [[]]
     var searchBarResult : [[String]] = []
+    var headers : [String] = []
     
     // List of variables holding their corresponding drop-down menu selection
     var BodyTypeSelection = ""
@@ -68,6 +69,7 @@ class ViewController: UIViewController {
     @IBAction func speciesShortlistBtn(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "ShortlistViewController") as! ShortlistViewController
         myVC.searchResultPassed = searchResult
+        myVC.headersTMP = headers
         navigationController?.pushViewController(myVC, animated: true)
     }
     
@@ -81,11 +83,8 @@ class ViewController: UIViewController {
     @IBAction func searchBarActivate(_ sender: Any) {
         searchBarResult.removeAll()
         
-        // Grab searchbar input. If its empty don't bother searching (return)
+        // Grab searchbar input.
         let inputTxt: String = searchInput.text!
-        
-        // ToDo: Santize the input text to protect against SQL Injection
-        // HERE
         
         var stmt: OpaquePointer?
         let searchQuery = "SELECT * FROM INVERTEBRATES WHERE COMMON_NAME LIKE '%\(inputTxt)%';"
@@ -104,11 +103,13 @@ class ViewController: UIViewController {
             }
             searchBarResult.append(tmp)
         }
-        //print(searchBarResult)
         sqlite3_finalize(stmt)
+        //print(searchBarResult)
+        
         
         let myVC = storyboard?.instantiateViewController(withIdentifier: "ShortlistViewController") as! ShortlistViewController
         myVC.searchResultPassed = searchBarResult
+        myVC.headersTMP = headers
         navigationController?.pushViewController(myVC, animated: true)
     }
     
@@ -128,42 +129,40 @@ class ViewController: UIViewController {
         if sqlite3_exec(db, initalDrop, nil, nil, nil) != SQLITE_OK {
             print("Error Dropping Table!")
             return
-        } else {
-            //print("Table Dropped Successfully")
         }
         
         let createTableQuery = """
         CREATE TABLE INVERTEBRATES (
-        ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        COMMON_NAME VARCHAR(40),
-        SPECIES_NAME VARCHAR(40),
-        MORPHO_SPECIES_NAME VARCAHR(40),
-        BODY_TYPE VARCHAR(30),
-        BODY_CONSTRICTION VARCHAR(30),
-        LEG_NUM VARCHAR(30),
-        LEG_TYPE VARCHAR(30),
-        GREATER_THAN_EIGHT_LEGS VARCHAR(30),
-        WING_NUM VARCHAR(30),
-        WING_TEXTURE VARCHAR(30),
-        ANTENNAE VARCHAR(30),
-        ANTENNAE_LENGTH VARCHAR(30),
-        MOUTH_PARTS VARCHAR(30),
-        ABDOMEN_APPENDAGE VARCHAR(30),
-        SIZE VARCHAR(20),
-        EYE_PRESENCE VARCHAR(30),
-        HEAD_SHAPE_FEATURES VARCHAR(30),
-        LENGTH_OF_ELYTRA VARCHAR(30),
-        ANT_SUBFAMILY_CRITERIA VARCHAR(30),
-        PHYLUM VARCHAR(30),
-        SUBPHYLUM VARCHAR(30),
-        CLASS VARCHAR(30),
-        SUBCLASS VARCHAR(30),
-        SUPERORDER VARCHAR(30),
+        `ID` INTEGER PRIMARY KEY AUTOINCREMENT,
+        `COMMON_NAME` VARCHAR(40),
+        `SPECIES_NAME` VARCHAR(40),
+        `MORPHO_SPECIES_NAME` VARCAHR(40),
+        `BODY_TYPE` VARCHAR(30),
+        `BODY_CONSTRICTION` VARCHAR(30),
+        `LEG_NUM` VARCHAR(30),
+        `LEG_TYPE` VARCHAR(30),
+        `GREATER_THAN_EIGHT_LEGS` VARCHAR(30),
+        `WING_NUM` VARCHAR(30),
+        `WING_TEXTURE` VARCHAR(30),
+        `ANTENNAE` VARCHAR(30),
+        `ANTENNAE_LENGTH` VARCHAR(30),
+        `MOUTH_PARTS` VARCHAR(30),
+        `ABDOMEN_APPENDAGE` VARCHAR(30),
+        `SIZE` VARCHAR(20),
+        `EYE_PRESENCE` VARCHAR(30),
+        `HEAD_SHAPE_FEATURES` VARCHAR(30),
+        `LENGTH_OF_ELYTRA` VARCHAR(30),
+        `ANT_SUBFAMILY_CRITERIA` VARCHAR(30),
+        `PHYLUM` VARCHAR(30),
+        `SUBPHYLUM` VARCHAR(30),
+        `CLASS` VARCHAR(30),
+        `SUBCLASS` VARCHAR(30),
+        `SUPERORDER` VARCHAR(30),
         `ORDER` VARCHAR(30),
-        SUBORDER VARCHAR(30),
-        SUPERFAMILY VARCHAR(30),
-        FAMILY VARCHAR(30),
-        SUBFAMILY VARCHAR(30));
+        `SUBORDER` VARCHAR(30),
+        `SUPERFAMILY` VARCHAR(30),
+        `FAMILY` VARCHAR(30),
+        `SUBFAMILY` VARCHAR(30));
         """
         
         if sqlite3_exec(db, createTableQuery, nil, nil, nil) != SQLITE_OK {
@@ -186,11 +185,13 @@ class ViewController: UIViewController {
         let stream = InputStream(fileAtPath: csvPath)!
         let csv = try! CSVReader(stream: stream, hasHeaderRow: true)
         
+        headers = csv.headerRow!
+        
         var insertQuery = ""
         while let row = csv.next() {
             insertQuery = """
             INSERT INTO INVERTEBRATES (
-            COMMON_NAME, SPECIES_NAME, MORPHO_SPECIES_NAME, BODY_TYPE, BODY_CONSTRICTION,  LEG_NUM, LEG_TYPE, GREATER_THAN_EIGHT_LEGS, WING_NUM, WING_TEXTURE,  ANTENNAE, ANTENNAE_LENGTH, MOUTH_PARTS, ABDOMEN_APPENDAGE, SIZE, EYE_PRESENCE, HEAD_SHAPE_FEATURES, LENGTH_OF_ELYTRA, ANT_SUBFAMILY_CRITERIA, PHYLUM, SUBPHYLUM, CLASS, SUBCLASS, SUPERORDER, `ORDER`, SUBORDER, SUPERFAMILY, FAMILY, SUBFAMILY
+            `COMMON_NAME`, `SPECIES_NAME`, `MORPHO_SPECIES_NAME`, `BODY_TYPE`, `BODY_CONSTRICTION`,  `LEG_NUM`, `LEG_TYPE`, `GREATER_THAN_EIGHT_LEGS`, `WING_NUM`, `WING_TEXTURE`,  `ANTENNAE`, `ANTENNAE_LENGTH`, `MOUTH_PARTS`, `ABDOMEN_APPENDAGE`, `SIZE`, `EYE_PRESENCE`, `HEAD_SHAPE_FEATURES`, `LENGTH_OF_ELYTRA`, `ANT_SUBFAMILY_CRITERIA`, `PHYLUM`, `SUBPHYLUM`, `CLASS`, `SUBCLASS`, `SUPERORDER`, `ORDER`, `SUBORDER`, `SUPERFAMILY`, `FAMILY`, `SUBFAMILY`
             )
             VALUES
             (

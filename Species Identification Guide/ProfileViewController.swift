@@ -2,19 +2,49 @@
 //  ProfileViewController.swift
 //  Species Identification Guide
 //
-//  Created by David on 21/5/18.
-//  Copyright © 2018 PACE Group24. All rights reserved.
+//  Created by David Rosetti on 21/5/18.
+//  Copyright © 2018 David Rosetti. All rights reserved.
 //
 
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-    var speciesDetailsPassed : [String] = []
     
-    @IBOutlet weak var textView: UITextView!
+    var passedHeaders : [String] = []
+    var speciesDetailsPassed : [String] = []
+    var generatedLabels : [UILabel] = []
+    
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var image: UIImageView!
+    
     func setupProfile() {
-        textView.text = speciesDetailsPassed[0]
+        //print(passedHeaders)
+        for i in 0...(speciesDetailsPassed.count - 1) {
+            //if speciesDetailsPassed[i] != "" {
+                let label: UILabel = UILabel()
+                label.backgroundColor = #colorLiteral(red: 0.8324873096, green: 0.8324873096, blue: 0.8324873096, alpha: 1)
+                label.textColor = UIColor.darkText
+                label.text = "\(passedHeaders[i]): \(speciesDetailsPassed[i])"
+                label.lineBreakMode = .byWordWrapping
+                label.numberOfLines = 0
+            
+                self.mainView.addSubview(label)
+                
+                label.translatesAutoresizingMaskIntoConstraints = false
+                
+                if(generatedLabels.count == 0){
+                    label.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10).isActive = true
+                } else {
+                    label.topAnchor.constraint(equalTo: (generatedLabels.last!).bottomAnchor, constant: 15).isActive = true
+                }
+                
+                label.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true
+                label.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
+                
+                generatedLabels.append(label)
+            //}
+        }
+        generatedLabels.last?.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10).isActive = true
     }
     
     override func viewDidLoad() {
@@ -22,21 +52,4 @@ class ProfileViewController: UIViewController {
         
         setupProfile()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

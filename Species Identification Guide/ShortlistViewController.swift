@@ -2,8 +2,8 @@
 //  ShortlistViewController.swift
 //  Species Identification Guide
 //
-//  Created by David on 21/5/18.
-//  Copyright © 2018 PACE Group24. All rights reserved.
+//  Created by David Rosetti on 21/5/18.
+//  Copyright © 2018 David Rosetti. All rights reserved.
 //
 
 import UIKit
@@ -11,6 +11,7 @@ import UIKit
 class ShortlistViewController: UIViewController {
 
     var searchResultPassed : [[String]] = [[]]
+    var headersTMP : [String] = []
     @IBOutlet weak var mainView: UIView!
     
     var generatedButtons : [UIButton] = []
@@ -38,7 +39,7 @@ class ShortlistViewController: UIViewController {
                 speciesButton.topAnchor.constraint(equalTo: (generatedButtons.last!).bottomAnchor, constant: 10).isActive = true
             }
             
-            speciesButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: 10).isActive = true
+            speciesButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true
             speciesButton.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
             
             generatedButtons.append(speciesButton)
@@ -57,6 +58,7 @@ class ShortlistViewController: UIViewController {
             }
         }
         myVC.speciesDetailsPassed = speciesEntry
+        myVC.passedHeaders = headersTMP
         navigationController?.pushViewController(myVC, animated: true)
     }
     override func viewDidLoad() {
@@ -67,28 +69,21 @@ class ShortlistViewController: UIViewController {
         if searchResultPassed.count >= 1 {
             generateSpeciesButtons()
         } else {
-            let speciesButton = UIButton(frame: CGRect(x:10, y: 10, width: 355, height: 50))
+            let noResult = UIButton(type: .custom) as UIButton
+            noResult.backgroundColor = UIColor.white
+            noResult.setTitleColor(UIColor.darkText, for: .normal)
+            noResult.setTitle("No Matching Species", for: .normal)
+            noResult.titleLabel?.text = "No Matching Species"
+            noResult.titleLabel?.textAlignment = NSTextAlignment.center
             
-            speciesButton.backgroundColor = UIColor.white
-            speciesButton.setTitle("No Matching Species", for: .normal)
-            speciesButton.titleLabel?.text = "No Matching Species"
+            self.mainView.addSubview(noResult)
+            
+            // Setting Button Constraints
+            noResult.translatesAutoresizingMaskIntoConstraints = false
+            noResult.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            noResult.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 10).isActive = true
+            noResult.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true
+            noResult.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

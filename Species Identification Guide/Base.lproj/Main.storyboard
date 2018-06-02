@@ -1430,22 +1430,12 @@
                                                     <constraint firstAttribute="height" constant="302" id="sVX-8Z-JXY"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QFr-J2-iTh">
-                                                <rect key="frame" x="10" y="320" width="355" height="317"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="QFr-J2-iTh" firstAttribute="leading" secondItem="2Oi-xF-IZu" secondAttribute="leading" constant="10" id="6Ea-Xr-OLb"/>
                                             <constraint firstItem="YA4-ot-e2t" firstAttribute="leading" secondItem="2Oi-xF-IZu" secondAttribute="leading" constant="10" id="7hU-ah-aUx"/>
                                             <constraint firstItem="YA4-ot-e2t" firstAttribute="top" secondItem="2Oi-xF-IZu" secondAttribute="top" constant="10" id="Bfn-ia-Jlv"/>
                                             <constraint firstAttribute="trailing" secondItem="YA4-ot-e2t" secondAttribute="trailing" constant="10" id="gld-ta-9N2"/>
-                                            <constraint firstAttribute="bottom" secondItem="QFr-J2-iTh" secondAttribute="bottom" constant="10" id="hO7-XI-Yfg"/>
-                                            <constraint firstItem="QFr-J2-iTh" firstAttribute="top" secondItem="YA4-ot-e2t" secondAttribute="bottom" constant="8" id="k9I-b3-AXb"/>
-                                            <constraint firstAttribute="trailing" secondItem="QFr-J2-iTh" secondAttribute="trailing" constant="10" id="l2g-S3-hUA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1470,7 +1460,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Creature Profile" id="oZG-hn-Ke5"/>
                     <connections>
-                        <outlet property="textView" destination="QFr-J2-iTh" id="VKo-9B-V2w"/>
+                        <outlet property="image" destination="YA4-ot-e2t" id="pOt-4R-wYu"/>
+                        <outlet property="mainView" destination="2Oi-xF-IZu" id="CRH-O8-gXy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9d-E8-hsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
