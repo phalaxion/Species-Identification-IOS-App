@@ -13,10 +13,10 @@ class ShortlistViewController: UIViewController {
     var searchResultPassed : [[String]] = [[]]
     @IBOutlet weak var mainView: UIView!
     
+    var generatedButtons : [UIButton] = []
+    
     func generateSpeciesButtons() {
-        var buttonY : CGFloat = 10
         for species in searchResultPassed {
-            
             // Setting button properties (size, width, colours, etc.)
             let speciesButton = UIButton(type: .custom) as UIButton
             speciesButton.backgroundColor = UIColor.white
@@ -30,17 +30,21 @@ class ShortlistViewController: UIViewController {
             
             // Setting Button Constraints
             speciesButton.translatesAutoresizingMaskIntoConstraints = false
-            
-            //speciesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             speciesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            speciesButton.topAnchor.constraint(equalTo: mainView.topAnchor, constant: buttonY).isActive = true
+            
+            if(generatedButtons.count == 0){
+                speciesButton.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 10).isActive = true
+            } else {
+                speciesButton.topAnchor.constraint(equalTo: (generatedButtons.last!).bottomAnchor, constant: 10).isActive = true
+            }
+            
             speciesButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: 10).isActive = true
             speciesButton.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
             
-            
+            generatedButtons.append(speciesButton)
             //print(species[0])
-            buttonY = buttonY + 60
         }
+        generatedButtons.last?.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10).isActive = true
     }
     
     @objc func speciesProfileBtn(sender: UIButton!) {
@@ -58,7 +62,7 @@ class ShortlistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(searchResultPassed)
+        //print(searchResultPassed)
         print(searchResultPassed.count)
         if searchResultPassed.count >= 1 {
             generateSpeciesButtons()

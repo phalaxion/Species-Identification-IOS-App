@@ -63,6 +63,7 @@ class ViewController: UIViewController {
     var AntSubfamilySelection = ""
     
     @IBOutlet weak var search: UITextField!
+    @IBOutlet weak var speciesShortlistLabel: UIButton!
     
     @IBAction func speciesShortlistBtn(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "ShortlistViewController") as! ShortlistViewController
@@ -254,6 +255,8 @@ class ViewController: UIViewController {
         }
         //print(searchResult)
         sqlite3_finalize(stmt)
+        
+        speciesShortlistLabel.setTitle("Species Shortlist (\(searchResult.count))", for: .normal)
     }
     
     override func viewDidLoad() {
