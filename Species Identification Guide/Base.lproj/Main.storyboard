@@ -849,7 +849,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-R9-TB8">
-                                                                <rect key="frame" x="0.0" y="-924" width="355" height="50"/>
+                                                                <rect key="frame" x="0.0" y="-974" width="355" height="50"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="ptd-ur-s2Y"/>
@@ -862,7 +862,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zml-iG-dHs">
-                                                                <rect key="frame" x="0.0" y="-874" width="355" height="50"/>
+                                                                <rect key="frame" x="0.0" y="-924" width="355" height="50"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="frN-Qe-bJ1"/>
@@ -1452,18 +1452,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Oi-xF-IZu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bear" translatesAutoresizingMaskIntoConstraints="NO" id="YA4-ot-e2t">
-                                                <rect key="frame" x="10" y="10" width="355" height="302"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-HU-KQH" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                                <rect key="frame" x="10" y="10" width="355" height="300"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="302" id="sVX-8Z-JXY"/>
+                                                    <constraint firstAttribute="height" constant="300" id="wR5-gb-UUN"/>
                                                 </constraints>
-                                            </imageView>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="YA4-ot-e2t" firstAttribute="leading" secondItem="2Oi-xF-IZu" secondAttribute="leading" constant="10" id="7hU-ah-aUx"/>
-                                            <constraint firstItem="YA4-ot-e2t" firstAttribute="top" secondItem="2Oi-xF-IZu" secondAttribute="top" constant="10" id="Bfn-ia-Jlv"/>
-                                            <constraint firstAttribute="trailing" secondItem="YA4-ot-e2t" secondAttribute="trailing" constant="10" id="gld-ta-9N2"/>
+                                            <constraint firstItem="Tty-HU-KQH" firstAttribute="top" secondItem="2Oi-xF-IZu" secondAttribute="top" constant="10" id="ZYV-Ou-qLw"/>
+                                            <constraint firstItem="Tty-HU-KQH" firstAttribute="leading" secondItem="2Oi-xF-IZu" secondAttribute="leading" constant="10" id="l5g-zG-Y6K"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tty-HU-KQH" secondAttribute="trailing" constant="10" id="lYO-Ju-Hrj"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1488,8 +1489,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Creature Profile" id="oZG-hn-Ke5"/>
                     <connections>
-                        <outlet property="image" destination="YA4-ot-e2t" id="pOt-4R-wYu"/>
                         <outlet property="mainView" destination="2Oi-xF-IZu" id="CRH-O8-gXy"/>
+                        <outlet property="slideshow" destination="Tty-HU-KQH" id="13e-fa-IFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9d-E8-hsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1541,7 +1542,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bear" width="1200" height="800"/>
         <image name="hamburger" width="1200" height="1200"/>
     </resources>
 </document>

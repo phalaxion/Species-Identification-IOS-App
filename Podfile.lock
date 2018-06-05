@@ -1,16 +1,22 @@
 PODS:
   - CSV.swift (2.2.1)
+  - ImageSlideshow (1.6.0):
+    - ImageSlideshow/Core (= 1.6.0)
+  - ImageSlideshow/Core (1.6.0)
 
 DEPENDENCIES:
   - CSV.swift (~> 2.2.1)
+  - ImageSlideshow (~> 1.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CSV.swift
+    - ImageSlideshow
 
 SPEC CHECKSUMS:
   CSV.swift: 5bf3338aff82371cb51cc6dc559d7b45a74bab14
+  ImageSlideshow: 9a1038da5669d2d337ae5ecda2ee8282ff14e9c5
 
-PODFILE CHECKSUM: d0b522ad44934ae4ff6599de498b1e9026e07686
+PODFILE CHECKSUM: 7bb571b49b5568d1722e22de3466aec91e4d1e9b
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

@@ -13,6 +13,7 @@
 		271B1736209806B90097F5C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271B1734209806B90097F5C1 /* Main.storyboard */; };
 		271B1738209806BB0097F5C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271B1737209806BB0097F5C1 /* Assets.xcassets */; };
 		273A0FBD20AC2F6F0036D81C /* invertebrates.csv in Resources */ = {isa = PBXBuildFile; fileRef = 273A0FBC20AC2F6F0036D81C /* invertebrates.csv */; };
+		6372F66B20C6644C005AD541 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6372F66A20C6644B005AD541 /* Resources.bundle */; };
 		6396369920C16FCB00703ECE /* invertebrates test.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6396369820C16FCA00703ECE /* invertebrates test.csv */; };
 		63A8D01320B26F8500AB4C69 /* ShortlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8D01220B26F8500AB4C69 /* ShortlistViewController.swift */; };
 		63A8D01520B26F9C00AB4C69 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8D01420B26F9C00AB4C69 /* ProfileViewController.swift */; };
@@ -27,6 +28,7 @@
 		271B1737209806BB0097F5C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271B173C209806BB0097F5C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273A0FBC20AC2F6F0036D81C /* invertebrates.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invertebrates.csv; sourceTree = "<group>"; };
+		6372F66A20C6644B005AD541 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
 		6396369820C16FCA00703ECE /* invertebrates test.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "invertebrates test.csv"; sourceTree = "<group>"; };
 		63A8D01220B26F8500AB4C69 /* ShortlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortlistViewController.swift; sourceTree = "<group>"; };
 		63A8D01420B26F9C00AB4C69 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		271B172F209806B90097F5C1 /* Species Identification Guide */ = {
 			isa = PBXGroup;
 			children = (
+				6372F66A20C6644B005AD541 /* Resources.bundle */,
 				273A0FBC20AC2F6F0036D81C /* invertebrates.csv */,
 				271B1730209806B90097F5C1 /* AppDelegate.swift */,
 				271B1732209806B90097F5C1 /* ViewController.swift */,
@@ -158,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6372F66B20C6644C005AD541 /* Resources.bundle in Resources */,
 				6396369920C16FCB00703ECE /* invertebrates test.csv in Resources */,
 				271B1738209806BB0097F5C1 /* Assets.xcassets in Resources */,
 				273A0FBD20AC2F6F0036D81C /* invertebrates.csv in Resources */,
@@ -176,10 +180,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Species Identification Guide/Pods-Species Identification Guide-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

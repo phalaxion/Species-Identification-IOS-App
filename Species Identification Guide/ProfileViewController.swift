@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class ProfileViewController: UIViewController {
     
@@ -15,7 +16,9 @@ class ProfileViewController: UIViewController {
     var generatedLabels : [UILabel] = []
     
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var slideshow: ImageSlideshow!
+    var imageList : [ImageSource] = []
     
     func setupProfile() {
         //print(passedHeaders)
@@ -33,7 +36,7 @@ class ProfileViewController: UIViewController {
                 label.translatesAutoresizingMaskIntoConstraints = false
                 
                 if(generatedLabels.count == 0){
-                    label.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10).isActive = true
+                    label.topAnchor.constraint(equalTo: slideshow.bottomAnchor, constant: 10).isActive = true
                 } else {
                     label.topAnchor.constraint(equalTo: (generatedLabels.last!).bottomAnchor, constant: 15).isActive = true
                 }
@@ -47,9 +50,40 @@ class ProfileViewController: UIViewController {
         generatedLabels.last?.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10).isActive = true
     }
     
+    func setupImages(morphoSpecies: String) {
+        let fileManager = FileManager.default
+        let bundleURL = Bundle.main.bundleURL
+        let assetURL = bundleURL.appendingPathComponent("Resources.bundle")
+        let contents = try! fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
+        
+        for item in contents {
+            //if item.lastPathComponent.contains(morphoSpecies){
+                let img = ImageSource(image: UIImage(named: "Resources.bundle/" + item.lastPathComponent)!)
+                imageList.append(img)
+            //}
+        }
+    }
+    
+    @objc func didTap() {
+        slideshow.presentFullScreenController(from: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupProfile()
+        setupImages(morphoSpecies: speciesDetailsPassed[2])
+        
+        slideshow.setImageInputs(imageList)
+        
+        let pageIndicator = UIPageControl()
+        pageIndicator.currentPageIndicatorTintColor = UIColor.lightGray
+        pageIndicator.pageIndicatorTintColor = UIColor.black
+        slideshow.pageIndicator = pageIndicator
+        slideshow.zoomEnabled = true
+        slideshow.pageIndicatorPosition = PageIndicatorPosition(horizontal: .center, vertical: .bottom)
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        slideshow.addGestureRecognizer(gestureRecognizer)
     }
 }
