@@ -57,10 +57,10 @@ class ProfileViewController: UIViewController {
         let contents = try! fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
         
         for item in contents {
-            //if item.lastPathComponent.contains(morphoSpecies){
+            if item.lastPathComponent.lowercased().contains(morphoSpecies.lowercased()){
                 let img = ImageSource(image: UIImage(named: "Resources.bundle/" + item.lastPathComponent)!)
                 imageList.append(img)
-            //}
+            }
         }
     }
     

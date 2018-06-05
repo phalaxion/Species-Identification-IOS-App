@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -849,7 +850,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-R9-TB8">
-                                                                <rect key="frame" x="0.0" y="-974" width="355" height="50"/>
+                                                                <rect key="frame" x="0.0" y="-924" width="355" height="50"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="ptd-ur-s2Y"/>
@@ -862,7 +863,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zml-iG-dHs">
-                                                                <rect key="frame" x="0.0" y="-924" width="355" height="50"/>
+                                                                <rect key="frame" x="0.0" y="-874" width="355" height="50"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="frN-Qe-bJ1"/>
@@ -1379,15 +1380,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8J-de-vcv">
-                                <rect key="frame" x="164" y="144" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8J-de-vcv">
+                                <rect key="frame" x="10" y="104" width="355" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EvR-n6-k4L">
+                                <rect key="frame" x="50" y="158" width="275" height="464"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="XXE-Wn-2zM"/>
+                                </constraints>
+                                <string key="text">Welcome to 'Spineless' - an invertebrate identification app for MQ students at Stanwell Tops. This app currently enables students to identify invertebrates based upon their visible characteristics and features.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.83137254901960789" green="0.83137254901960789" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EvR-n6-k4L" firstAttribute="centerX" secondItem="Y8J-de-vcv" secondAttribute="centerX" id="Ch0-cV-0Np"/>
+                            <constraint firstItem="9Dz-FJ-jci" firstAttribute="bottom" secondItem="EvR-n6-k4L" secondAttribute="bottom" constant="45" id="DE2-58-PxR"/>
+                            <constraint firstItem="Y8J-de-vcv" firstAttribute="top" secondItem="9Dz-FJ-jci" secondAttribute="top" constant="40" id="Zix-ca-ZxJ"/>
+                            <constraint firstItem="9Dz-FJ-jci" firstAttribute="trailing" secondItem="Y8J-de-vcv" secondAttribute="trailing" constant="10" id="dBS-cX-9WC"/>
+                            <constraint firstItem="Y8J-de-vcv" firstAttribute="leading" secondItem="9Dz-FJ-jci" secondAttribute="leading" constant="10" id="jKS-Kd-TGz"/>
+                            <constraint firstItem="EvR-n6-k4L" firstAttribute="top" secondItem="Y8J-de-vcv" secondAttribute="bottom" constant="30" id="qjs-Ty-gKj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9Dz-FJ-jci"/>
                     </view>
                 </viewController>
@@ -1452,15 +1470,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Oi-xF-IZu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-HU-KQH" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                                <rect key="frame" x="10" y="10" width="355" height="300"/>
+                                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-HU-KQH" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                                <rect key="frame" x="10" y="10" width="355" height="236"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="wR5-gb-UUN"/>
+                                                    <constraint firstAttribute="width" secondItem="Tty-HU-KQH" secondAttribute="height" multiplier="355:236" id="Ngm-zX-Wuk"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.83248730959999995" green="0.83248730959999995" blue="0.83248730959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.83137254901960789" green="0.83137254901960789" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Tty-HU-KQH" firstAttribute="top" secondItem="2Oi-xF-IZu" secondAttribute="top" constant="10" id="ZYV-Ou-qLw"/>
                                             <constraint firstItem="Tty-HU-KQH" firstAttribute="leading" secondItem="2Oi-xF-IZu" secondAttribute="leading" constant="10" id="l5g-zG-Y6K"/>
@@ -1505,21 +1523,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acknowledgements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQi-Fs-FYw">
-                                <rect key="frame" x="112" y="148" width="151" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Acknowledgements BG" translatesAutoresizingMaskIntoConstraints="NO" id="lef-rV-wHb">
+                                <rect key="frame" x="-37" y="29" width="449" height="638"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acknowledgements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQi-Fs-FYw">
+                                <rect key="frame" x="10" y="104" width="355" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bxY-HZ-aIH">
+                                <rect key="frame" x="50" y="163" width="275" height="459"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="bN2-SW-iiy"/>
+                                </constraints>
+                                <string key="text">Development of the app was made possible via a Macquarie University Strategic Priority Grant 2018. The app was designed and created by David Rosetti, Daniel Chin and Cyrus Ng with guidance from Linda Beaumont and Katherine McClellan. With the underlying invertebrate data collated by Gabrielle Suares, Theotime Colin, Stephen Fellenberg and Katherine McClellan. Photographs were taken by Gabrielle Suares.</string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FK7-ez-7Jg" firstAttribute="bottom" secondItem="lef-rV-wHb" secondAttribute="bottom" id="06N-Tr-9qT"/>
+                            <constraint firstItem="eQi-Fs-FYw" firstAttribute="top" secondItem="FK7-ez-7Jg" secondAttribute="top" constant="40" id="3NS-nC-u2W"/>
+                            <constraint firstItem="bxY-HZ-aIH" firstAttribute="top" secondItem="eQi-Fs-FYw" secondAttribute="bottom" constant="30" id="4vq-eY-IMp"/>
+                            <constraint firstItem="bxY-HZ-aIH" firstAttribute="centerX" secondItem="eQi-Fs-FYw" secondAttribute="centerX" id="8Vy-G9-sua"/>
+                            <constraint firstItem="FK7-ez-7Jg" firstAttribute="bottom" secondItem="bxY-HZ-aIH" secondAttribute="bottom" constant="45" id="BDz-JS-r9j"/>
+                            <constraint firstItem="eQi-Fs-FYw" firstAttribute="leading" secondItem="FK7-ez-7Jg" secondAttribute="leading" constant="10" id="Tkw-sL-gcS"/>
+                            <constraint firstItem="FK7-ez-7Jg" firstAttribute="trailing" secondItem="lef-rV-wHb" secondAttribute="trailing" constant="-37" id="b3g-cZ-Ucp"/>
+                            <constraint firstItem="lef-rV-wHb" firstAttribute="top" secondItem="FK7-ez-7Jg" secondAttribute="top" constant="-35" id="scP-hX-YEC"/>
+                            <constraint firstItem="lef-rV-wHb" firstAttribute="leading" secondItem="FK7-ez-7Jg" secondAttribute="leading" constant="-37" id="tFT-Nj-kh1"/>
+                            <constraint firstItem="FK7-ez-7Jg" firstAttribute="trailing" secondItem="eQi-Fs-FYw" secondAttribute="trailing" constant="10" id="wuI-kT-ztE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FK7-ez-7Jg"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Wy-KP-bb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="-591"/>
+            <point key="canvasLocation" x="269.60000000000002" y="-591.45427286356824"/>
         </scene>
         <!--abel-->
         <scene sceneID="RwT-S3-XXI">
@@ -1542,6 +1584,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Acknowledgements BG" width="1654" height="2339"/>
         <image name="hamburger" width="1200" height="1200"/>
     </resources>
 </document>

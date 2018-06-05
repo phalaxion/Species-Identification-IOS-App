@@ -65,7 +65,7 @@ class ShortlistViewController: UIViewController {
         super.viewDidLoad()
         
         //print(searchResultPassed)
-        print(searchResultPassed.count)
+        //print(searchResultPassed.count)
         if searchResultPassed.count >= 1 {
             generateSpeciesButtons()
         } else {
