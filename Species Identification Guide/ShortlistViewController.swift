@@ -20,7 +20,7 @@ class ShortlistViewController: UIViewController {
         for species in searchResultPassed {
             // Setting button properties (size, width, colours, etc.)
             let speciesButton = UIButton(type: .custom) as UIButton
-            speciesButton.backgroundColor = UIColor(red: 196/255, green: 255/255, blue: 207/255, alpha: 1)
+            speciesButton.backgroundColor = UIColor(red: 167/255, green: 255/255, blue: 129/255, alpha: 1)
             speciesButton.setTitleColor(UIColor.darkText, for: .normal)
             speciesButton.setTitle(species[0], for: .normal)
             speciesButton.titleLabel?.text = species[0]
