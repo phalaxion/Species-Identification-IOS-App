@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
         for i in 0...(speciesDetailsPassed.count - 1) {
             //if speciesDetailsPassed[i] != "" {
                 let label: UILabel = UILabel()
-                label.backgroundColor = #colorLiteral(red: 0.8324873096, green: 0.8324873096, blue: 0.8324873096, alpha: 1)
+                label.backgroundColor = UIColor(red:0/255,green:0/255,blue:0/255,alpha: 0)
                 label.textColor = UIColor.darkText
                 label.text = "\(passedHeaders[i]): \(speciesDetailsPassed[i])"
                 label.lineBreakMode = .byWordWrapping
@@ -77,7 +77,7 @@ class ProfileViewController: UIViewController {
         slideshow.setImageInputs(imageList)
         
         let pageIndicator = UIPageControl()
-        pageIndicator.currentPageIndicatorTintColor = UIColor.lightGray
+        pageIndicator.currentPageIndicatorTintColor = UIColor(red:0/255,green:0/255,blue:0/255,alpha: 0)
         pageIndicator.pageIndicatorTintColor = UIColor.black
         slideshow.pageIndicator = pageIndicator
         slideshow.zoomEnabled = true
