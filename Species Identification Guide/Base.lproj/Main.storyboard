@@ -1588,6 +1588,9 @@
                                         <state key="normal" title="Reset Search">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f5E-Sv-7Mc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puc-AE-Avj">
                                         <rect key="frame" x="110" y="110" width="180" height="40"/>

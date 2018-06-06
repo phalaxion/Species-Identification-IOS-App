@@ -332,6 +332,43 @@ class ViewController: UIViewController {
             menuVisible = !menuVisible
         }
     }
+    //-----RESET All Categories------//
+    
+    @IBAction func resetSearch(_ sender: UIButton) {
+        BodyTypeSelection = ""
+        BodyConstrictionSelection = ""
+        LegNumSelection = ""
+        LegTypeSelection = ""
+        MoreLegSelection = ""
+        WingNumSelection = ""
+        WingTextureSelection = ""
+        AntennaeSelection = ""
+        AntennaeLengthSelection = ""
+        MouthPartsSelection = ""
+        AbdomenAppendageSelection = ""
+        AverageSizeSelection = ""
+        EyePresenceSelection = ""
+        HeadFeaturesSelection = ""
+        ElytraLengthSelection = ""
+        AntSubfamilySelection = ""
+        BodyTypeButton.setTitle("Body Type", for: .normal)
+        BodyConstrictionButton.setTitle("Body Constriction Present", for: .normal)
+        SizeButton.setTitle("Size", for: .normal)
+        AbdomenAppendageButton.setTitle("Abdomen Appendage", for: .normal)
+        MouthPartButton.setTitle("Mouth Parts", for: .normal)
+        EyePresenceButton.setTitle("Presence of Eyes", for: .normal)
+        HeadFeatureButton.setTitle("Head Shape Features", for: .normal)
+        LegNumberButton.setTitle("Number of Legs", for: .normal)
+        LegTypeButton.setTitle("Leg Type", for: .normal)
+        MoreLegButton.setTitle("If Greater than 8 Legs", for: .normal)
+        WingNumButton.setTitle("Number of Wings", for: .normal)
+        WingTextureButton.setTitle("Wing Texture", for: .normal)
+        ElytraLengthButton.setTitle("Length of Elytra", for: .normal)
+        AntennaeButton.setTitle("Antennae", for: .normal)
+        AntennaeLengthButton.setTitle("Antennae Length", for: .normal)
+        AntCriteriaButton.setTitle("Criteria for Ant Subfamilies", for: .normal)
+        autoQuery()
+    }
     //-----Characteristic Menu Groupings-----//
     //Body
     @IBOutlet var Bodys: [UIStackView]!
