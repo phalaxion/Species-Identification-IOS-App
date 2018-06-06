@@ -16,14 +16,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Species_Identification_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RJ-IE-yZs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1936"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBF-Mv-d58">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1936"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="490"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kha-cP-ZS6">
                                                 <rect key="frame" x="10" y="10" width="315" height="40"/>
@@ -1527,6 +1527,7 @@
                                             <constraint firstAttribute="trailing" secondItem="ifi-Rg-xhk" secondAttribute="trailing" constant="10" id="19Z-66-OkK"/>
                                             <constraint firstItem="ifi-Rg-xhk" firstAttribute="top" secondItem="wBF-Mv-d58" secondAttribute="top" constant="10" id="7a9-CW-y9K"/>
                                             <constraint firstAttribute="trailing" secondItem="p8a-bn-BBp" secondAttribute="trailing" constant="10" id="7aj-NP-LWc"/>
+                                            <constraint firstAttribute="bottom" secondItem="sz4-aD-l0D" secondAttribute="bottom" constant="10" id="7m9-vW-ewU"/>
                                             <constraint firstItem="p8a-bn-BBp" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="9zg-Na-5bw"/>
                                             <constraint firstItem="kha-cP-ZS6" firstAttribute="leading" secondItem="wBF-Mv-d58" secondAttribute="leading" constant="10" id="B8t-WS-dlD"/>
                                             <constraint firstItem="Gtm-0w-3bD" firstAttribute="top" secondItem="ifi-Rg-xhk" secondAttribute="bottom" constant="10" id="BaP-CI-G4e"/>
@@ -1564,7 +1565,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nm-sw-b5g">
-                                <rect key="frame" x="-100" y="64" width="300" height="1936"/>
+                                <rect key="frame" x="-100" y="64" width="300" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-gW-7lb">
                                         <rect key="frame" x="110" y="10" width="180" height="40"/>
@@ -1616,16 +1617,25 @@
                                             <segue destination="rY0-fD-dGY" kind="show" id="ZlN-HQ-mBB"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mq" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-Dg-YnI">
+                                        <rect key="frame" x="110" y="393" width="180" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="tdL-my-xFn"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VOS-Dg-YnI" secondAttribute="bottom" constant="10" id="1LY-br-4CO"/>
                                     <constraint firstAttribute="trailing" secondItem="Z4v-xS-uf8" secondAttribute="trailing" constant="10" id="83X-Y0-Crz"/>
                                     <constraint firstItem="Puc-AE-Avj" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="110" id="HeQ-cK-MEW"/>
                                     <constraint firstItem="Z4v-xS-uf8" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="110" id="RZn-Ku-idh"/>
                                     <constraint firstAttribute="trailing" secondItem="pnF-gW-7lb" secondAttribute="trailing" constant="10" id="W38-ri-Z9N"/>
                                     <constraint firstItem="Bny-d1-Edy" firstAttribute="top" secondItem="pnF-gW-7lb" secondAttribute="bottom" constant="10" id="YVx-55-aei"/>
                                     <constraint firstItem="Bny-d1-Edy" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="110" id="a5i-1D-z03"/>
+                                    <constraint firstItem="VOS-Dg-YnI" firstAttribute="leading" secondItem="3nm-sw-b5g" secondAttribute="leading" constant="110" id="a9Z-3j-WXU"/>
                                     <constraint firstItem="pnF-gW-7lb" firstAttribute="top" secondItem="3nm-sw-b5g" secondAttribute="top" constant="10" id="cYE-rt-OWV"/>
+                                    <constraint firstAttribute="trailing" secondItem="VOS-Dg-YnI" secondAttribute="trailing" constant="10" id="eux-CG-HQx"/>
                                     <constraint firstAttribute="trailing" secondItem="Puc-AE-Avj" secondAttribute="trailing" constant="10" id="qMe-6Z-BaB"/>
                                     <constraint firstAttribute="trailing" secondItem="Bny-d1-Edy" secondAttribute="trailing" constant="10" id="qcy-yV-KcJ"/>
                                     <constraint firstItem="Puc-AE-Avj" firstAttribute="top" secondItem="Bny-d1-Edy" secondAttribute="bottom" constant="10" id="uvj-9G-IaH"/>
@@ -1648,11 +1658,6 @@
                             <constraint firstItem="3nm-sw-b5g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="knX-QV-PIL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="3nm-sw-b5g"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DO5-zW-WUQ" appends="YES" id="jyG-W5-x1t"/>
                         </connections>
@@ -1664,7 +1669,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="2000"/>
                     <connections>
                         <outlet property="AbdomenAppendageButton" destination="s0V-VE-pP3" id="EkU-xm-TEu"/>
                         <outlet property="AntCriteriaButton" destination="AzT-TK-nJw" id="qdF-FX-ZGy"/>
@@ -1774,7 +1778,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1076" y="133.13343328335833"/>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Nzp-TC-SRV">
@@ -1990,5 +1994,6 @@
     <resources>
         <image name="Acknowledgements BG" width="1654" height="2339"/>
         <image name="hamburger" width="1200" height="1200"/>
+        <image name="mq" width="910" height="866"/>
     </resources>
 </document>
