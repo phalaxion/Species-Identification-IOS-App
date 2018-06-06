@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     // List of variables holding their corresponding drop-down menu selection
     var BodyTypeSelection = ""
-    var BodyConstrictionSelection = "No"
+    var BodyConstrictionSelection = ""
     var LegNumSelection = ""
     var LegTypeSelection = ""
     var MoreLegSelection = ""
@@ -332,17 +332,11 @@ class ViewController: UIViewController {
             menuVisible = !menuVisible
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    //-----Characteristic Group Menus-----//
-    @IBOutlet var bodySubMenuItems: [UIStackView]!
-    @IBAction func bodySubMenus(_ sender: Any) {
-        print("unhide")
-        bodySubMenuItems.forEach { (button) in
+    //-----Characteristic Menu Groupings-----//
+    //Body
+    @IBOutlet var Bodys: [UIStackView]!
+    @IBAction func BodySelection(_ sender: UIButton) { // Dropdown header selected
+        Bodys.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
@@ -350,10 +344,10 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet var legSubMenuItems: [UIStackView]!
-    @IBAction func legSubMenus(_ sender: UIButton) {
-        print("unhide")
-        legSubMenuItems.forEach { (button) in
+    //Head
+    @IBOutlet var Heads: [UIStackView]!
+    @IBAction func HeadSelection(_ sender: UIButton) { // Dropdown header selected
+        Heads.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
@@ -361,507 +355,660 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet var wingSubMenuItems: [UIStackView]!
+    //Legs
+    @IBOutlet var Legs: [UIStackView]!
+    @IBAction func LegSelection(_ sender: UIButton) { // Dropdown header selected
+        Legs.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
     
-    @IBAction func wingSubMenus(_ sender: UIButton) {
-        print("unhide")
-        wingSubMenuItems.forEach { (button) in
+    //Wings
+    @IBOutlet var Wings: [UIStackView]!
+    @IBAction func WingSelection(_ sender: UIButton) { // Dropdown header selected
+        Wings.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    @IBOutlet var antennaeSubMenuItems: [UIStackView]!
-    @IBAction func antennaeSubMenus(_ sender: UIButton) {
-        print("unhide")
-        antennaeSubMenuItems.forEach { (button) in
+    
+    //AntennaeGroup
+    @IBOutlet var AntennaeGroups: [UIStackView]!
+    @IBAction func AntennaeGroupSelection(_ sender: UIButton) { // Dropdown header selected
+        AntennaeGroups.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
+    
     
     //-----Characteristic Submenus-----//
     //Cases must be exactly the same as the button in storyboard
     
-    // BODY TYPE
-    @IBOutlet weak var bodyTypeButton: UIButton!
-    @IBOutlet var bodyTypes: [UIButton]!
-    @IBAction func bodyTypeChoice(_ sender: UIButton) {
-        bodyTypes.forEach { (button) in
+    //Body Type
+    @IBOutlet weak var BodyTypeButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var BodyTypes: [UIButton]! //All of the Dropdown Options
+    @IBAction func BodyTypeSelection(_ sender: UIButton) { // Dropdown header selected
+        BodyTypes.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum BodyTypes: String {
+    enum BodyTypeOptions: String { //Dropdown Option Names
         case soft = "Soft Body"
         case shell = "Shell"
         case exo = "Tough Exoskeleton"
     }
-    @IBAction func bodyTypeTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let bodyType = BodyTypes(rawValue: title) else {
+    @IBAction func BodyTypeTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let bodyType = BodyTypeOptions(rawValue: title) else {
             return
         }
-        BodyTypeSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch bodyType {
+        BodyTypeSelection = title
+        autoQuery()
+        switch bodyType { //cases for each option
         case .soft:
-            bodyTypeButton.setTitle("Soft Body", for: .normal)
-            bodyTypeChoice(sender)
+            BodyTypeButton.setTitle("Soft Body", for: .normal)
+            BodyTypeSelection(sender)
         case .shell:
-            bodyTypeButton.setTitle("Shell", for: .normal)
-            bodyTypeChoice(sender)
+            BodyTypeButton.setTitle("Shell", for: .normal)
+            BodyTypeSelection(sender)
         case .exo:
-            bodyTypeButton.setTitle("Tough Exoskeleton", for: .normal)
-            bodyTypeChoice(sender)
+            BodyTypeButton.setTitle("Tough Exoskeleton", for: .normal)
+            BodyTypeSelection(sender)
         }
     }
     
-    // BODY CONSTRICTION
-    @IBOutlet weak var abdomenThoraxConstriction: UIButton!
-    var count = 0
-    @IBAction func abdomenThoraxConstrictionButton(_ sender: Any) {
-        count = count + 1
-        if (count%2 == 1){
-            abdomenThoraxConstriction.setTitle("Constriction Between Thorax and Abdomen", for: .normal)
-            BodyConstrictionSelection = "Yes" // Sets global variable to the current menu selection
-            autoQuery() // Runs the update query for species shortlist
-        }
-        else {
-            abdomenThoraxConstriction.setTitle("No Constriction Between Thorax and Abdomen", for: .normal)
-            BodyConstrictionSelection = "No" // Sets global variable to the current menu selection
-            autoQuery() // Runs the update query for species shortlist
-        }
-    }
-    
-    // LEG NUMBER
-    @IBOutlet weak var numLegsButton: UIButton!
-    @IBOutlet var numLegs: [UIButton]!
-    @IBAction func numLegChoice(_ sender: UIButton) {
-        numLegs.forEach { (button) in
+    //Body Constriction
+    @IBOutlet weak var BodyConstrictionButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var BodyConstrictions: [UIButton]! //All of the Dropdown Options
+    @IBAction func BodyConstrictionSelection(_ sender: UIButton) { // Dropdown header selected
+        BodyConstrictions.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum NumLegs: String {
-        case zero = "0 Legs"
-        case six = "6 Legs"
-        case eight = "8 Legs"
-        case eightPlus = "More than 8 Legs"
+    enum BodyConstrictionOptions: String { //Dropdown Option Names
+        case no = "No"
+        case yes = "Yes"
     }
-    @IBAction func numLegsTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let shape = NumLegs(rawValue: title) else {
+    @IBAction func BodyConstrictionTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let BodyConstriction = BodyConstrictionOptions(rawValue: title) else { //Make enum list
             return
         }
-        LegNumSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch shape{
+        BodyConstrictionSelection = title
+        autoQuery()
+        switch BodyConstriction { //cases for each option
+        case .no:
+            BodyConstrictionButton.setTitle("No", for: .normal)
+            BodyConstrictionSelection(sender)
+        case .yes:
+            BodyConstrictionButton.setTitle("Yes", for: .normal)
+            BodyConstrictionSelection(sender)
+        }
+    }
+    
+    //Leg Number
+    @IBOutlet weak var LegNumberButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var LegNumbers: [UIButton]! //All of the Dropdown Options
+    @IBAction func LegNumberSelection(_ sender: UIButton) { // Dropdown header selected
+        LegNumbers.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum LegNumberOptions: String { //Dropdown Option Names
+        case zero = "0"
+        case six = "6"
+        case eight = "8"
+        case morethaneight = ">8"
+    }
+    @IBAction func LegNumberTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let LegNumber = LegNumberOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        LegNumSelection = title
+        autoQuery()
+        switch LegNumber { //cases for each option
         case .zero:
-            numLegsButton.setTitle("0 Legs", for: .normal)
-            numLegChoice(sender)
+            LegNumberButton.setTitle("0", for: .normal)
+            LegNumberSelection(sender)
         case .six:
-            numLegsButton.setTitle("6 Legs", for: .normal)
-            numLegChoice(sender)
+            LegNumberButton.setTitle("6", for: .normal)
+            LegNumberSelection(sender)
         case .eight:
-            numLegsButton.setTitle("8 Legs", for: .normal)
-            numLegChoice(sender)
-        case .eightPlus:
-            numLegsButton.setTitle("More than 8 Legs", for: .normal)
-            numLegChoice(sender)
+            LegNumberButton.setTitle("8", for: .normal)
+            LegNumberSelection(sender)
+        case .morethaneight:
+            LegNumberButton.setTitle(">8", for: .normal)
+            LegNumberSelection(sender)
         }
     }
     
-    // LEG TYPE
-    @IBOutlet weak var legTypeButton: UIButton!
-    @IBOutlet var legTypes: [UIButton]!
-    @IBAction func legTypeChoice(_ sender: UIButton) {
-        legTypes.forEach { (button) in
+    //Leg Type
+    @IBOutlet weak var LegTypeButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var LegTypes: [UIButton]! //All of the Dropdown Options
+    @IBAction func LegTypeSelection(_ sender: UIButton) { // Dropdown header selected
+        LegTypes.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum LegTypes: String {
-        case na = "N/A"
-        case jumpingHind = "Strong jumping hind legs"
-        case raptorial = "Raptorial"
-        case digging = "Front Legs flattened for digging"
+    enum LegTypeOptions: String { //Dropdown Option Names
+        case none = "No special features or no legs"
+        case jump = "Strong jumping hind legs"
+        case raptor = "Raptorial"
+        case digging = "Front legs flattened for digging"
     }
-    @IBAction func legTypeTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let legType = LegTypes(rawValue: title) else {
+    @IBAction func LegTypeTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let LegType = LegTypeOptions(rawValue: title) else { //Make enum list
             return
         }
-        LegTypeSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch legType{
-        case .na:
-            legTypeButton.setTitle("N/A", for: .normal)
-            legTypeChoice(sender)
-        case .jumpingHind:
-            legTypeButton.setTitle("Strong jumping hind legs", for: .normal)
-            legTypeChoice(sender)
-        case .raptorial:
-            legTypeButton.setTitle("Raptorial", for: .normal)
-            legTypeChoice(sender)
+        LegTypeSelection = title
+        autoQuery()
+        switch LegType { //cases for each option
+        case .none:
+            LegTypeButton.setTitle("No special features or no legs", for: .normal)
+            LegTypeSelection(sender)
+        case .jump:
+            LegTypeButton.setTitle("Strong jumping hind legs", for: .normal)
+            LegTypeSelection(sender)
+        case .raptor:
+            LegTypeButton.setTitle("Raptorial", for: .normal)
+            LegTypeSelection(sender)
         case .digging:
-            legTypeButton.setTitle("Front Legs flattened for digging", for: .normal)
-            legTypeChoice(sender)
+            LegTypeButton.setTitle("Front legs flattened for digging", for: .normal)
+            LegTypeSelection(sender)
         }
     }
     
-    // WING NUMBER
-    @IBOutlet weak var numWingsButton: UIButton!
-    @IBOutlet var numWings: [UIButton]!
-    @IBAction func numWingsChoice(_ sender: UIButton) {
-        numWings.forEach { (button) in
+    //More than 8 Legs
+    @IBOutlet weak var MoreLegButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var MoreLegs: [UIButton]! //All of the Dropdown Options
+    @IBAction func MoreLegSelection(_ sender: UIButton) { // Dropdown header selected
+        MoreLegs.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum NumWings: String {
-        case none = "No Wings"
-        case elytra = "2 Wings (+ elytra)"
-        case hemelytra = "2 Wings (+ hemelytra)"
-        case halteres = "2 Wings (+ halteres)"
+    enum MoreLegOptions: String { //Dropdown Option Names
+        case one = "1 pair per segment"
+        case two = "2 pairs per segment"
     }
-    @IBAction func numWingsTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let numWing = NumWings(rawValue: title) else {
+    @IBAction func MoreLegTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let MoreLeg = MoreLegOptions(rawValue: title) else { //Make enum list
             return
         }
-        WingNumSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch numWing{
+        MoreLegSelection = title
+        autoQuery()
+        switch MoreLeg { //cases for each option
+        case .one:
+            MoreLegButton.setTitle("1 pair per segment", for: .normal)
+            MoreLegSelection(sender)
+        case .two:
+            MoreLegButton.setTitle("2 pairs per segment", for: .normal)
+            MoreLegSelection(sender)
+        }
+    }
+    
+    //Wing Number
+    @IBOutlet weak var WingNumButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var WingNums: [UIButton]! //All of the Dropdown Options
+    @IBAction func WingNumSelection(_ sender: UIButton) { // Dropdown header selected
+        WingNums.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum WingNumOptions: String { //Dropdown Option Names
+        case none = "0"
+        case four = "4"
+        case elytra = "2 + elytra"
+        case hemelytra = "2 + hemelytra"
+        case halteres = "2 + halteres"
+    }
+    @IBAction func WingNumTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let WingNum = WingNumOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        WingNumSelection = title
+        autoQuery()
+        switch WingNum { //cases for each option
         case .none:
-            numWingsButton.setTitle("No Wings", for: .normal)
-            numWingsChoice(sender)
+            WingNumButton.setTitle("0", for: .normal)
+            WingNumSelection(sender)
+        case .four:
+            WingNumButton.setTitle("4", for: .normal)
+            WingNumSelection(sender)
         case .elytra:
-            numWingsButton.setTitle("2 Wings (+ elytra)", for: .normal)
-            numWingsChoice(sender)
+            WingNumButton.setTitle("2 + elytra", for: .normal)
+            WingNumSelection(sender)
         case .hemelytra:
-            numWingsButton.setTitle("2 Wings (+ hemelytra)", for: .normal)
-            numWingsChoice(sender)
+            WingNumButton.setTitle("2 + hemelytra", for: .normal)
+            WingNumSelection(sender)
         case .halteres:
-            numWingsButton.setTitle("2 Wings (+ halteres)", for: .normal)
-            numWingsChoice(sender)
+            WingNumButton.setTitle("2 + halteres", for: .normal)
+            WingNumSelection(sender)
         }
     }
     
-    // WING TEXTURE
-    @IBOutlet weak var wingTextureButton: UIButton!
-    @IBOutlet var wingTextures: [UIButton]!
-    @IBAction func wingTextureChoice(_ sender: UIButton) {
-        wingTextures.forEach { (button) in
+    //Wing Texture
+    @IBOutlet weak var WingTextureButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var WingTextures: [UIButton]! //All of the Dropdown Options
+    @IBAction func WingTextureSelection(_ sender: UIButton) { // Dropdown header selected
+        WingTextures.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum WingTextures: String {
+    enum WingTextureOptions: String { //Dropdown Option Names
+        case none = "No wings"
+        case scaly = "Scaly and patterned"
+        case complex = "Membraneous, complex"
+        case simple = "Membraneous, simple"
         case hairy = "Hairy"
-        case scaly = "Scaly and Patterned"
-        case membranous1 = "Complex vein pattern"
-        case membranous2 = "Simple vein pattern"
     }
-    @IBAction func wingTextureTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let wingTexture = WingTextures(rawValue: title) else {
+    @IBAction func WingTextureTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let WingTexture = WingTextureOptions(rawValue: title) else { //Make enum list
             return
         }
-        WingTextureSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch wingTexture{
-        case .hairy:
-            wingTextureButton.setTitle("Hairy", for: .normal)
-            wingTextureChoice(sender)
-        case .scaly:
-            wingTextureButton.setTitle("Scaly and Patterned)", for: .normal)
-            wingTextureChoice(sender)
-        case .membranous1:
-            wingTextureButton.setTitle("Complex vein pattern", for: .normal)
-            wingTextureChoice(sender)
-        case .membranous2:
-            wingTextureButton.setTitle("Simple vein pattern", for: .normal)
-            wingTextureChoice(sender)
-        }
-    }
-    
-    // ANTENNAE TYPE
-    @IBOutlet weak var antennaeButton: UIButton!
-    @IBOutlet var antennae: [UIButton]!
-    @IBAction func antennaeChoice(_ sender: UIButton) {
-        antennae.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    enum Antennae: String {
-        case fileform = "Filiform"
-        case beadlike = "Bead-like"
-        case longFirst = "Long first segment"
-        case biramous = "Biramous"
-        case clubbed = "Clubbed"
-    }
-    @IBAction func antannaeTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let antennae = Antennae(rawValue: title) else {
-            return
-        }
-        AntennaeSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch antennae{
-        case .fileform:
-            antennaeButton.setTitle("Filiform", for: .normal)
-            antennaeChoice(sender)
-        case .beadlike:
-            antennaeButton.setTitle("Bead-like", for: .normal)
-            antennaeChoice(sender)
-        case .longFirst:
-            antennaeButton.setTitle("Long first segment", for: .normal)
-            antennaeChoice(sender)
-        case .biramous:
-            antennaeButton.setTitle("Biramous", for: .normal)
-            antennaeChoice(sender)
-        case .clubbed:
-            antennaeButton.setTitle("Clubbed", for: .normal)
-            antennaeChoice(sender)
-        }
-    }
-    
-    // ANTENNAE LENGTH
-    @IBOutlet var antennaLengths: [UIButton]!
-    @IBOutlet weak var antennaLengthButton: UIButton!
-    @IBAction func antennaLengthChoice(_ sender: UIButton) {
-        antennaLengths.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    enum AntennaLengths: String {
-        case none = "No antenna"
-        case short = "Short"
-        case long = "Long First Segment"
-    }
-    @IBAction func antennaLengthTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let antennaLength = AntennaLengths(rawValue: title) else {
-            return
-        }
-        AntennaeLengthSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch antennaLength{
+        WingTextureSelection = title
+        autoQuery()
+        switch WingTexture { //cases for each option
         case .none:
-            antennaLengthButton.setTitle("No antenna", for: .normal)
-            antennaLengthChoice(sender)
-        case .short:
-            antennaLengthButton.setTitle("Short", for: .normal)
-            antennaLengthChoice(sender)
+            WingTextureButton.setTitle("No wings", for: .normal)
+            WingTextureSelection(sender)
+        case .scaly:
+            WingTextureButton.setTitle("Scaly and patterned", for: .normal)
+            WingTextureSelection(sender)
+        case .simple:
+            WingTextureButton.setTitle("Membraneous, complex", for: .normal)
+            WingTextureSelection(sender)
+        case .complex:
+            WingTextureButton.setTitle("Membraneous, simple", for: .normal)
+            WingTextureSelection(sender)
+        case .hairy:
+            WingTextureButton.setTitle("Hairy", for: .normal)
+            WingTextureSelection(sender)
+        }
+    }
+    
+    //Antennae
+    @IBOutlet weak var AntennaeButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var Antennaes: [UIButton]! //All of the Dropdown Options
+    @IBAction func AntennaeSelection(_ sender: UIButton) { // Dropdown header selected
+        Antennaes.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum AntennaeOptions: String { //Dropdown Option Names
+        case absent = "Absent"
+        case filiform = "Filiform"
+        case bead = "Bead-like"
+        case long = "Long first segment"
+        case club = "Club at the end"
+        case biramous = "Biramous"
+    }
+    @IBAction func AntennaeTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let Antennae = AntennaeOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        AntennaeSelection = title
+        autoQuery()
+        switch Antennae { //cases for each option
+        case .absent:
+            AntennaeButton.setTitle("Absent", for: .normal)
+            AntennaeSelection(sender)
+        case .filiform:
+            AntennaeButton.setTitle("Filiform", for: .normal)
+            AntennaeSelection(sender)
+        case .bead:
+            AntennaeButton.setTitle("Bead-like", for: .normal)
+            AntennaeSelection(sender)
         case .long:
-            antennaLengthButton.setTitle("Long First Segment", for: .normal)
-            antennaLengthChoice(sender)
+            AntennaeButton.setTitle("Long first segment", for: .normal)
+            AntennaeSelection(sender)
+        case .club:
+            AntennaeButton.setTitle("Club at the end", for: .normal)
+            AntennaeSelection(sender)
+        case .biramous:
+            AntennaeButton.setTitle("Biramous", for: .normal)
+            AntennaeSelection(sender)
         }
     }
     
-    //  MOUTH PARTS
-    @IBOutlet weak var mouthPartsButton: UIButton!
-    @IBOutlet var mouthParts: [UIButton]!
-    @IBAction func mouthPartsChoice(_ sender: UIButton) {
-        mouthParts.forEach { (button) in
+    //Antennae Length
+    @IBOutlet weak var AntennaeLengthButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var AntennaeLengths: [UIButton]! //All of the Dropdown Options
+    @IBAction func AntennaeLengthSelection(_ sender: UIButton) { // Dropdown header selected
+        AntennaeLengths.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum MouthParts: String {
+    enum AntennaeLengthOptions: String { //Dropdown Option Names
+        case none = "No antennae"
+        case short = "Short"
+        case medium = "Medium"
+        case long = "Long"
+    }
+    @IBAction func AntennaeLengthTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let AntennaeLength = AntennaeLengthOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        AntennaeLengthSelection = title
+        autoQuery()
+        switch AntennaeLength { //cases for each option
+        case .none:
+            AntennaeLengthButton.setTitle("No antennae", for: .normal)
+            AntennaeLengthSelection(sender)
+        case .short:
+            AntennaeLengthButton.setTitle("Short", for: .normal)
+            AntennaeLengthSelection(sender)
+        case .medium:
+            AntennaeLengthButton.setTitle("Medium", for: .normal)
+            AntennaeLengthSelection(sender)
+        case .long:
+            AntennaeLengthButton.setTitle("Long", for: .normal)
+            AntennaeLengthSelection(sender)
+        }
+    }
+    
+    //Mouth Parts
+    @IBOutlet weak var MouthPartButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var MouthParts: [UIButton]! //All of the Dropdown Options
+    @IBAction func MouthPartSelection(_ sender: UIButton) { // Dropdown header selected
+        MouthParts.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum MouthPartOptions: String { //Dropdown Option Names
         case chewing = "Chewing"
-        case piercing = "Piercing or Sucking"
-        case enclosed = "Enclosed / Not visible"
+        case suck = "Piercing or sucking"
+        case enclosed = "Enclosed/not visible"
     }
-    @IBAction func mouthPartsTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let mouthPart = MouthParts(rawValue: title) else {
+    @IBAction func MouthPartTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let MouthPart = MouthPartOptions(rawValue: title) else { //Make enum list
             return
         }
-        MouthPartsSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch mouthPart{
+        MouthPartsSelection = title
+        autoQuery()
+        switch MouthPart { //cases for each option
         case .chewing:
-            mouthPartsButton.setTitle("Chewing", for: .normal)
-            mouthPartsChoice(sender)
-        case .piercing:
-            mouthPartsButton.setTitle("Piercing or Sucking ", for: .normal)
-            mouthPartsChoice(sender)
+            MouthPartButton.setTitle("Chewing", for: .normal)
+            MouthPartSelection(sender)
+        case .suck:
+            MouthPartButton.setTitle("Piercing or sucking", for: .normal)
+            MouthPartSelection(sender)
         case .enclosed:
-            mouthPartsButton.setTitle("Enclosed / Not visible", for: .normal)
-            mouthPartsChoice(sender)
+            MouthPartButton.setTitle("Enclosed/not visible", for: .normal)
+            MouthPartSelection(sender)
         }
     }
     
-    // ABDOMEN APPENDAGE
-    @IBOutlet weak var abdomenAppendageButton: UIButton!
-    @IBOutlet var abdomenAppendages: [UIButton]!
-    @IBAction func abdomenAppendageChoice(_ sender: UIButton) {
-        abdomenAppendages.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: { //doesnt seem to be working for this dropdown?
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    enum AbdomenAppendages: String {
-        case furculum = "Furculum"
-        case piercing = "Piercing"
-        case cerci = "2 Grasping Cerci"
-        case tails1 = "2 Tail-like Cerci"
-        case tails2 = "3 Tail-like Cerci"
-        case telson = "Telson"
-    }
-    @IBAction func abdomenAppendageTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let abdomenAppendage = AbdomenAppendages(rawValue: title) else {
-            return
-        }
-        AbdomenAppendageSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch abdomenAppendage{
-            case .furculum:
-                abdomenAppendageButton.setTitle("Furculum", for: .normal)
-                abdomenAppendageChoice(sender)
-            case .piercing:
-                abdomenAppendageButton.setTitle("Piercing", for: .normal)
-                abdomenAppendageChoice(sender)
-            case .cerci:
-                abdomenAppendageButton.setTitle("2 Grasping Cerci", for: .normal)
-                abdomenAppendageChoice(sender)
-            case .tails1:
-                abdomenAppendageButton.setTitle("2 Tail-like Cerci", for: .normal)
-                abdomenAppendageChoice(sender)
-            case .tails2:
-                abdomenAppendageButton.setTitle("3 Tail-like Cerci", for: .normal)
-                abdomenAppendageChoice(sender)
-            case .telson:
-                abdomenAppendageButton.setTitle("Telson", for: .normal)
-                abdomenAppendageChoice(sender)
-        }
-    }
-    
-    // SIZE
-    @IBOutlet weak var sizeButton: UIButton!
-    @IBOutlet var sizes: [UIButton]!
-    @IBAction func sizeChoice(_ sender: UIButton) {
-        sizes.forEach { (button) in
+    //Abdomen Appendage
+    @IBOutlet weak var AbdomenAppendageButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var AbdomenAppendages: [UIButton]! //All of the Dropdown Options
+    @IBAction func AbdomenAppendageSelection(_ sender: UIButton) { // Dropdown header selected
+        AbdomenAppendages.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum Sizes: String {
-        case verySmall = "Really small"
-        case small = "Small"
-        case large = "Large"
+    enum AbdomenAppendageOptions: String { //Dropdown Option Names
+        case none = "Absent"
+        case furculum = "Raptorial Furculum"
+        case piercing = "Raptorial Piercing"
+        case grasping = "2 Grasping cerci"
+        case twotailcerci = "2 Tail-like cerci"
+        case threetailcerci = "3 Tail-like cerci"
+        case telson = "Raptorial Telson"
     }
-    @IBAction func sizeTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let size = Sizes(rawValue: title) else {
+    @IBAction func AbdomenAppendageTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let AbdomenAppendage = AbdomenAppendageOptions(rawValue: title) else { //Make enum list
             return
         }
-        AverageSizeSelection = title // Sets global variable to the current menu selection
-        autoQuery() // Runs the update query for species shortlist
-        switch size{
-            case .verySmall:
-                sizeButton.setTitle("Really small", for: .normal)
-                sizeChoice(sender)
-            case .small:
-                sizeButton.setTitle("Small", for: .normal)
-                sizeChoice(sender)
-            case .large:
-                sizeButton.setTitle("Large", for: .normal)
-                sizeChoice(sender)
+        AbdomenAppendageSelection = title
+        autoQuery()
+        switch AbdomenAppendage { //cases for each option
+        case .none:
+            AbdomenAppendageButton.setTitle("Absent", for: .normal)
+            AbdomenAppendageSelection(sender)
+        case .furculum:
+            AbdomenAppendageButton.setTitle("Raptorial Furculum", for: .normal)
+            AbdomenAppendageSelection(sender)
+        case .piercing:
+            AbdomenAppendageButton.setTitle("Raptorial Piercing", for: .normal)
+            AbdomenAppendageSelection(sender)
+        case .grasping:
+            AbdomenAppendageButton.setTitle("2 Grasping cerci", for: .normal)
+            AbdomenAppendageSelection(sender)
+        case .twotailcerci:
+            AbdomenAppendageButton.setTitle("2 Tail-like cerci", for: .normal)
+            AbdomenAppendageSelection(sender)
+        case .threetailcerci:
+            AbdomenAppendageButton.setTitle("3 Tail-like cerci", for: .normal)
+            AbdomenAppendageSelection(sender)
+        case .telson:
+            AbdomenAppendageButton.setTitle("Raptorial Telson", for: .normal)
+            AbdomenAppendageSelection(sender)
         }
     }
     
-    // EYES
-    @IBOutlet weak var hasEyes: UIButton!
-    var count1 = 1
-    @IBAction func eyesButton(_ sender: Any) {
-        count1 = count1 + 1
-        if (count1%2 == 1){
-            hasEyes.setTitle("Has Eyes", for: .normal)
-        }
-        else {
-            hasEyes.setTitle("No Eyes or Extremely Reduced", for: .normal)
-        }
-    }
-    
-    // ELYTRA LENGTH
-    @IBOutlet weak var elytraLength: UIButton!
-    var count2 = 1
-    @IBAction func elytraButton(_ sender: Any) {
-        count2 = count2 + 1
-        if (count2%2 == 1){
-            elytraLength.setTitle("Short Elytra", for: .normal)
-        }
-        else {
-            elytraLength.setTitle("Long Elytra", for: .normal)
-        }
-    }
-    
-    //ANT SUBFAMILY
-    @IBOutlet weak var subFamilyButton: UIButton!
-    @IBOutlet var subFamilies: [UIButton]!
-    @IBAction func subFamilyChoice(_ sender: UIButton){
-        subFamilies.forEach { (button) in
+    //Size
+    @IBOutlet weak var SizeButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var Sizes: [UIButton]! //All of the Dropdown Options
+    @IBAction func SizeSelection(_ sender: UIButton) { // Dropdown header selected
+        Sizes.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
         }
     }
-    enum Families: String {
-        case dolichoderinae = "Dolichoderinae"
-        case formicinae = "Formicinae"
-        case ecatomminae = "Ecatomminae"
-        case ponerinae = "Ponerinae"
-        case myrmeciinae = "Myrmeciinae"
-        case myrmicinae = "Myrmicinae"
-        case dorylinae = "Dorylinae"
+    enum SizeOptions: String { //Dropdown Option Names
+        case realsmall = "Really small"
+        case small = "Small 5-10mm"
+        case large = "Large > 10mm"
     }
-    
-    @IBAction func subFamilyTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let fam = Families(rawValue: title) else {
+    @IBAction func SizeTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let Size = SizeOptions(rawValue: title) else { //Make enum list
             return
         }
-        switch fam{
-        case .dolichoderinae:
-            subFamilyButton.setTitle("Dolichoderinae", for: .normal)
-            subFamilyChoice(sender)
-        case .formicinae:
-            subFamilyButton.setTitle("Formicinae", for: .normal)
-            subFamilyChoice(sender)
-        case .ecatomminae:
-            subFamilyButton.setTitle("Ecatomminae", for: .normal)
-            subFamilyChoice(sender)
-        case .ponerinae:
-            subFamilyButton.setTitle("Ponerinae", for: .normal)
-            subFamilyChoice(sender)
-        case .myrmeciinae:
-            subFamilyButton.setTitle("Myrmeciinae", for: .normal)
-            subFamilyChoice(sender)
-        case .myrmicinae:
-            subFamilyButton.setTitle("Myrmicinae", for: .normal)
-            subFamilyChoice(sender)
-        case .dorylinae:
-            subFamilyButton.setTitle("Dorylinae", for: .normal)
-            subFamilyChoice(sender)
+        AverageSizeSelection = title
+        autoQuery()
+        switch Size { //cases for each option
+        case .realsmall:
+            SizeButton.setTitle("Really small", for: .normal)
+            SizeSelection(sender)
+        case .small:
+            SizeButton.setTitle("Small 5-10mm", for: .normal)
+            SizeSelection(sender)
+        case .large:
+            SizeButton.setTitle("Large > 10mm", for: .normal)
+            SizeSelection(sender)
+        }
+    }
+    
+    //Presence of Eyes
+    @IBOutlet weak var EyePresenceButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var EyePresences: [UIButton]! //All of the Dropdown Options
+    @IBAction func EyePresenceSelection(_ sender: UIButton) { // Dropdown header selected
+        EyePresences.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum EyePresenceOptions: String { //Dropdown Option Names
+        case yes = "Yes"
+        case no = "No or extremely reduced"
+    }
+    @IBAction func EyePresenceTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let EyePresence = EyePresenceOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        EyePresenceSelection = title
+        autoQuery()
+        switch EyePresence { //cases for each option
+        case .yes:
+            EyePresenceButton.setTitle("Yes", for: .normal)
+            EyePresenceSelection(sender)
+        case .no:
+            EyePresenceButton.setTitle("No or extremely reduced", for: .normal)
+            EyePresenceSelection(sender)
+        }
+    }
+    
+    //Head Features
+    @IBOutlet weak var HeadFeatureButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var HeadFeatures: [UIButton]! //All of the Dropdown Options
+    @IBAction func HeadFeatureSelection(_ sender: UIButton) { // Dropdown header selected
+        HeadFeatures.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum HeadFeatureOptions: String { //Dropdown Option Names
+        case noRostrum = "Elongated but no rostrum"
+        case rostrum = "Elongated with rostrum"
+        case sharp = "Sharp angle when viewed from side"
+        case pronotum = "Pronotum"
+    }
+    @IBAction func HeadFeatureTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let HeadFeature = HeadFeatureOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        HeadFeaturesSelection = title
+        autoQuery()
+        switch HeadFeature { //cases for each option
+        case .noRostrum:
+            HeadFeatureButton.setTitle("Elongated but no rostrum", for: .normal)
+            HeadFeatureSelection(sender)
+        case .rostrum:
+            HeadFeatureButton.setTitle("Elongated with rostrum", for: .normal)
+            HeadFeatureSelection(sender)
+        case .sharp:
+            HeadFeatureButton.setTitle("Sharp angle when viewed from side", for: .normal)
+            HeadFeatureSelection(sender)
+        case .pronotum:
+            HeadFeatureButton.setTitle("Pronotum", for: .normal)
+            HeadFeatureSelection(sender)
+        }
+    }
+    
+    //Lenght of Elytra
+    @IBOutlet weak var ElytraLengthButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var ElytraLengths: [UIButton]! //All of the Dropdown Options
+    @IBAction func ElytraLengthSelection(_ sender: UIButton) { // Dropdown header selected
+        ElytraLengths.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum ElytraLengthOptions: String { //Dropdown Option Names
+        case short = "Short"
+        case long = "Long"
+    }
+    @IBAction func ElytraLengthTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let ElytraLength = ElytraLengthOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        ElytraLengthSelection = title
+        autoQuery()
+        switch ElytraLength { //cases for each option
+        case .short:
+            ElytraLengthButton.setTitle("Short", for: .normal)
+            ElytraLengthSelection(sender)
+        case .long:
+            ElytraLengthButton.setTitle("Long", for: .normal)
+            ElytraLengthSelection(sender)
+        }
+    }
+    
+    //Ant Subfamily Criteria
+    @IBOutlet weak var AntCriteriaButton: UIButton! //The Title of the Dropdown
+    @IBOutlet var AntCriterias: [UIButton]! //All of the Dropdown Options
+    @IBAction func AntCriteriaSelection(_ sender: UIButton) { // Dropdown header selected
+        AntCriterias.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    enum AntCriteriaOptions: String { //Dropdown Option Names
+        case dolic = "Dolichoderinae"
+        case formi = "Formicinae"
+        case ectat = "Ectatomminae"
+        case poner = "Ponerinae"
+        case myrmec = "Myrmeciinae"
+        case myrmic = "Myrmicinae"
+        case doryli = "Dorylinae"
+    }
+    @IBAction func AntCriteriaTapped(_ sender: UIButton) { //all dropdown options
+        guard let title = sender.currentTitle, let AntCriteria = AntCriteriaOptions(rawValue: title) else { //Make enum list
+            return
+        }
+        AntSubfamilySelection = title
+        autoQuery()
+        switch AntCriteria { //cases for each option
+        case .dolic:
+            AntCriteriaButton.setTitle("Dolichoderinae", for: .normal)
+            AntCriteriaSelection(sender)
+        case .formi:
+            AntCriteriaButton.setTitle("Formicinae", for: .normal)
+            AntCriteriaSelection(sender)
+        case .ectat:
+            AntCriteriaButton.setTitle("Ectatomminae", for: .normal)
+            AntCriteriaSelection(sender)
+        case .poner:
+            AntCriteriaButton.setTitle("Ponerinae", for: .normal)
+            AntCriteriaSelection(sender)
+        case .myrmec:
+            AntCriteriaButton.setTitle("Myrmeciinae", for: .normal)
+            AntCriteriaSelection(sender)
+        case .myrmic:
+            AntCriteriaButton.setTitle("Myrmicinae", for: .normal)
+            AntCriteriaSelection(sender)
+        case .doryli:
+            AntCriteriaButton.setTitle("Dorylinae", for: .normal)
+            AntCriteriaSelection(sender)
         }
     }
 }
