@@ -35,7 +35,7 @@ extension UIViewController {
 class ViewController: UIViewController {
     
     // Initalises the menu and sets it to not be shown
-    var menuVisible = false;
+    var menuVisible = true;
     @IBOutlet weak var viewConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideView: UIView!
     
@@ -232,7 +232,7 @@ class ViewController: UIViewController {
         AND ANTENNAE_LENGTH LIKE '%\(AntennaeLengthSelection)%'
         AND MOUTH_PARTS LIKE '%\(MouthPartsSelection)%'
         AND ABDOMEN_APPENDAGE LIKE '%\(AbdomenAppendageSelection)%'
-        AND SIZE LIKE '%\(AverageSizeSelection)%';
+        AND SIZE LIKE '%\(AverageSizeSelection)%'
         AND EYE_PRESENCE LIKE '%\(EyePresenceSelection)%'
         AND HEAD_SHAPE_FEATURES LIKE '%\(HeadFeaturesSelection)%'
         AND LENGTH_OF_ELYTRA LIKE '%\(ElytraLengthSelection)%'
