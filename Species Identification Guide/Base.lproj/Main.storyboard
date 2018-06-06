@@ -43,7 +43,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="Hdi-eq-pRC"/>
                                                 </constraints>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="hamburger"/>
+                                                <state key="normal" image="Ios-search.svg"/>
                                                 <connections>
                                                     <action selector="searchBarActivate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lTJ-hT-hR6"/>
                                                 </connections>
@@ -1997,7 +1997,7 @@
     </scenes>
     <resources>
         <image name="Acknowledgements BG" width="1654" height="2339"/>
-        <image name="hamburger" width="1200" height="1200"/>
+        <image name="Ios-search.svg" width="512" height="512"/>
         <image name="mq" width="910" height="866"/>
     </resources>
 </document>
