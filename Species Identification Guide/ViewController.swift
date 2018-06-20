@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             var tmp : [String] = []
-            for i in 1...29 {
+            for i in 1...30 {
                 tmp.append(String(cString: sqlite3_column_text(stmt, Int32(i))))
             }
             searchBarResult.append(tmp)
@@ -162,7 +162,9 @@ class ViewController: UIViewController {
         `SUBORDER` VARCHAR(30),
         `SUPERFAMILY` VARCHAR(30),
         `FAMILY` VARCHAR(30),
-        `SUBFAMILY` VARCHAR(30));
+        `SUBFAMILY` VARCHAR(30),
+        `SPECIES_DESCRIPTION` VARCHAR(200)
+        );
         """
         
         if sqlite3_exec(db, createTableQuery, nil, nil, nil) != SQLITE_OK {
@@ -191,11 +193,11 @@ class ViewController: UIViewController {
         while let row = csv.next() {
             insertQuery = """
             INSERT INTO INVERTEBRATES (
-            `COMMON_NAME`, `SPECIES_NAME`, `MORPHO_SPECIES_NAME`, `BODY_TYPE`, `BODY_CONSTRICTION`,  `LEG_NUM`, `LEG_TYPE`, `GREATER_THAN_EIGHT_LEGS`, `WING_NUM`, `WING_TEXTURE`,  `ANTENNAE`, `ANTENNAE_LENGTH`, `MOUTH_PARTS`, `ABDOMEN_APPENDAGE`, `SIZE`, `EYE_PRESENCE`, `HEAD_SHAPE_FEATURES`, `LENGTH_OF_ELYTRA`, `ANT_SUBFAMILY_CRITERIA`, `PHYLUM`, `SUBPHYLUM`, `CLASS`, `SUBCLASS`, `SUPERORDER`, `ORDER`, `SUBORDER`, `SUPERFAMILY`, `FAMILY`, `SUBFAMILY`
+            `COMMON_NAME`, `SPECIES_NAME`, `MORPHO_SPECIES_NAME`, `BODY_TYPE`, `BODY_CONSTRICTION`,  `LEG_NUM`, `LEG_TYPE`, `GREATER_THAN_EIGHT_LEGS`, `WING_NUM`, `WING_TEXTURE`,  `ANTENNAE`, `ANTENNAE_LENGTH`, `MOUTH_PARTS`, `ABDOMEN_APPENDAGE`, `SIZE`, `EYE_PRESENCE`, `HEAD_SHAPE_FEATURES`, `LENGTH_OF_ELYTRA`, `ANT_SUBFAMILY_CRITERIA`, `PHYLUM`, `SUBPHYLUM`, `CLASS`, `SUBCLASS`, `SUPERORDER`, `ORDER`, `SUBORDER`, `SUPERFAMILY`, `FAMILY`, `SUBFAMILY`, `SPECIES_DESCRIPTION`
             )
             VALUES
             (
-            '\(row[0])', '\(row[1])', '\(row[2])', '\(row[3])', '\(row[4])', '\(row[5])', '\(row[6])', '\(row[7])', '\(row[8])', '\(row[9])', '\(row[10])', '\(row[11])', '\(row[12])', '\(row[13])', '\(row[14])', '\(row[15])', '\(row[16])', '\(row[17])', '\(row[18])', '\(row[19])', '\(row[20])', '\(row[21])', '\(row[22])', '\(row[23])', '\(row[24])', '\(row[25])', '\(row[26])', '\(row[27])', '\(row[28])'
+            '\(row[0])', '\(row[1])', '\(row[2])', '\(row[3])', '\(row[4])', '\(row[5])', '\(row[6])', '\(row[7])', '\(row[8])', '\(row[9])', '\(row[10])', '\(row[11])', '\(row[12])', '\(row[13])', '\(row[14])', '\(row[15])', '\(row[16])', '\(row[17])', '\(row[18])', '\(row[19])', '\(row[20])', '\(row[21])', '\(row[22])', '\(row[23])', '\(row[24])', '\(row[25])', '\(row[26])', '\(row[27])', '\(row[28])', '\(row[29])'
             );
             """
             //print(insertQuery)
@@ -249,7 +251,7 @@ class ViewController: UIViewController {
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             var tmp : [String] = []
-            for i in 1...29 {
+            for i in 1...30 {
                 tmp.append(String(cString: sqlite3_column_text(stmt, Int32(i))))
             }
             searchResult.append(tmp)

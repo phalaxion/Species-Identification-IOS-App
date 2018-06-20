@@ -23,9 +23,9 @@ class ProfileViewController: UIViewController {
     func setupProfile() {
         //print(passedHeaders)
         for i in 0...(speciesDetailsPassed.count - 1) {
-            //if speciesDetailsPassed[i] != "" {
+            if speciesDetailsPassed[i] != "" {
                 let label: UILabel = UILabel()
-                label.backgroundColor = UIColor(red:0/255,green:0/255,blue:0/255,alpha: 0)
+                label.backgroundColor = UIColor.white
                 label.textColor = UIColor.darkText
                 label.text = "\(passedHeaders[i]): \(speciesDetailsPassed[i])"
                 label.lineBreakMode = .byWordWrapping
@@ -38,14 +38,14 @@ class ProfileViewController: UIViewController {
                 if(generatedLabels.count == 0){
                     label.topAnchor.constraint(equalTo: slideshow.bottomAnchor, constant: 10).isActive = true
                 } else {
-                    label.topAnchor.constraint(equalTo: (generatedLabels.last!).bottomAnchor, constant: 15).isActive = true
+                    label.topAnchor.constraint(equalTo: (generatedLabels.last!).bottomAnchor, constant: 10).isActive = true
                 }
                 
                 label.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -10).isActive = true
                 label.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10).isActive = true
                 
                 generatedLabels.append(label)
-            //}
+            }
         }
         generatedLabels.last?.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10).isActive = true
     }
